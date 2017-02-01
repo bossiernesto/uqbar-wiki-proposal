@@ -78,10 +78,10 @@ module Jekyll
             'short_sha' => sha,
             'long_sha' => long_sha,
             'author_name' => author_name,
-            'author_email' => author_email,
+            'author_email' => "#{author_email[0..6]}...",
             'author_date' => author_date,
             'commit_name' => commit_name,
-            'commit_email' => commit_email,
+            'commit_email' => "#{commit_email[0..6]}...",
             'commit_date' => commit_date,
             'message' => message
         }
