@@ -14,7 +14,7 @@ module Jekyll
       end
 
       def render context
-        title = @text.strip.gsub " ", "_"
+        title = @text.strip.gsub " ", "-"
         text = @text.strip
 
         %Q{<a class="link article_link" href="/wiki/articles/#{title}.html">#{text}</a>}

@@ -1,9 +1,9 @@
 ---
 # Jekyll options.
-name: uqbar-wiki-template
+name: uqbar-wiki
 domain:
 baseurl:
-description: "Wiki jekyll engine for github-pages"
+description: "Wiki jekyll engine for Uqbar organization"
 markdown: kramdown
 highlighter: rouge
 github_username:
