@@ -2,33 +2,30 @@
 layout: article
 title: Design temario
 ---
-Unidad 1: Diseño y Sistemas
----------------------------
+
+# Unidad 1: Diseño y Sistemas
 
 -   [Conceptos de Ingeniería de software y de sistemas](conceptos-de-ingenieria-de-software-y-de-sistemas.md)
 -   [Diseño y Tecnología](diseno-y-tecnologia.md)
 -   [Metamodelo](metamodelo.md)
 
-Unidad 2: Diseño y metodologías
--------------------------------
+# Unidad 2: Diseño y metodologías
+
 
 -   [Introducción a las metodologías de desarrollo de software](introduccion-a-las-metodologias-de-desarrollo-de-software.md)
 -   [El papel del diseño en la metodología de desarrollo](el-papel-del-diseno-en-la-metodologia-de-desarrollo.md)
 -   [Refactoring](refactoring.md)
 
-Unidad 3: Herramientas de concepción y comunicación del diseño
---------------------------------------------------------------
+# Unidad 3: Herramientas de concepción y comunicación del diseño
 
 -   [Comunicación](comunicacion.md)
 
-Unidad 4: Requerimientos y Diseño
----------------------------------
+# Unidad 4: Requerimientos y Diseño
 
 -   [Conceptos básicos del diseño](conceptos-basicos-del-diseno.md)
 -   [Impacto de los requerimientos en el diseño](impacto-de-los-requerimientos-en-el-diseno.md)
 
-Unidad 5: Modelado de objetos
------------------------------
+# Unidad 5: Modelado de objetos
 
 -   [Cosificación](cosificacion.md)
 -   [Diseño y Sistemas de Tipos](diseno-y-sistemas-de-tipos.md)
@@ -39,15 +36,15 @@ Unidad 5: Modelado de objetos
 -   [Template method](template-method.md)
 -   [Double dispatch](double-dispatch.md)
 
-### Tecnologías
+# Tecnologías
 
-#### Java
+## Java
 
 -   Preparación de un entorno de desarrollo
     -   [Preparacion de un entorno de desarrollo Java](preparacion-de-un-entorno-de-desarrollo-java.md)
     -   [Lambdas en Java 8](lambdas-en-java-8.md)
 
-#### Otras tecnologías
+## Otras tecnologías
 
 -   [Preparacion de un entorno de desarrollo Scala](preparacion-de-un-entorno-de-desarrollo-scala.md)
 -   [Preparacion de un entorno de desarrollo Groovy](preparacion-de-un-entorno-de-desarrollo-groovy.md)
@@ -62,29 +59,24 @@ Una pregunta que muchas veces en la materia diseño es: ¿Que lenguaje uso? Acá
 
 -   [Groovy vs Scala](groovy-vs-scala.md)
 
-Unidad 6: Modelado de datos
----------------------------
+# Unidad 6: Modelado de datos
 
 -   [Normalizacion en Objetos](normalizacion-en-objetos.md)
 
-Unidad 7: Introducción al diseño de arquitectura
-------------------------------------------------
+# Unidad 7: Introducción al diseño de arquitectura
 
 -   [Patrones de comunicación entre componentes](patrones-de-comunicacion-entre-componentes.md)
 -   [Libreria y Framework](libreria-y-framework.md)
 
-Unidad 8: Validación del Diseño
--------------------------------
+# Unidad 8: Validación del Diseño
 
 -   [Validación del diseño](validacion-del-diseno.md)
 -   [Calidad de las pruebas unitarias](calidad-de-las-pruebas-unitarias.md)
 -   [Cobertura](cobertura.md)
 
-Unidad 9: Diseño de interfaz de usuario
----------------------------------------
+# Unidad 9: Diseño de interfaz de usuario
 
-Fuera de progama: Diseño funcional y estructurado
--------------------------------------------------
+# Fuera de progama: Diseño funcional y estructurado
 
 -   [Efectos y diseño](efectos-y-diseno.md)
 -   [Evaluación diferida y diseño](evaluacion-diferida-y-diseno.md)
@@ -94,13 +86,13 @@ Fuera de progama: Diseño funcional y estructurado
 -   [Estereotipos de objetos](estereotipos-de-objetos.md)
 -   [Tipo abstracto de datos](tipo-abstracto-de-datos.md)
 
-### Patrones funcionales en objetos
+## Patrones funcionales en objetos
 
 -   [Value Object](value-object.md)
 -   [Function Object](function-object.md)
 -   [Lazy Object y Thunk Object](lazy-object-y-thunk-object.md)
 
-### Tips de C
+## Tips de C
 
 -   [Preparación del ambiente C](preparacion-del-ambiente-c.md)
 -   [Typedefs y tipos anónimos](typedefs-y-tipos-anonimos.md)

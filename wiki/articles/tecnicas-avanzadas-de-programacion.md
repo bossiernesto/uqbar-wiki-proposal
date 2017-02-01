@@ -2,73 +2,73 @@
 layout: article
 title: Tecnicas avanzadas de programacion
 ---
-Técnicas Avanzadas de Programación - Contenidos actuales
---------------------------------------------------------
+
+# Técnicas Avanzadas de Programación - Contenidos actuales
+
+# Unidad 1
 
 ### Modelado en objetos avanzado
 
--   [Traits](traits.md)
--   [Mixins](mixins.md)
--   [Bloques como forma de modelar comportamiento](bloques-como-forma-de-modelar-comportamiento.md)
--   [Modelar comportamiento como objetos](modelar-comportamiento-como-objetos.md)
+-   [Traits](traits.html)
+-   [Mixins](mixins.html)
+-   [Bloques como forma de modelar comportamiento](bloques-como-forma-de-modelar-comportamiento.html)
+-   [Modelar comportamiento como objetos](modelar-comportamiento-como-objetos.html)
 
 ### Tipado dinámico vs estático en objetos
 
--   [Esquemas de Tipado](esquemas-de-tipado.md)
--   [Binding, polimorfismo y sobrecarga](binding--polimorfismo-y-sobrecarga.md)
+-   [Esquemas de Tipado](esquemas-de-tipado.html)
+-   [Binding, polimorfismo y sobrecarga](binding--polimorfismo-y-sobrecarga.html)
 
 ### Metaprogramación
 
--   [Metaprogramación](metaprogramacion.md)
--   [Reflection: Introspection y Self-modification](reflection.md)
--   [Uso de features de lenguajes dinámicos](uso-de-features-de-lenguajes-dinamicos.md)
--   [Method missing](method-missing.md)
+-   [Metaprogramación](metaprogramacion.html)
+-   [Reflection: Introspection y Self-modification](reflection.html)
+-   [Uso de features de lenguajes dinámicos](uso-de-features-de-lenguajes-dinamicos.html)
+-   [Method missing](method-missing.html)
 
 ### Declaratividad y DSLs
 
--   [Declaratividad](declaratividad.md)
--   [DSL](dsl.md)
--   [Builder](builder.md)
--   [Tiempo de creación vs tiempo de uso](tiempo-de-creacion-vs-tiempo-de-uso.md)
+-   [Declaratividad](declaratividad.html)
+-   [DSL](dsl.html)
+-   [Builder](builder.html)
+-   [Tiempo de creación vs tiempo de uso](tiempo-de-creacion-vs-tiempo-de-uso.html)
 
-Técnicas Avanzadas de Programación - Contenidos heredados
----------------------------------------------------------
+# Técnicas Avanzadas de Programación - Contenidos heredados
 
 La materia cambió mucho sus contenidos en estos años, sin embargo el material teórico sigue siendo útil aunque no esté en la planificación actual.
 
-### Material teórico
+## Material teórico
 
--   [Manejo de Errores](manejo-de-errores.md)
--   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.md)
--   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.md)
--   [Double dispatch](double-dispatch.md)
--   [Refactoring](refactoring.md)
+-   [Manejo de Errores](manejo-de-errores.html)
+-   [Ciclo de vida de un objeto](ciclo-de-vida-de-un-objeto.html)
+-   [Bibliografía](bibliografia-sobre-programacion-avanzada-orientada-a-objetos.html)
+-   [Double dispatch](double-dispatch.html)
+-   [Refactoring](refactoring.html)
 
-Arquitecturas
--------------
+# Arquitecturas
 
--   [Arquitecturas](arquitecturas.md)
--   [Home](home.md)
+-   [Arquitecturas](arquitecturas.html)
+-   [Home](home.html)
 
-### Tutoriales
+## Tutoriales
 
--   [Resolver problemas de dependencias maven dentro de Eclipse](resolver-problemas-de-dependencias-maven-dentro-de-eclipse.md)
--   Documentación de [Arena MVC](arena-mvc.md)
+-   [Resolver problemas de dependencias maven dentro de Eclipse](resolver-problemas-de-dependencias-maven-dentro-de-eclipse.html)
+-   Documentación de [Arena MVC](arena-mvc.html)
 
-### Consejos prácticos
+# Consejos prácticos
 
--   [Tips para la resolución de un parcial de TADP](tips-para-la-resolucion-de-un-parcial-de-tadp.md)
+-   [Tips para la resolución de un parcial de TADP](tips-para-la-resolucion-de-un-parcial-de-tadp.html)
 
-### Otros
+# Otros
 
--   [Frases teadepeanas](frases-teadepeanas.md)
+-   [Frases teadepeanas](frases-teadepeanas.html)
 
-Apuntes para revisar
+## Apuntes para revisar
 
 -   <http://www.programacion.net/java/articulo/jap_injection/>
 -   [Paper about Autofetch presented at ECOOP 2006](http://www.cs.utexas.edu/~aibrahim/publications/autofetch.pdf)
 
-Una lectura interesante
+## Una lectura interesante
 
 -   <http://cacm.acm.org/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/fulltext>
 
