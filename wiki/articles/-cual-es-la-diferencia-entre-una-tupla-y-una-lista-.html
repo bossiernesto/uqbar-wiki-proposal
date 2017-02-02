@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>cual es la diferencia entre una tupla y una lista</title>
+  <meta property="og:title" content="cual es la diferencia entre una tupla y una lista" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        cual es la diferencia entre una tupla y una lista
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>En primer lugar vale la pena detenernos a pensar qué queremos modelar al usar <a href="tipos-de-haskell-tuplas.md">tuplas</a> y <a href="tipos-de-haskell-listas-y-strings.md">listas</a>. La tupla representa una agrupación de valores ordenados, cada uno con un significado particular ya que se intenta modelar una abstracción compuesta por todos estos elementos. En estructurado podemos compararlas con los registros. Las listas sirven para modelar conjuntos de elementos, para agrupar valores independientes entre sí.</p>
+
+<h2 id="tuplas-y-listas-en-haskell">Tuplas y listas en Haskell</h2>
+
+<p>Una cosa que suele confundir a la hora de diferenciar listas y tuplas es la idea de que “el número de componentes de una tupla es fijo”, ¿qué quiere decir que es fijo si yo puedo tener 2-uplas, 3-uplas… n-uplas?</p>
+
+<p>Lo que quiere decir es que las tuplas de distinta aridad son de <em>distinto tipo</em>, es decir no son comparables entre sí. Es decir la tupla y la tupla son de tipos distintos y yo no puedo hacer una función que acepte ambas tuplas (bah, debería ser polimórfica, ya es otra cuestión.</p>
+
+<p>En cambio, las listas y son ambas del mismo tipo () y entonces sí puedo hacer una función que funcione en ambos casos.</p>
+
+<h3 id="ejemplos-básicos">Ejemplos básicos</h3>
+
+<p>Comencemos por ver qué tipos me dice el Haskell que tiene cada uno de los valores que mencionamos antes:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (True, True)</code>
+<code class="highlighter-rouge">(True, True) :: (Bool, Bool)</code>
+<code class="highlighter-rouge">Prelude&gt; :t (True, True, True)</code>
+<code class="highlighter-rouge">(True, True, True) :: (Bool, Bool, Bool)</code>
+<code class="highlighter-rouge">Prelude&gt; :t [True, True]</code>
+<code class="highlighter-rouge">[True, True] :: [Bool]</code>
+<code class="highlighter-rouge">Prelude&gt; :t [True, True, True]</code>
+<code class="highlighter-rouge">[True, True, True] :: [Bool]</code></p>
+
+<p>Lo que hay que mirar en el ejemplo anterior es que las dos tuplas tienen tipos distintos ( y ), mientras que las dos listas tienen el mismo tipo ().</p>
+
+<p>Además podemos ver que el tipo de una tupla indica la cantidad de componentes, mientras que el tipo de una lista no… eso quiere decir que todas las listas de booleanos son del mismo tipo, independientemente de la cantidad de componentes.</p>
+
+<h3 id="errores-de-tipo">Errores de tipo</h3>
+
+<p>Es fácil ver que si intentamos trabajar con las dos tuplas como si fueran del mismo tipo vamos a tener problemas, un ejemplo sencillo es compararlas por igualdad. Si comparamos las dos listas obtenemos el resultado esperable:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; [True,True] == [True,True,True]</code>
+<code class="highlighter-rouge">False</code></p>
+
+<p>pero si intentamos comparar las dos tuplas ocurre un error:</p>
+
+<p><code class="highlighter-rouge">(False, 'H') :: (Bool, Char)</code>
+<code class="highlighter-rouge">Prelude&gt; (True,True) == (True,True,True)</code></p>
+<interactive>`:1:15:`
+``     Couldn't match expected type `(Bool, Bool)' ``
+``            against inferred type `(Bool, Bool, Bool)' ``
+``     In the second argument of `(==)', namely `(True, True, True)' ``
+`    In the expression: (True, True) == (True, True, True)`
+``     In the definition of `it': it = (True, True) == (True, True, True) ``
+
+### Uso en funciones
+
+También podemos ver que una función puede manejar listas de cualquier longitud pero no pasa lo mismo con las tuplas. Si intentamos hacer una función todosVerdaderos, con listas es fácil:
+
+`todosVerdaderosL [] = True`
+`todosVerdaderosL (x:xs) = x &amp;&amp; todosVerdaderosL xs`
+
+Al cargar eso en el Haskell obtenemos:
+
+`Prelude&gt; :l todosVerdaderos.hs`
+`[1 of 1] Compiling Main             ( todosVerdaderos.hs, interpreted )`
+`Ok, modules loaded: Main.`
+`*Main&gt; todosVerdaderosL [True,True]`
+`True`
+`*Main&gt; todosVerdaderosL [True,True,True]`
+`True`
+
+Podríamos intentar hacer lo mismo con tuplas, para ello agrego las dos definiciones:
+
+`todosVerdaderosT (x,y) = x &amp;&amp; y`
+`todosVerdaderosT (x,y,z) = x &amp;&amp; y &amp;&amp; z`
+
+Pero lamentablemente eso no es posible en Haskell:
+
+`*Main&gt; :r`
+`[1 of 1] Compiling Main             ( todosVerdaderos.hs, interpreted )`
+`todosVerdaderos.hs:5:17:`
+``     Couldn't match expected type `(Bool, Bool)' ``
+``            against inferred type `(a, b, c)' ``
+`    In the pattern: (x, y, z)`
+``     In the definition of `todosVerdaderosT': ``
+`        todosVerdaderosT (x, y, z) = x &amp;&amp; y &amp;&amp; z`
+`Failed, modules loaded: none.`
+
+Una forma de definir la función es:
+
+`todosVerdaderosT2 (x,y) = x &amp;&amp; y`
+`todosVerdaderosT3 (x,y,z) = x &amp;&amp; y &amp;&amp; z`
+
+eso si pasa los chequeos del haskell:
+
+`Prelude&gt; :r`
+`[1 of 1] Compiling Main             ( todosVerdaderos.hs, interpreted )`
+`Ok, modules loaded: Main.`
+
+Pero vemos que me obliga a usar las funciones separadamente:
+
+`*Main&gt; todosVerdaderosT2 (True,True)`
+`True`
+`*Main&gt; todosVerdaderosT3 (True,True,True)`
+`True`
+
+Finalmente, podemos ver que si se intenta intercambiar las funciones se produce un error:
+
+`*Main&gt; todosVerdaderosT2 (True,True,True)`
+<interactive>`:1:18:`
+``     Couldn't match expected type `(Bool, Bool)' ``
+``            against inferred type `(Bool, Bool, Bool)' ``
+``     In the first argument of `todosVerdaderosT2', namely ``
+``         `(True, True, True)' ``
+`    In the expression: todosVerdaderosT2 (True, True, True)`
+``     In the definition of `it': ``
+`        it = todosVerdaderosT2 (True, True, True)`
+
+Para más información, ver acá: [Pattern\_Matching\_en\_Haskell](pattern-matching-en-haskell.md)
+</interactive></interactive>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>115</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

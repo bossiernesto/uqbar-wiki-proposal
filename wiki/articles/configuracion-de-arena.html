@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Configuracion de arena</title>
+  <meta property="og:title" content="Configuracion de arena" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/configuracion-de-arena.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/configuracion-de-arena.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Configuracion de arena
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="pre-requisitos">Pre-requisitos</h2>
+
+<p>Asumimos que tenés instaladas las herramientas básicas según se explica en <a href="preparacion-de-un-entorno-de-desarrollo-java.md">este instructivo</a>, incluyendo Maven.</p>
+
+<h2 id="estructura-de-un-proyecto-arena">Estructura de un proyecto Arena</h2>
+
+<p>En general una aplicación arena consta de dos componentes o partes:</p>
+
+<ul>
+  <li>el dominio</li>
+  <li>la vista</li>
+</ul>
+
+<p>Si bien podemos tener todas las clases de ambas partes en un único proyecto, lo más prolijo es plasmar esa separación en dos proyectos (java/scala/loquesea). Porque por ejemplo, para el TP podrán reutilizar el dominio entre las diferentes tecnologías.</p>
+
+<h2 id="dependencias-de-los-proyectos">Dependencias de los proyectos</h2>
+
+<p>Entonces en ese esquema si seguimos con la idea de que el dominio no debe estar acoplado a la tecnología de la vista directamente, nuestro proyecto “dominio” no dependerá del artefacto arena, pero sí de otro artefacto más abstracto que establece contratos de los objetos de negocio: uqbar-domain.</p>
+
+<p>Por otro lado, nuestro proyecto que tendrá la vista en arena sí, lógicamente dependerá del artefacto “arena”.</p>
+
+<p>La siguiente figura resume esto:</p>
+
+<p><img src="Arena-dependencias.fw.png" alt="" title="Arena-dependencias.fw.png" /></p>
+
+<p>Nota: si hacemos un único proyecto con dominio + ui arena, podemos sólo depender de “arena” y transitivamente veríamos a “uqbar-domain”.</p>
+
+<h2 id="lo-que-deben-tener-tus-pomxml">Lo que deben tener tus pom.xml</h2>
+
+<h3 id="dependencias-para-proyectos-de-dominio">Dependencias para proyectos de dominio</h3>
+
+<p>Si vas a definir tus objetos de dominio en un proyecto aparte (cosa que recomendamos) tenés que definir esta dependencia</p>
+
+<dependency>
+`   `<groupId>`org.uqbar-project`</groupId>
+`   `<artifactId>`uqbar-domain`</artifactId>
+`   `<version>`3.6.1`</version>
+</dependency>
+
+<h3 id="dependencias-para-proyectos-de-ui">Dependencias para proyectos de UI</h3>
+
+<p>Agregar dos referencias en el pom</p>
+
+<ul>
+  <li>al framework Arena (consideramos Arena = Arena-JFace como predeterminado)</li>
+  <li>al proyecto de dominio (asumimos que vamos a tener dos proyectos separados, uno para el dominio y otro para la ui).</li>
+</ul>
+
+<p>Por ejemplo, las dependencias en nuestro pom podrían quedar así:</p>
+
+<p><code class="highlighter-rouge">   </code><dependencies>
+`       `<dependency>
+`           `<groupId>`org.uqbar-project`</groupId>
+`           `<artifactId>`arena-jface`</artifactId>
+`           `<version>`3.6.1`</version>
+`       `</dependency>
+`       `<dependency>
+`           `<groupId>`uqbar-project.org`</groupId>
+`           `<artifactId>`videoclub-domain`</artifactId>
+`           `<version>`1.0.0-SNAPSHOT`</version>
+`       `</dependency>
+`   `</dependencies></p>
+
+<p>Las otras dependencias como JUnit se toman de la definición del parent project, en caso de ser necesario se debe agregar a mano:</p>
+
+<p><code class="highlighter-rouge">       </code><dependency>
+`           `<groupId>`junit`</groupId>
+`           `<artifactId>`junit`</artifactId>
+`           `<version>`4.11`</version>
+`           `<scope>`test`</scope>
+`       `</dependency></p>
+
+<p>Si no querés tocar el pom.xml a mano, podés agregarlo a través del plugin M2clipse: botón derecho sobre el proyecto, Maven &gt; Add Dependency &gt; buscás “arena” y tiene que aparecer “arena-jface”, buscás la versión que querés (o si tenés dudas la última) y aceptás. Entonces el plugin va a descargarlo (si no lo tiene en tu repositorio local). Lo mismo con las demás dependencias que necesites.</p>
+
+<h2 id="arena-y-xtend">Arena y Xtend</h2>
+
+<p>Si estás trabajando Arena-UI desde xtend, este parent contiene todas las dependencias que necesitás (JUnit, el compilador Xtend, Arena UI, Uqbar Domain, etc.):</p>
+
+<parent>
+`    `<groupId>`org.uqbar-project`</groupId>
+`    `<artifactId>`arena-xtend-parent`</artifactId>
+`    `<version>`3.6.2`</version>
+</parent>
+
+<h3 id="integración-con-xtend">Integración con Xtend</h3>
+
+<p>Asumimos que además del entorno básico ya te instalaste Xtend según <a href="preparacion-de-un-entorno-de-desarrollo-xtend.md">este instructivo</a>.</p>
+
+<p>Para bajarte los ejemplos, te recomendamos:</p>
+
+<ul>
+  <li>hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk</li>
+  <li>una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project</li>
+  <li>luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: “compile”)</li>
+</ul>
+
+<h2 id="integración-con-scala">Integración con Scala</h2>
+
+<p>Asumimos que además del entorno básico ya te instalaste Scala según el instructivo para <a href="preparacion-de-un-entorno-de-desarrollo-scala.md">Preparacion de un entorno de desarrollo Scala</a>.</p>
+
+<p>Para bajarte los ejemplos, te recomendamos:</p>
+
+<ul>
+  <li>hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk</li>
+  <li>una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project</li>
+</ul>
+
+<h3 id="crear-un-proyecto-de-arena-en-scala">Crear un proyecto de Arena en Scala</h3>
+
+<p>Las instrucciones para tener un proyecto Scala que utilice Arena son las mismas que para cualquier <a href="preparacion-de-un-entorno-de-desarrollo-scala-creacion-de-un-proyecto-maven-con-scala.md">Proyecto Maven con Scala</a></p>
+
+<p>En caso de duda podés utilizar alguno de nuestros pom.xml como ejemplo.</p>
+
+<h2 id="integración-con-groovy">Integración con Groovy</h2>
+
+<p>Asumimos que además del entorno básico ya te instalaste Groovy según <a href="preparacion-de-un-entorno-de-desarrollo-groovy.md">este instructivo</a>.</p>
+
+<p>Para bajarte los ejemplos, te recomendamos:</p>
+
+<ul>
+  <li>hacer checkout desde el SVN respetando el mismo nombre del proyecto que el directorio padre de trunk</li>
+  <li>una vez bajado el proyecto en tu workspace, botón derecho sobre el proyecto: Configure &gt; Convert to Maven project</li>
+  <li>Luego, botón derecho sobre el proyecto: Configure &gt; Convert to Groovy project</li>
+  <li>Y luego correr mvn compile o mvn install (Run As &gt; Maven install o bien crear una configuración de ejecución con el goal: “compile”)</li>
+</ul>
+
+<h4 id="crear-un-proyecto-de-arena-en-groovy">Crear un proyecto de Arena en Groovy</h4>
+
+<p>A las configuraciones generales del pom.xml (referenciar al parent-project y las dependencias de arena + junit), hay que incorporar:</p>
+
+<ul>
+  <li>Dependencias: el plugin para groovy</li>
+</ul>
+
+<dependencies>
+`   `<dependency>
+`       `<groupId>`org.codehaus.mojo`</groupId>
+`       `<artifactId>`build-helper-maven-plugin`</artifactId>
+`       `<version>`1.8`</version>
+`   `</dependency>
+`   `<dependency>
+`       `<groupId>`uqbar`</groupId>
+`       `<artifactId>`arena-jface`</artifactId>
+`       ...`
+&lt;/dependencies&gt;
+
+-   Y definir el directorio donde están los fuentes como src/main/groovy en lugar de src/main/java que es el default para Maven:
+
+<build>
+`   `<sourceDirectory>`src/main/groovy`</sourceDirectory>
+`   `<testSourceDirectory>`src/test/groovy`</testSourceDirectory>
+`...`
+
+Podés utilizar alguno de nuestros pom.xml como ejemplo.
+
+Importante, para correr cualquier aplicación de Arena
+-----------------------------------------------------
+
+En Run &gt; Run Configurations... &gt; Java Application &gt; New launch configuration (buscá el botón de la toolbar que está a la izquierda) y en la solapa Arguments, tenés que indicarle en VM Arguments que use el Launcher propio de Arena:
+
+`-Djava.system.class.loader=org.uqbar.apo.APOClassLoader`
+
+de lo contrario te va a aparecer un mensaje de error:
+
+`Exception in thread "main" java.lang.RuntimeException: Esta aplicación no está corriendo con el ClassLoader necesario. Corra  la aplicación con el siguiente parámetro para la VM: -Djava.system.class.loader=org.uqbar.apo.APOClassLoader. El ClassLoader actual es: sun.misc.Launcher$AppClassLoader@6fd3633c`
+`   at org.uqbar.arena.Application.validateClassLoader(Application.java:32)`
+`   at org.uqbar.arena.Application.`<init>`(Application.java:24)`
+
+En muchos ejemplos tenemos un archivo .launch que tiene esta configuración ya cargada.
+
+Troubleshooting
+---------------
+
+¿Qué hacer cuando nos bajamos ejemplos (o desarrollamos uno nuevo) y no nos andan? Chequear esta lista...
+
+### Maven
+
+Revisá que Maven esté correctamente instalado en tu máquina y que tenés el settings.xml correctamente configurado. Cualquier duda fijate en [el tutorial de instalación de Maven](preparacion-de-un-entorno-de-desarrollo-java-maven.md).
+
+También asegurate que la versión de Maven sea 3.0.x o posterior, o vas a tener un mensaje de error similar a éste:
+
+`[INFO] Unable to initialise extensions`
+`Component descriptor role: 'com.jcraft.jsch.UIKeyboardInteractive', implementation: 'org.apache.maven.wagon.providers.ssh.jsch.interactive.PrompterUIKeyboardInteractive', role hint: 'default' has a hint, but there are other implementations that don't`
+
+Si trabajás con Xtend puede ser que te surjan tres errores del tipo **Plugin execution not covered by lifecycle configuration: net.alchim31.maven:scala-maven-plugin...** al importar o crear un proyecto.
+
+![](ErrorPluginExcecution.jpg "ErrorPluginExcecution.jpg")
+
+Esto se debe a que no se encuentra un plugin que integra Scala con Maven para Eclipse. Te recomendamos utilizar dos opciones que surgen del quick fix (con el pop-up emergente, ctrl + 1 o bien click derecho sobre el problema seleccionado y en el menú emergente seleccionar Quick fix)
+
+![](ErrorPluginExecutionQuickFix.jpg "ErrorPluginExecutionQuickFix.jpg")
+
+La primer opción es ignorar este plugin solicitado ya que Maven por si solo puede compilar el proyecto sin éste y puedo correr el programa de igual forma. Esto se logra seleccionando la opción **Mark goal add-source as ignored in Eclipse build in Eclipse preferences (Experimental)**. Esta acción la debo realizar tres veces (una por cada error declarado). El resultado es la creación de un archivo XML en la ruta *..../MiWorkspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml* con el siguiente código:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<lifecycleMappingMetadata>
+`  `<pluginExecutions>
+`    `<pluginExecution>
+`      `<pluginExecutionFilter>
+`        `<groupId>`net.alchim31.maven`</groupId>
+`        `<artifactId>`scala-maven-plugin`</artifactId>
+`        `<versionRange>`3.1.5`</versionRange>
+`        `<goals>
+`          `<goal>`testCompile`</goal>
+`          `<goal>`compile`</goal>
+`          `<goal>`add-source`</goal>
+`        `</goals>
+`      `</pluginExecutionFilter>
+`      `<action>
+`        `<ignore />
+`      `</action>
+`    `</pluginExecution>
+`  `</pluginExecutions>
+</lifecycleMappingMetadata>
+
+La otra opción es seleccionar **Discover new m2e connectors**. Esta instala el plugin faltante y soluciona el error. Otro camino para realizar la misma acción puede ser ir a *Window-&gt;Preferences-&gt;Maven-&gt;Discovery-&gt;Open Catalog*.
+
+![](ErrorPluginexecutionDiscover.jpg "ErrorPluginexecutionDiscover.jpg")
+
+### Checkout desde el SVN
+
+En general los ejemplos se bajan desde la estructura "proyecto/trunk", si los bajás desde el directorio proyecto, vas a tener algunos conflictos de directorio.
+
+Al bajarlo utilizar como nombre del proyecto el mismo nombre que el directorio padre de trunk. Ejemplo: al checkoutear "celulares-ui-arena-xtend/trunk" deben definir como nombre del proyecto "celulares-ui-arena-xtend".
+
+### Source folders del proyecto
+
+Los source folders de los proyectos (que tienen maven como estructura central del proyecto) deben ser
+
+-   para proyectos Java o Xtend: src/main/java y src/test/java
+-   para proyectos Groovy: src/main/groovy y src/test/groovy
+-   y para proyectos Scala es src/main/scala y src/test/scala.
+
+Si te aparece como source folder sólo el src, o bien si no tenés source folders, una de dos: 1) corré el plugin de maven: botón derecho sobre el proyecto &gt; Configure &gt; Maven project (o mvn compile) 2) si eso no soluciona el problema, agregá los source folder a mano: botón derecho sobre el proyecto &gt; Build path &gt; new source folder o bien parado sobre el directorio src/main/el-que-corresponda botón derecho &gt; Build path &gt; Add as source folder
+
+### Naturaleza del proyecto
+
+Si estás en una tecnología distinta de Java, tenés que asegurarte que el proyecto tenga el "nature" de esa tecnología. Si no lo tiene, click derecho sobre el proyecto &gt; Configure
+
+-   para Xtend, Add Xtext nature
+-   para Groovy, Add Groovy nature
+-   para Scala, Add Scala nature
+
+### JDK
+
+Revisá que tengas instalada una JDK (no JRE, tiene que ser JDK con las herramientas para desarrollar en Java como el compilador, debug, etc.) y que la versión de ese JDK sea 1.8 ó superior. Si querés usar una JDK 1.7 ó inferior te va a aparecer el siguiente mensaje de error
+
+`java.lang.UnsupportedClassVersionError: ---aplicación de Arena--- : Unsupported major.minor version 51.0`
+
+porque Arena está compilado con una JDK 1.8
+
+### Problemas para encontrar la ventana ejecutable
+
+Si te aparece un error similar a éste al correr un "launcher":
+
+`Error: no se ha encontrado o cargado la clase principal org.uqbar.arena.examples.conversor.xtend.ConversorWindow`
+
+Revisá
+
+-   si tenés correctamente definidos los source folders (punto anterior)
+-   si tenés las librerías de Xtend/Groovy/Scala importadas en tu proyecto (sólo la del lenguaje en el que te lo bajaste, claro está). En caso de que no sea así, las podés agregar manualmente: click derecho sobre el proyecto &gt; propiedades &gt; java build path &gt; solapa "libraries" &gt; "add library" y elegir la que corresponda
+-   por último, si tenés apuntado en tu proyecto un JDK válido (que apunte a un directorio que exista en tu PC, revisá Window &gt; Preferences &gt; Installed JREs)
+
+### Problemas al correr el ejecutable
+
+Si te aparece un error como éste al correr un launcher:
+
+`Error occurred during initialization of VM`
+`java.lang.Error: java.lang.ClassNotFoundException: org.uqbar.arena.aop.ArenaClassLoader`
+`   at java.lang.ClassLoader.initSystemClassLoader(Unknown Source)`
+`   at java.lang.ClassLoader.getSystemClassLoader(Unknown Source)`
+`Caused by: java.lang.ClassNotFoundException: org.uqbar.arena.aop.ArenaClassLoader`
+`   at java.net.URLClassLoader$1.run(Unknown Source)`
+
+El problema está en el launcher, el ArenaClassLoader está deprecado, se reemplazó por el APOClassLoader (más arriba te dice cómo configurarlo).
+
+#### APOClassLoader not found
+
+Otro problema que puede aparecer es:
+
+`Error occurred during initialization of VM`
+`java.lang.Error: java.lang.ClassNotFoundException: ....APOClassLoader`
+
+entonces el problema puede darse por dos razones:
+
+1) no te descargó las dependencias de Maven correctamente. Revisá los directorios de tu usuario/.m2/repository porque seguramente te falte bajar dependencias, podés probar haciendo Maven &gt; Update project (forzando el check Update snapshots), es poco probable que eso lo solucione pero al menos te puede ayudar a encontrar el origen de la dependencia errónea.
+
+2) bajaste el proyecto desde otro path que no es el indicado. Por ejemplo el proyecto conversor-ui-arena está en el path conversor-ui-arena/trunk y vos lo bajaste desde conversor-ui-arena. Si ves un directorio trunk donde adentro está el pom.xml es eso. Volvelo a bajar desde el path que te indica el ejemplo.
+
+#### Errores de launchers
+
+Otro problema que te puede ocurrir cuando corras un launcher que te descargaste de nuestros ejemplos es que te aparezca un error de este tipo:
+
+`Launch configuration references non-existing project celulares-ui-arena-scala`
+
+En este caso el problema es que te descargaste el proyecto del SVN utilizando otro nombre que el que originalmente definimos. Entonces fijate cuál es el nombre del proyecto que está esperando y renombralo a ese, o bien entrá por el menú Run Configuration y apuntá el launcher al proyecto que vos definiste. Otra opción puede ser que no hayas ejecutado el comando mvn compile (Run As &gt; Maven build... Goal compile)
+
+### Problemas específicos con Groovy
+
+Si te aparece un error como el siguiente:
+
+`groovy-all is loaded in version 2.0.6 and you are trying to load version 2.1.6`
+
+Editá el pom.xml y cambiale la versión de groovy-all a 2.0.6 (o la versión en la que esté cargada)
+</init></build></dependency></dependencies>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>303</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

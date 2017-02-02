@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma de objetos</title>
+  <meta property="og:title" content="Paradigma de objetos" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/paradigma-de-objetos.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/paradigma-de-objetos.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Paradigma de objetos
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>Un objeto es un ente computacional que exhibe comportamiento (podemos comunicarnos con él mediante mensajes) y puede (o no) tener un estado interno (referencias a otros objetos).</p>
+
+<p>Un programa basado en este paradigma es un conjunto de objetos que interactúan entre sí en un ambiente mandándose mensajes para lograr un objetivo determinado.</p>
+
+<h2 id="intuición">Intuición</h2>
+
+<p>Intuitivamente, nuestra realidad parece estar conformada por muchos objetos: automóviles, mesas, frascos de mermelada, papeles, computadoras, cables. Esos objetos están allí, se pueden diferenciar entre ellos: una mesa y una silla son diferentes. Más importante aún, si tengo dos sillas, aunque hayan sido fabricadas en el mismo lugar, tengan la misma cantidad de patas y mismo tapizado, las puedo distinguir. Es decir, aunque dos objetos se vean muy parecidos, siguen siendo… ¡dos objetos diferentes! Los objetos se pueden diferenciar, porque tienen identidad propia.</p>
+
+<p>¿Y por qué nos interesan los objetos? Cuando programamos, queremos resolver problemas, entonces no nos van a interesar tanto los objetos por sí mismos, sino que estos pueden resolver problemas. ¿Cómo es esto de resolver problemas? Simple: las hojas de papel nos sirven para escribir en ellas, los cables para conducir energía, los automóviles, para transportarnos. Es decir, no nos va a interesar la mesa porque tenga cuatro patas y una tabla de madera, sino porque esas cuatro patas y tabla nos permitirán resolver el problema de apoyar nuestro almuerzo. De los objetos, entonces, nos va a interesar que son capaces de hacer cosas: tienen comportamiento.</p>
+
+<p>Hay algo más que es interesante en los objetos: a veces estos cambian con el tiempo. Por ejemplo, las mesas se deterioran después de servir de sostén por mucho tiempo, el frasco de mermelada se vacía después de sacarle mermelada varias veces, el automóvil pierde nafta cuando se mueve, y gana nafta cuando se lo recarga. Los objetos pueden tener un estado, y el mismo puede cambiar.</p>
+
+<p><strong>Entonces parece que la pregunta de qué es un objeto se responde fácil… es una cosa, pero no cualquier cosa: tiene identidad, estado y comportamiento.</strong></p>
+
+<p>Ahora nos queda realizar un último salto: en realidad hay más cosas, más objetos en nuestro mundo, que sólo automoviles, hojas o mesas. Hay por ejemplo, países, culturas,trabajos, problemas, ideas, sentimientos. Y una idea se puede diferenciar de otra (identidad), un trabajo puede resolverlos el problema de tener dinero a fin de mes (comportamiento), y un país puede cambiar (estado). Los objetos, entonces, pueden ser también cosas que no podemos tocar: cosas intangibles.</p>
+
+<p>El paradigma de objetos nos propone justamente resolver nuestros problemas usando, adivinen…..¡objetos!. Y para eso, tendremos que zambullirnos en un mundo de objetos.</p>
+
+<h2 id="teoría">Teoría</h2>
+
+<ul>
+  <li><a href="mensajes-y-metodos.md">Mensajes y métodos</a></li>
+  <li>Referencias: <a href="variables.md">Variables</a> y <a href="pseudovariable.md">Pseudovariables</a></li>
+  <li><a href="encapsulamiento.md">Encapsulamiento</a></li>
+  <li><a href="polimorfismo-en-el-paradigma-de-objetos.md">Polimorfismo</a></li>
+  <li><a href="modelando-objetos---responsabilidades-y-delegacion.md">Modelando objetos - Responsabilidades y delegación</a></li>
+  <li><a href="manejo-de-errores.md">Manejo de errores</a></li>
+  <li><a href="prototipado.md">Prototipado</a></li>
+  <li><a href="clases.md">Clases</a></li>
+  <li><a href="prototipado-vs-clases.md">Prototipado vs Clases</a></li>
+  <li><a href="herencia.md">Herencia</a></li>
+  <li><a href="method-lookup.md">Method lookup</a></li>
+  <li><a href="redefinicion.md">Redefinición</a></li>
+  <li><a href="variables-y-metodos-de-clase.md">Variables y métodos de clase</a></li>
+  <li><a href="igual-o-identico-----vs---.md">igual o idéntico - = vs ==</a></li>
+  <li><a href="inmutabilidad.md">Inmutabilidad</a></li>
+  <li><a href="Composición_(OOP)" title="wikilink">Composición (OOP)</a></li>
+  <li><a href="garbage-collector.md">Garbage collector</a></li>
+</ul>
+
+<h2 id="sintaxis">Sintaxis</h2>
+
+<ul>
+  <li><a href="sintaxis-de-smalltalk.md">Sintaxis de Smalltalk</a></li>
+  <li><a href="tipos-de-mensajes-en-smalltalk.md">Tipos de mensajes en Smalltalk</a></li>
+  <li><a href="variables-locales-en-metodos.md">Variables locales en métodos</a></li>
+  <li><a href="precedencia-de-mensajes.md">Precedencia de Mensajes</a></li>
+</ul>
+
+<h2 id="objetos-básicos">Objetos básicos</h2>
+
+<ul>
+  <li><a href="manejo-de-booleanos.md">Manejo de booleanos</a></li>
+  <li><a href="min--y-max-.md">min: y max:</a></li>
+  <li><a href="bloques.md">Bloques</a></li>
+</ul>
+
+<h2 id="colecciones">Colecciones</h2>
+
+<ul>
+  <li><a href="intro-a-colecciones.md">Intro a colecciones</a></li>
+  <li><a href="sabores-de-colecciones.md">Sabores de colecciones</a></li>
+  <li><a href="mensajes-de-colecciones.md">Mensajes de colecciones</a></li>
+  <li><a href="errores-comunes-con-select--y-collect-.md">Errores comunes con select: y collect:</a></li>
+  <li>
+    <inject:into:>
+</inject:into:>
+  </li>
+  <li><a href="arrays-literales-en-smalltalk.md">Arrays literales en Smalltalk</a></li>
+  <li><a href="diccionarios.md">Diccionarios</a></li>
+</ul>
+
+<h2 id="cosas-que-pueden-servir-para-pensar-en-cómo-modelar-un-enunciado">Cosas que pueden servir para pensar en cómo modelar un enunciado</h2>
+
+<ul>
+  <li><a href="diferencia-entre-objetos-y-procedural---con-un-ejercicio-de-la-guia-1.md">Diferencia entre objetos y procedural - con un ejercicio de la guía 1</a></li>
+  <li><a href="nombres-de-clases.md">Nombres de clases</a></li>
+  <li><a href="ley-de-demeter.md">Ley de demeter</a></li>
+  <li><a href="cuestiones-basicas-para-resolver-el-parcial-de-objetos.md">Cuestiones básicas para resolver el parcial de objetos</a></li>
+  <li><a href="puntos-de-entrada.md">Puntos de entrada</a></li>
+</ul>
+
+<h2 id="cosas-que-pueden-servir-para-el-tp">Cosas que pueden servir para el TP</h2>
+
+<ul>
+  <li><a href="preguntas-frecuentes.md">Preguntas Frecuentes</a></li>
+  <li><a href="metodos-de-clase-para-crear-objetos-inicializados.md">Métodos de clase para crear objetos inicializados</a></li>
+  <li><a href="como-hacer-para-que-de-un-objeto-muestre-lo-que-yo-quiero.md">Cómo hacer para que de un objeto muestre lo que yo quiero</a></li>
+  <li><a href="tutorial-de-squeak-y-pharo.md">Tutorial de Squeak y Pharo</a></li>
+  <li><a href="como-crear-una-subclase-en-squeak.md">Cómo crear una subclase en Squeak</a></li>
+  <li><a href="testing.md">Testing</a></li>
+  <li><a href="pharo-para-programadores-ozonosos.md">Pharo para programadores Ozonosos</a></li>
+  <li><a href="http://www.pdep.com.ar/Home/software/software-pharo/object-browser-ultima-version/ObjectBrowser-manual.pdf?attredirects=0">Manual de Ozono</a></li>
+</ul>
+
+<h2 id="miscelánea">Miscelánea</h2>
+
+<ul>
+  <li><a href="maquina-virtual.md">Máquina_Virtual</a></li>
+  <li><a href="diagrama-de-clases.md">Diagrama de clases</a></li>
+  <li><a href="lenguajes.md">Lenguajes</a></li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>98</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

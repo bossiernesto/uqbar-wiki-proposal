@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Aplicacion parcial</title>
+  <meta property="og:title" content="Aplicacion parcial" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/aplicacion-parcial.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/aplicacion-parcial.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Aplicacion parcial
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>Por aplicación parcial se entiende a la <a href="aplicacion.md">aplicación de una función</a>, pero suministrando menos parámetros que los que esta requiere. <strong>El resultado de aplicar parcialmente una función es otra función que espera menos parámetros que la original</strong>, ya que puede realizar reemplazos en su definición por expresiones o valores concretos. La aplicación parcial es muy útil para <a href="composicion.md">componer funciones</a> y para parametrizar funciones de <a href="orden-superior.md">Orden Superior</a>.</p>
+
+<p>Por ejemplo, las siguientes expresiones presentan aplicación parcial:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">map</code> <code class="highlighter-rouge">fst</code></li>
+  <li><code class="highlighter-rouge">(+1)</code></li>
+  <li><code class="highlighter-rouge">foldl</code> <code class="highlighter-rouge">(+)</code></li>
+  <li><code class="highlighter-rouge">foldl</code> <code class="highlighter-rouge">(+)</code> <code class="highlighter-rouge">0</code></li>
+</ul>
+
+<p>Para visualizar mejor la transformación que ocurre al aplicar parcialmente una función pueden consultar el tipo de la función map y de la función map fst usando :t en el editor de Haskell. Podemos realizar un análisis en función del tipo de las expresiones anteriores, cuantos más parámetros se aplican menor aridad (cantidad de parámetros) tiene la función resultante:</p>
+
+<p><code class="highlighter-rouge">*Main&gt; :t map</code>
+<code class="highlighter-rouge">map :: (a -&gt; b) -&gt; [a] -&gt; [b]</code>
+<code class="highlighter-rouge">*Main&gt; :t map fst</code>
+<code class="highlighter-rouge">map fst :: [(b, b1)] -&gt; [b]</code></p>
+
+<p><code class="highlighter-rouge">*Main&gt; :t (+)</code>
+<code class="highlighter-rouge">(+) :: Num a =&gt; a -&gt; a -&gt; a</code>
+<code class="highlighter-rouge">*Main&gt; :t (+1)</code>
+<code class="highlighter-rouge">(+1) :: Num a =&gt; a -&gt; a</code></p>
+
+<p><code class="highlighter-rouge">*Main&gt; :t foldl</code>
+<code class="highlighter-rouge">foldl :: (a -&gt; b -&gt; a) -&gt; a -&gt; [b] -&gt; a</code>
+<code class="highlighter-rouge">*Main&gt; :t foldl (+)</code>
+<code class="highlighter-rouge">foldl (+) :: Num b =&gt; b -&gt; [b] -&gt; b</code>
+<code class="highlighter-rouge">*Main&gt; :t foldl (+) 0</code>
+<code class="highlighter-rouge">foldl (+) 0 :: Num b =&gt; [b] -&gt; b</code></p>
+
+<p>En el caso de map fst y del fold (+) vemos también que no sólo disminuyó la cantidad de parámetros, sino que el tipo de la función resultante es más particular, ya que fst obliga a que la lista sea una lista de duplas y el + a que la lista y el valor inicial del foldl sean números.</p>
+
+<p>Las siguientes funciones no están aplicadas parcialmente:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">all</code> (no está aplicada)</li>
+  <li><code class="highlighter-rouge">odd</code> (no está aplicada)</li>
+  <li><code class="highlighter-rouge">odd</code> <code class="highlighter-rouge">3</code> (está completamente aplicada, esta expresión no es de tipo función sino que es un booleano)</li>
+  <li><code class="highlighter-rouge">filter</code> <code class="highlighter-rouge">(&gt;5)</code> <code class="highlighter-rouge">[4,5,9,10]</code> (está completamente aplicada, esta expresión no es de tipo función sino que es una lista de números)</li>
+</ul>
+
+<p>Una consecuencia de esto es que sólo pueden aplicarse parcialmente funciones de 2 o más argumentos. Para que la aplicación parcial exista, es necesario que las funciones estén currificadas (ver <a href="currificacion.md">Currificación</a>).</p>
+
+<h2 id="puedo-aplicar-parcialmente-el-segundo-parámetro-en-vez-del-primero">Puedo aplicar parcialmente el segundo parámetro en vez del primero?</h2>
+
+<p>En ocasiones sucede que no podemos aplicar parcialmente una función ya que el valor que le queremos pasar no es el primero que espera sino otro, por ejemplo si quiero saber si un nombre es exótico, que se cumple si tiene x, k, q o w, no sería correcto intentar hacer:</p>
+
+<p><code class="highlighter-rouge">esExotico nombre = any (elem "XKQWxkqw") nombre</code></p>
+
+<p>Ya que “xkqw” que es la lista en la cual quiero verificar si se encuentra uno de los caracteres del nombre, no es correcto tratar de aplicárselo a elem porque debería ser el segundo parámetro, no el primero. De hecho esa función va a compilar correctamente, pero no va a funcionar como esperamos, ya que al intentar usarla de esta forma:</p>
+
+<p><code class="highlighter-rouge">&gt; esExotico "Xiomara"</code></p>
+
+<p>Nosotros esperaríamos que nos diga True, pero vamos a tener un error de tipos:</p>
+
+<p><code class="highlighter-rouge">   Couldn't match expected type `[ [Char] ]' with actual type `Char'</code></p>
+
+<p>Esto sucede porque si a elem le aplicamos un String (equivalente a [Char]), el resultado va a ser una función de tipo [ [Char] ] -&gt; Bool</p>
+
+<p>Formas posibles de resolverlo:</p>
+
+<p><strong>Usando una <a href="expresiones-lambda.md">expresión lambda</a></strong></p>
+
+<p><code class="highlighter-rouge">esExotico nombre = any (\letra -&gt; elem letra "XKQWxkqw") nombre</code></p>
+
+<p><strong>Usando notación infija (como los operadores) en vez de prefija</strong>: En ocasiones nos parece más natural usar las funciones de dos argumentos de forma infija, por ejemplo:</p>
+
+<p><code class="highlighter-rouge">&gt; 10 `mod` 2</code></p>
+
+<p>Podemos aprovechar ese feature para aplicar el segundo parámetro y no el primero como hacemos con los operadores, por ej. <code class="highlighter-rouge">(/2)</code></p>
+
+<p><code class="highlighter-rouge">esExotico nombre = any (`elem` "XKQWxkqw") nombre</code></p>
+
+<p><strong>Usando la función flip</strong></p>
+
+<p>En Haskell existe una función de <a href="orden-superior.md">Orden Superior</a> llamada flip cuyo tipo es <code class="highlighter-rouge">(a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c)</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c</code>, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.</p>
+
+<p><code class="highlighter-rouge">esExotico nombre = any (flip elem "XKQWxkqw") nombre</code></p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>79</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

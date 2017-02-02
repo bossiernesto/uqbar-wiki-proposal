@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Conceptos basicos del diseno</title>
+  <meta property="og:title" content="Conceptos basicos del diseno" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/conceptos-basicos-del-diseno.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/conceptos-basicos-del-diseno.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Conceptos basicos del diseno
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="modelo">Modelo</h2>
+
+<p>Un modelo es una simplificación. Es una interpretación de la realidad que abstrae los aspectos relevantes para la solución de un problema. [DDD-Eric Evans].</p>
+
+<h2 id="dominio">Dominio</h2>
+
+<p>Todo programa de software que se va a construir, surge como una idea, o una necesidad, que está relacionada con alguna actividad o interés. Estas “actividades” o “intereses” y el conjunto de reglas y características que lo componen, son el dominio de un problema. Cuando vayamos a construir un programa, debemos conocer y entender el dominio para poder encarar una solución al problema que tenemos. Por supuesto que la información puede ser mucha, y en algunos casos difícil de entender, por lo que debemos crear modelos que simplifique, seleccione y estructure el conocimiento de manera de enfocarlo en lo que necesitamos para solucionar el problema.</p>
+
+<h2 id="heurística">Heurística</h2>
+
+<p>La heurística es una medida. No es una medida cuantitativa como una longitud o un peso, sino una medida que me permite establecer un valor de referencia de una característica cualitativa.</p>
+
+<p>Podemos hablar de que una heurística es una buena práctica, que permite comparar dos objetos de estudio en base a una determinada característica. No vamos a poder establecer un valor numérico para compararlos pero igualmente nos va a poder permitir saber si un objeto es “más” o “menos” que el otro en ese aspecto.</p>
+
+<p>Por ejemplo, si hablamos de la simplicidad de un diseño, no podemos decir que un sistema tenga complejidad 3.5 complejidoñios; pero sí podemos decir que un diseño es más o menos simple que otro.</p>
+
+<p>Las heurísticas son útiles cuando no disponemos de los medios cientificos para usar otras medidas.</p>
+
+<p>Es equivocado buscar que una heurística se convierta en un número medible, eso resulta contradictorio por su propia definición. Por lo tanto, en elementos cualitativos, es imposible establecer medidas cuantitativas. Aunque resulte tentador convertir una heurística en una medición debemos evitar esa tentación a todo costo.</p>
+
+<p>Por ejemplo un error común es hablar de complejidad en número de clases o número de métodos, de la misma manera que no podemos medir la complejidad de una solución por la cantidad de líneas de código involucradas. Estas medidas son apenas indicios pero es necesario analizar las clases, los métodos, el código para poder determinar si efectivamente esa solución resulta más compleja que otra.</p>
+
+<h2 id="cohesión">Cohesión</h2>
+
+<ul>
+  <li>Una clase es cohesiva si podemos definirle un objetivo claro y puntual.</li>
+  <li>Un método es cohesivo si tiene un único objetivo.</li>
+</ul>
+
+<p>Emitir una factura y calcular el total de facturación está bueno que estén en diferentes métodos. En general, tener métodos con efecto colateral (emitir factura, realizar un descuento, firmar una libreta de un alumno, cambiar el sueldo básico a un empleado) y métodos que no tengan efecto (conocer el sueldo de un empleado, saber el promedio de notas de un alumno en finales, conocer el total de facturación de un mes para un cliente, etc.) es una buena práctica, también es bueno abstraer ideas que se repiten en la misma clase dándole un nombre y dejándolo en un método aparte. Así por un lado evitamos duplicar código y por otro aumenta la cohesión de un método: se concentra en hacer sólo una cosa por vez.</p>
+
+<p>Por eso mismo un Cliente representa todo lo que un cliente puede abstraer. Si hay una clase Empresa es porque representa para nosotros una abstracción importante en el sistema, no para que la Empresa tome decisiones que son del cliente. El cliente tiene atributos + comportamiento. Así aumentamos la cohesión de nuestro sistema. De lo contrario, la Empresa toma responsabilidades de un Cliente, de un Empleado, etc. y como hace muchas cosas a la vez, el objetivo que cumple es difuso y la consecuencia de esta menor cohesión es el impacto que tiene cualquier modificación de la estructura interna de un cliente, un empleado o una factura.</p>
+
+<h2 id="acoplamiento">Acoplamiento</h2>
+
+<p>Es el grado en que los componentes de un sistema se conocen.</p>
+
+<p>Un cliente conoce sus facturas para calcular el total, y está bien que las conozca. Lo que es nocivo para el cliente es conocer de más o de menos. De más porque si el cliente le pide las líneas (los renglones) a cada factura y luego a cada línea le pide el precio unitario de cada producto, cualquier modificación en el cálculo del precio de un producto (por ejemplo, descuento por cantidad dependiente del producto), el que se ve directamente afectado es el cliente.</p>
+
+<font color="#8B0000">**Ejemplo de código con alto nivel de acoplamiento**</font>
+<p><code></code></p>
+
+<p><code class="highlighter-rouge">public BigDecimal getMontoTotal() {</code>
+<code class="highlighter-rouge">    BigDecimal total = new BigDecimal(0);</code>
+<code class="highlighter-rouge">    for (Factura factura : this.facturas) {</code>
+<code class="highlighter-rouge">        for (Renglon renglon : factura.renglones) { </code>
+<code class="highlighter-rouge">            total = total.add(renglon.getProducto().getPrecioUnitario() * renglon.getCantidad());</code>
+<code class="highlighter-rouge">        }</code>
+<code class="highlighter-rouge">    }</code>
+<code class="highlighter-rouge">    return total;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>&lt;/code&gt; Aquí vemos que un cliente conoce a objetos factura, pero también a renglones de factura y a productos.</p>
+
+<p>Si el cliente conoce de menos no tiene forma de saber el total de facturación si no sabe que cada factura tiene como interfaz un método que me permite saber el total (<code class="highlighter-rouge">public</code> <code class="highlighter-rouge">BigDecimal</code> <code class="highlighter-rouge">getTotal()</code>)</p>
+
+<font color="#0047AB">**El mismo ejemplo con nivel adecuado de acoplamiento entre cliente y factura**</font>
+<p><code></code></p>
+
+<p><code class="highlighter-rouge">public BigDecimal getMontoTotal() {</code>
+<code class="highlighter-rouge">    BigDecimal total = new BigDecimal(0);</code>
+<code class="highlighter-rouge">    for (Factura factura : this.facturas) {</code>
+<code class="highlighter-rouge">        total = total.add(factura.getTotal());</code>
+<code class="highlighter-rouge">    }</code>
+<code class="highlighter-rouge">    return total;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>&lt;/code&gt;</p>
+
+<h3 id="acoplamiento-explícito-e-implícito">Acoplamiento explícito e implícito</h3>
+
+<p>En algunos casos, el acoplamiento entre dos entidades de software no es fácilmente detectable, a estos acoplamientos se los denomina *implícitos*. Esto se produce cuando una entidad de software, para su funcionamiento depende de una característica de otra que no está visible en su interfaz pública y en cambio forma parte de su implementación interna. En algunos libros este concepto puede encontrarse mencionado como <em>Program to an interface, not to an implementation</em>.</p>
+
+<p>El acoplamiento entre dos entidades de software produce una dependencia: un cambio en una de ellas posiblemente produzca un cambio en la otra. Al modificar una entidad de software es importante poder conocer cuáles son todas las otras entidades que pudieran ser afectadas por este cambio. Por eso, en el caso en que tengamos un acoplamiento, siempre es preferible que lo explicitemos, ya que facilitará la mantenibilidad del sistema y nos dará una herramienta para asegurar la consistencia ante las modificaciones.</p>
+
+<h2 id="requerimientos-y-casos-de-uso">Requerimientos y casos de uso</h2>
+
+<p>Un caso de uso es una secuencia de interacciones que se desarrollarán entre un sistema y sus actores en respuesta a un evento que inicia un actor principal sobre el propio sistema. Cuando hacemos especificaciones de los casos de uso definimos la interacción entre usuario y sistema, dejando claro el límite entre lo que debe proporcionar el usuario y lo que el sistema debe responder.</p>
+
+<p>Los casos de uso pueden ser útiles para establecer requisitos de comportamiento, pero no establecen completamente los requisitos funcionales ni permiten determinar los requisitos no funcionales. Los casos de uso deben complementarse con información adicional como reglas de negocio, requisitos no funcionales, diccionario de datos que complementen los requerimientos del sistema.</p>
+
+<p>Un requerimiento es algo que el sistema debe hacer para lograr el objetivo de un usuario.</p>
+
+<p><a href="http://uqbar-wiki.org/index.php?title=Conceptos_de_Ingenier%C3%ADa_de_software_y_de_sistemas#Requerimientos">Mas sobre requerimientos</a></p>
+
+<h2 id="links-relacionados">Links relacionados</h2>
+
+<ul>
+  <li><a href="design-temario.md">Volver a Diseño de Sistemas</a></li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>96</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

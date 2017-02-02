@@ -5,4 +5,4 @@ _site
 .bundle
 node_modules
 Gemfile.lock
-bower_components
+

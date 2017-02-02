@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma logico   el forall</title>
+  <meta property="og:title" content="Paradigma logico   el forall" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/paradigma-logico---el-forall.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/paradigma-logico---el-forall.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Paradigma logico   el forall
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="antes-que-nada">Antes que nada</h2>
+
+<p>El forall es un predicado, o sea, no conviene pensar qué “hace”, sino qué relaciona, y/o cuándo se verifica.
+El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.</p>
+
+<h2 id="definición">Definición</h2>
+
+<p>El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de <a href="orden-superior.md">orden superior</a>, porque puede manejar predicados dentro de sus parámetros.</p>
+
+<p>Hagámosnos la pregunta … ¿cuándo se verifica?
+Cuando a todos los que les pasa lo primero, les pasa lo segundo.
+Dicho un poco más “en técnico”, cuando todas las respuestas de la primer consulta son respuestas de la segunda.</p>
+
+<p>Entonces, en las situaciones donde decimos “a todos los que …blah… les pasa …bleh…” es probable que el forall nos venga bien.</p>
+
+<h2 id="un-ejemplo">Un ejemplo</h2>
+
+<p>partimos de estos hechos</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dulce(chocolate).
+dulce(caramelo).
+dulce(durazno).
+amargo(radicheta).
+amargo(cebada).
+
+leGusta(roque,chocolate).
+leGusta(roque,radicheta).
+leGusta(pepe,cebada).
+% ... y muchos hechos más que describen los gustos de un grupo de personas
+
+colorDePelo(roque,colorado).
+colorDePelo(pepe,castanio).
+% ... etc. con los colores de pelo
+
+vive(roque,buenosAires).
+vive(pepe,mendoza).
+vive(lucas,salliquelo).
+% ... y donde vive cada persona de la que queremos hablar
+
+ciudadGrande(buenosAires).
+ciudadGrande(mendoza).
+% ... y así todas las ciudades grandes
+</code></pre>
+</div>
+
+<p>y queremos definir esTierno/1, donde decimos que una persona es tierna si todas las cosas que le gustan son dulces.</p>
+
+<p>Estamos en un caso candidato a forall: “a todas las cosas que le gustan les tiene que pasar ser dulces”. En Prolog:</p>
+
+<p><code class="highlighter-rouge">   esTierno(P):- forall(leGusta(P,Alim), dulce(Alim)).</code></p>
+
+<p>… P es tierno si … todas las cosas que le gustan son dulces, exactamente lo que dijimos en castellano.</p>
+
+<p>Ahora quiero definir el predicado alimentoCurioso/1, un alimento es curioso si solamente le gusta a gente de pelo colorado.
+Para darme cuenta que el forall me puede servir, lo pienso en términos de “a todos los que … les tiene que pasar …”. A veeer</p>
+
+<ul>
+  <li>a todas <strong>las personas</strong> que … les gusta el alimento</li>
+  <li>les tiene que pasar … ser coloradas</li>
+</ul>
+
+<p>Queda</p>
+
+<p><code class="highlighter-rouge">   alimentoCurioso(A):- forall(leGusta(P,A), esColorado(P)).</code></p>
+
+<h2 id="tener-claro-lo-que-se-quiere-decir">Tener claro lo que se quiere decir</h2>
+
+<p>¿Está bien si defino esTierno así?</p>
+
+<p><code class="highlighter-rouge">   esTierno(P):- forall(dulce(Alim), leGusta(P,Alim)).</code></p>
+
+<p>Claramente no, porque estaría pidiendo que le gusten todos los alimentos dulces.</p>
+
+<p>Si programar va a consistir en definir condiciones, es relevante entender la diferencia entre</p>
+
+<p>todos los alimentos que le gustan son dulces</p>
+
+<p>y</p>
+
+<p>le gustan todos los alimentos dulces.</p>
+
+<h2 id="el-forall-en-acción">El forall en acción</h2>
+
+<p>Supongamos que hacemos esta consulta:</p>
+
+<p><code class="highlighter-rouge">   ?- esTierno(roque).</code></p>
+
+<p>La P de esTierno se liga con roque … entonces el forall se va a verificar (ver la defi técnica) cuando</p>
+
+<ul>
+  <li>
+    <p>todas las respuestas a la consulta
+    leGusta(roque,Alim)</p>
+  </li>
+  <li>
+    <p>verifiquen la consulta
+    dulce(Alim)</p>
+  </li>
+</ul>
+
+<p>Para cada respuesta a la consulta leGusta(roque,Alim), la variable Alim se va a ligar, en el ejemplo hay dos respuestas, una con chocolate y otra con cebada.
+La consulta correspondiente ya viene con esa variable ligada, o sea que las consultas que se tienen que verificar para que se verifique el forall son</p>
+
+<p><code class="highlighter-rouge">   esDulce(chocolate).</code>
+<code class="highlighter-rouge">   esDulce(cebada).</code></p>
+
+<p>Volvamos a la definición: el forall se verifica si todas las respuestas a la primer consulta son respuestas de la segunda. Mirando el ejemplo de recién debería cerrar el esquema.</p>
+
+<h2 id="qué-pasa-si-no-hay-soluciones-para-el-primer-parámetro-de-forall">Qué pasa si no hay soluciones para el primer parámetro de forall?</h2>
+
+<p>Qué pasa si consultamos si lucas es tierno y en nuestra base de conocimientos no hay nada que le guste?</p>
+
+<p><code class="highlighter-rouge">   ?- esTierno(lucas).</code></p>
+
+<p>Esta consulta va a ser cierta, porque si no le gusta nada, es cierto que todas las cosas que le gustan son dulces. Si nos interesa que sólo diga verdadero para las personas que les gusta algo, debemos agregar otra condición fuera del forall que lo asegure.</p>
+
+<h2 id="forall-e-inversibilidad">Forall e inversibilidad</h2>
+
+<p>Veamos qué pasa con las variables y la inversibilidad.
+¿Será inversible el predicado esTierno/1? Hagamos la consulta con una variable en el argumento</p>
+
+<p><code class="highlighter-rouge">   ?- esTierno(X).</code></p>
+
+<p>En este caso la P llega sin ligar al forall. Entonces la primer consulta es</p>
+
+<p><code class="highlighter-rouge">   leGusta(P,Alim).</code></p>
+
+<p>Para cada una de las respuestas a esta consulta, se tiene que verificar</p>
+
+<p><code class="highlighter-rouge">   esDulce(Alim) </code></p>
+
+<p>donde Alim es lo que ligó la primer consulta.</p>
+
+<p>¿Cuáles son las respuestas a la primer consulta? <strong>Todos</strong> los pares (persona,alimento) relacionados por leGusta.
+Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <strong>a alguien</strong>, no importa a quién, es dulce.</p>
+
+<p>Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante <a href="paradigma-logico---generacion.md"> generación</a>:</p>
+
+<p><code class="highlighter-rouge">   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).</code></p>
+
+<p>Una que no falla:</p>
+
+<p>fíjense que siempre decimos “a todos los blah que les pasa la consulta 1, les tiene que pasar la consulta 2”.</p>
+
+<p>Bueno, para ese “blah” va a haber una variable, que es Alim en el caso de esTierno (si todos <strong>los alimentos</strong> que le gustan …) y P para alimentoCurioso (si todas <strong>las personas</strong> a quienes les gusta …). Esa variable tiene que llegar al forall sin ligar. El resto de las variables por lo general deben llegar ligadas.</p>
+
+<h2 id="varias-condiciones">Varias condiciones</h2>
+
+<p>Qué pasa si se tienen que cumplir varias condiciones: digamos que un alimento es peculiar si todas las personas a las que le gusta son colorados y porteños … nos queda</p>
+
+<ul>
+  <li>a todas <strong>las personas</strong> que … les gusta el alimento</li>
+  <li>les tiene que pasar … ser coloradas y ser porteñas</li>
+</ul>
+
+<p>entonces la segunda consulta es un “y” entre dos condiciones.</p>
+
+<p>Si pongo</p>
+
+<p><code class="highlighter-rouge">  esPeculiar(A):- forall(leGusta(P,A), colorDePelo(P,colorado), vive(P,buenosAires)).</code></p>
+
+<p>está mal, porque el forall lleva dos parámetros, no tres. Necesito agrupar colorDePelo(…) y vive(…), para eso los encierro entre paréntesis, queda</p>
+
+<p><code class="highlighter-rouge">  esPeculiar(A):- forall(leGusta(P,A), (colorDePelo(P,colorado), vive(P,buenosAires))).</code></p>
+
+<p>Pregunto: ¿está bien</p>
+
+<p><code class="highlighter-rouge">  esPeculiar(A):- forall((leGusta(P,A), colorDePelo(P,colorado)), vive(P,buenosAires)).</code></p>
+
+<p>? No, porque estaría pidiendo que todos los colorados a los que les gusta el alimento vivan en Buenos Aires.</p>
+
+<h2 id="para-pensar">Para pensar</h2>
+
+<p>Una que les queda para pensar: ahora tengo que decir que un alimento es marketinable si todas las personas a las que les gusta viven en ciudades grandes. No me interesa que el predicado sea inversible.</p>
+
+<p>Tiro tres opciones: elijan la correcta y piensen por qué eligieron esa.</p>
+
+<p><code class="highlighter-rouge">   esMarketinable(A):- forall(leGusta(P,A), vive(P,C), ciudadGrande(C)).  % opción 1</code>
+<code class="highlighter-rouge">   esMarketinable(A):- forall((leGusta(P,A), vive(P,C)), ciudadGrande(C)).  % opción 2</code>
+<code class="highlighter-rouge">   esMarketinable(A):- forall(leGusta(P,A), (vive(P,C), ciudadGrande(C))).  % opción 3</code></p>
+
+<h2 id="más-sobre-forall">Más sobre forall</h2>
+
+<p>Léanse <a href="paradigma-logico---forall---no-siempre-con-member.md">Paradigma Lógico - forall - no siempre con member</a></p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>190</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

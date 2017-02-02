@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Composicion</title>
+  <meta property="og:title" content="Composicion" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/composicion.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/composicion.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Composicion
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="qué-es-composición">Qué es composición?</h2>
+
+<p>¿Qué queremos decir con ‘Componer’?<br />
+Lo mismo que con composición de funciones en matemática.</p>
+
+<p>fog(x) es lo mismo que f(g(x))</p>
+
+<p>Es decir que lo que devuelve g, hay que aplicárselo a f. A tener en cuenta, tanto f como g tienen que ser funciones, no podemos componer una función con un 2, o un 2 con una lista.</p>
+
+<blockquote>
+  <p>Sólo podemos componer funciones</p>
+</blockquote>
+
+<p>Para componer dos funciones en Haskell, por ejemplo f y g, se hace así</p>
+
+<p><code class="highlighter-rouge">f . g</code></p>
+
+<p>eso arma una nueeeva función, resultado de componer f con g.</p>
+
+<h3 id="ejemplo">Ejemplo</h3>
+
+<p><code class="highlighter-rouge">even . succ</code></p>
+
+<p>Esta formada por la composición de <em>even</em> que recibe un numero y devuelve un Bool que indica si es par o no, y <em>succ</em> que recibe un numero y devuelve el siguiente. Esa composición te devuelve una nueva función que recibe un número y te devuelve el resultado de primero sumarle uno y luego ver si es par:</p>
+
+<p><code class="highlighter-rouge">(not . even) 2       (espero se entiendan mis flechitas xD)</code>
+<code class="highlighter-rouge">  ^  |  ^    |</code>
+<code class="highlighter-rouge">  |__|  |____|</code>
+<code class="highlighter-rouge"> </code></p>
+
+<p>Fijate que el 2 se aplica a la función de la derecha y el resultado de eso se aplica a la función de la izquierda. Y ese sería el resultado final de la función.</p>
+
+<p>Tanto lo de la izquierda como lo de la derecha del punto, tienen que ser funciones que reciban 1 parámetro (al menos en paradigmas, lo otro es más complejo). Y a su vez, el <strong>tipo que retorna la función de la derecha, tiene que ser el mismo que el tipo que espera recibir la función de la izquierda</strong>. En este caso, <code class="highlighter-rouge">even</code> es una función que recibe un <em>Integral</em> (ver <a href="typeclasses.md">typeclasses</a>) y retorna un Bool.</p>
+
+<p><code class="highlighter-rouge">even :: Integral a =&gt; a -&gt; Bool</code></p>
+
+<p>y <code class="highlighter-rouge">not</code> recibe un Bool y retorna otro.</p>
+
+<p><code class="highlighter-rouge">not :: Bool -&gt; Bool</code></p>
+
+<p>Conviene prestar atención a lo siguiente: lo que devuelve <code class="highlighter-rouge">even</code>, coincide con lo que recibe <code class="highlighter-rouge">not</code>. Eso hace posible la composición!</p>
+
+<h2 id="preguntas-frecuentes">Preguntas Frecuentes</h2>
+
+<h3 id="es-necesesario-que-esten-los-puntos-para-que-sea-composicion">¿Es necesesario que esten los puntos para que sea composicion?</h3>
+
+<dl>
+<dd>
+Porque para mí está implícito que hay composición, si por ejemplo en lugar de:
+
+`impar = not . even`
+
+pongo
+
+`impar = not even`
+
+&lt;/dl&gt;
+**Sí, es necesario.** En el segundo ejemplo estas aplicando even a not, y not espera un Bool, no una función y por ende, ni compila por error de tipos.
+
+En cambio, cuando hacés
+
+`not . even`
+
+estás armando una **nueva función** que recibe un número, ve si es par y después lo niega. La forma de armar la función que querés, según el segundo ejemplo sería:
+
+`not (even 3)`
+
+Y en el segundo se aplicaría así:
+
+`(not . even) 3`
+
+Cuándo usar composición
+-----------------------
+
+¿Cuál es la diferencia entre estas dos definiciones?
+
+`impar n = not (even n)`
+`impar = not ◦ even`
+
+En un primer nivel de análisis, ambas definiciones son **equivalentes**.
+
+Sin embargo, si analizamos solamente las expresiones a la derecha del igual encontramos que
+
+`not (even n) `
+
+y
+
+`not . even`
+
+**son distintas**: la primera *denota* un *valor booleano* (True o False) mientras que la segunda denota *una función*.
+
+Esta segunda expresión es más poderosa que la primera, porque me permite que yo la use en funciones de orden superior, por ejemplo
+
+`filter (not.even) [1,2,3,4,5,6,7,8,9]`
+
+En cuanto a la definición de función , no tiene grandes ventajas sobre salvo que nos ayuda a entrenarnos en el uso de la composición, que después podemos utilizar para otras cosas.
+
+Aunque en funciones más complejas puede tener su utilidad, para un ejemplo de esto vean: [Append como "foldr f a"](Append_como_"foldr_f_a" "wikilink").
+
+Errores comunes
+---------------
+
+### Ejemplo
+
+Supongamos una lista de alumnos representados con tuplas de tipo (nombre::String, nota::Int). Queremos obtener los nombres de los alumnos aprobados (nota &gt;= 4).
+
+Podemos suponer además la existencia de las funciones:
+
+`nombre (nom, _) = nom`
+`aprobado (_, not) = not &gt;= 4`
+
+`nombres alumnos = map nombre alumnos`
+`aprobados alumnos = filter aprobado alumnos`
+
+Un error que veo con frecuencia es hacer:
+
+`nombreDeAprobados alumnos = nombres . aprobados alumnos`
+
+La composición es una operación *entre funciones* esto quiere decir que a ambos lados del "." **debe** haber una función. ¿Qué hay a cada lado del "." en este caso:
+
+-   , no hay problema: es una función (de listas de alumnos/tuplas en listas de nombres);
+
+-   ... sí hay problema! No es una función, es una lista de alumnos.
+
+Diciéndolo "en fácil": le tiene que faltar un parámetro, si yo a una función le aplico todos los parámetros deja de ser una función y pasa a ser un valor "simple". *Tal vez sea interesante ver el efecto de la [currificación](currificacion.md) en Haskell.*
+
+### Correcciones posibles
+
+Sin composición  
+
+`aprobados alumnos = nombres (aprobados alumnos)`
+
+  
+Es decir uso *aplicación* en lugar de composición (ojo, esto funciona pero si en estamos en un parcial y se desea evaluar que el alumno sepa composición... ahí no están usando composición entonces puede no ser suficiente como solución al ejercicio).
+
+Con composición  
+
+`nombreDeAprobados = nombres . aprobados`
+
+  
+Claramente son funciones las dos expresiones a ambos lados del ".". (Notese que a la derecha del "=" también hay un parámetro menos.)
+
+Pueden encontrar otro ejemplo sobre esta clase de errores en [ Errores con composición y aplicación parcial](errores-comunes-al-comenzar-a-trabajar-con-haskell-composicion-y-aplicacion-parcial.md)
+
+### Composición vs. Aplicación
+
+Para terminar de entenderlo recuerden la matemática, ¿es lo mismo que ? Claramente si g es una función yo no puedo hacer . Por otro lado, si en lugar de una función g tuviera un valor real x, entonces puedo hacer pero no .
+
+### Algunos detalles técnicos
+
+Si bien en general intentamos concentrarnos en los conceptos y no prestar tanta atención al conocimiento en sí del lenguaje; para poder expresar correctamente una composición en Haskell es necesario comprender correctamente algunos detalles de la sintaxis del Haskell:
+
+1.  Si pongo un "." es composición, si no es aplicación.
+      
+    Los dos conceptos son bien distintos y es muy importante comprender la diferencia; por lo tanto es necesario ser bien explícito sobre cuándo se esta queriendo utilizar uno u otro. En criollo, se tiene que notar dónde hay un punto y dónde no.
+
+2.  El operador de composición tiene mayor precedencia que todos los demás. (Ver [Aplicación Parcial](aplicacion-parcial.md))
+      
+    Por lo tanto la expresión debe leerse como .
+
+    De la misma manera si yo pongo se lee como y es incorrecto por lo expresado en el punto anterior.
+
+    Una alternativa posible es alterar la precedencia explícitamente usando paréntesis, por ejemplo ; donde "primero" se componen las funciones, eso produce una nueva función y a esa nueva función le aplico la lista como parámetro.
+
+    Para más información puede leer: [Precedencia de los operadores más comunes en Haskell](precedencia-de-los-operadores-mas-comunes-en-haskell.md) y [Cuándo usar paréntesis](cuando-usar-parentesis.md)
+
+
+</dd></dl>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>171</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

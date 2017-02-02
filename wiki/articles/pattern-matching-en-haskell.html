@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Pattern matching en haskell</title>
+  <meta property="og:title" content="Pattern matching en haskell" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/pattern-matching-en-haskell.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/pattern-matching-en-haskell.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Pattern matching en haskell
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>Pattern Matching es el concepto asociado al chequeo estructural de un dato respecto de una estructura esperada. El uso de pattern matching tiene la ventaja de simplificar mucho la codificación, ya que sólo escribimos la forma de lo que esperamos y podemos desglosar los componentes de estructuras complejas.</p>
+
+<p>Una desventaja asociada a usar pattern matching en vez de funciones para acceder a los elementos de las tuplas es que nuestro código se verá muy afectado ante un cambio en las estructuras manejadas. El simple hecho de agregar un elemento más a la tupla que representa a nuestro elemento de dominio provocará un cambio en el tipo del mismo y el mismo se propagará en todos los lugares donde se haya utilizado esta estructura directamente.</p>
+
+<h2 id="ejemplos-de-matcheo">Ejemplos de matcheo</h2>
+
+<h3 id="con-números-y-strings">Con números y strings</h3>
+
+<p>Si queremos saber si el nombre de un día de la semana es fin de semana podemos hacer:</p>
+
+<p><code class="highlighter-rouge">esFinDeSemana dia = dia == "Sábado" || dia == "Domingo"</code></p>
+
+<p>Sin embargo esta otra definición también es válida:</p>
+
+<p><code class="highlighter-rouge">esFinDeSemana' "Sábado" = True</code>
+<code class="highlighter-rouge">esFinDeSemana' "Domingo" = True</code>
+<code class="highlighter-rouge">esFinDeSemana' _ = False</code></p>
+
+<p>La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el <a href="paradigma-logico---introduccion-universo-cerrado.md"> principio de universo cerrado</a> y si sólo definimos esFinDeSemana’ para “Sábado” y “Domingo” y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la <a href="pattern-matching-en-haskell-sobre-la-variable-anonima.md"> variable anónima</a>, que matchea con cualquier patrón, sea la última definición de esFinDeSemana’, de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).</p>
+
+<p>Acá tenemos un ejemplito <a href="recursividad-en-haskell.md">recursivo</a> típico para pattern matching con números:</p>
+
+<p><code class="highlighter-rouge">factorial 0 = 1  </code>
+<code class="highlighter-rouge">factorial n = n * factorial (n - 1)  </code></p>
+
+<p>Para evitar loops infinitos, es importante poner el caso base primero para que matchee con el 0, ya que la variable n también matchearía con este valor.</p>
+
+<h3 id="con-tuplas">Con tuplas</h3>
+
+<p>Si tengo los valores</p>
+
+<p><code class="highlighter-rouge">v1 = (2,5)</code>
+<code class="highlighter-rouge">v2 = (3,5)</code>
+<code class="highlighter-rouge">v3 = (8,5)</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x,5)</code> matchea con los tres valores.</p>
+
+<p>También el patrón <code class="highlighter-rouge">(x,y)</code> matchea con los tres valores.</p>
+
+<p>También el patrón <code class="highlighter-rouge">(_,5)</code> matchea con los tres valores.</p>
+
+<p>También el patrón <code class="highlighter-rouge">(_,_)</code> matchea con los tres valores.</p>
+
+<p>También el patrón <code class="highlighter-rouge">unaTupla</code> matchea con los tres valores.</p>
+
+<h3 id="con-listas">Con listas</h3>
+
+<p>Ahora, si tengo una lista</p>
+
+<p><code class="highlighter-rouge">lista1 = [(2,5),(5,3),(3,3)]</code>
+<code class="highlighter-rouge">lista2 = [(2,5)]</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x,5)</code> no matchea con <code class="highlighter-rouge">lista1</code> ni con <code class="highlighter-rouge">lista2</code>. ¡Es una tupla, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipos.</p>
+
+<p>El patrón <code class="highlighter-rouge">(x:xs)</code> matchea con <code class="highlighter-rouge">lista1</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code> y <code class="highlighter-rouge">xs</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[(5,3),(3,3)]</code> y matchea con <code class="highlighter-rouge">lista2</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code> y <code class="highlighter-rouge">xs</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[]</code></p>
+
+<p>El patrón <code class="highlighter-rouge">[x]</code> no matchea con <code class="highlighter-rouge">lista1</code> porque tiene más de un elemento, pero sí matchea con <code class="highlighter-rouge">lista2</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x:_)</code> matchea con <code class="highlighter-rouge">lista1</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code> y matchea con <code class="highlighter-rouge">lista2</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x:y:_)</code> matchea con <code class="highlighter-rouge">lista1</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(2,5)</code> e <code class="highlighter-rouge">y</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(5,3)</code>, y no matchea con <code class="highlighter-rouge">lista2</code> porque sólo tiene un elemento</p>
+
+<p>El patrón <code class="highlighter-rouge">unaTupla</code> matchea con <code class="highlighter-rouge">lista1</code> siendo <code class="highlighter-rouge">unaTupla</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[(2,5),(5,3),(3,3)]</code> y matchea con <code class="highlighter-rouge">lista2</code> siendo <code class="highlighter-rouge">unaTupla</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[(2,5)]</code>. Es sólo un nombre de variable, con lo cual no restringe realmente el tipo del valor para que sea una tupla.</p>
+
+<h3 id="con-data">Con data</h3>
+
+<p>(En algunos cursos no se da data, para más información ver acá: <a href="data--definiendo-nuestros-tipos-en-haskell.md">Data: Definiendo nuestros tipos en Haskell</a>) Suponiendo que tenés</p>
+
+<p><code class="highlighter-rouge">data Coordenada = Coord Int Int</code></p>
+
+<p>(el tipo es Coordenada y el constructor es Coord)</p>
+
+<p>Donde se puede aplicar la misma idea</p>
+
+<p><code class="highlighter-rouge">lista1 = [Coord 2 5,Coord 5 3,Coord 3 3]</code>
+<code class="highlighter-rouge">lista2 = [Coord 2 5]</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(Coord</code> <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">5)</code> no matchea con <code class="highlighter-rouge">lista1</code> ni con <code class="highlighter-rouge">lista2</code>. ¡Es una Coordenada, no una lista! Antes de tratar de matchear, Haskell nos va a tirar un error de tipo.</p>
+
+<p>El patrón <code class="highlighter-rouge">(Coord</code> <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">y:restoCoords)</code> matchea con <code class="highlighter-rouge">lista1</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">2</code>, <code class="highlighter-rouge">y</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">5</code> y <code class="highlighter-rouge">restoCoords</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[Coord</code> <code class="highlighter-rouge">5</code> <code class="highlighter-rouge">3,Coord</code> <code class="highlighter-rouge">3</code> <code class="highlighter-rouge">3]</code> y matchea con <code class="highlighter-rouge">lista2</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">2</code>, <code class="highlighter-rouge">y</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">5</code> y <code class="highlighter-rouge">restoCoords</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[]</code></p>
+
+<p>El patrón <code class="highlighter-rouge">[x]</code> no matchea con <code class="highlighter-rouge">lista1</code> pero si matchea con <code class="highlighter-rouge">lista2</code>, siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">Coord</code> <code class="highlighter-rouge">2</code> <code class="highlighter-rouge">5</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x:_)</code> matchea con <code class="highlighter-rouge">lista1</code> y matchea con <code class="highlighter-rouge">lista2</code> siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">Coord</code> <code class="highlighter-rouge">2</code> <code class="highlighter-rouge">5</code></p>
+
+<p>El patrón <code class="highlighter-rouge">(x:y:_)</code> matchea con <code class="highlighter-rouge">lista1</code> siendo <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">Coord</code> <code class="highlighter-rouge">2</code> <code class="highlighter-rouge">5</code> y <code class="highlighter-rouge">y</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">Coord</code> <code class="highlighter-rouge">5</code> <code class="highlighter-rouge">3</code> pero no matchea con <code class="highlighter-rouge">lista2</code></p>
+
+<p>El patrón <code class="highlighter-rouge">unaTupla</code> matchea con <code class="highlighter-rouge">lista1</code> y matchea con <code class="highlighter-rouge">lista2</code> porque no es más que una variable sin ninguna restricción después de todo</p>
+
+<h2 id="patrones-con-sinónimos-at-pattern">Patrones con sinónimos (<strong>at</strong> Pattern)</h2>
+
+<p>Usamos este patrón para definir un sinónimo, o sea necesito por un lado el patrón para tomar algunos de sus componentes y por otro todo junto para la hacer otra cosa, pongamos un par de ejemplos:</p>
+
+<p><code class="highlighter-rouge">ordenada [_] = True</code>
+<code class="highlighter-rouge">ordenada (x1:x2:xs) = x1 &gt; x2 &amp;&amp; ordenada x2:xs</code></p>
+
+<p>Puede mejorarse sutilmente con un sinónimo.</p>
+
+<p><code class="highlighter-rouge">ordenada [_] = True</code>
+<code class="highlighter-rouge">ordenada (x1:xs@(x2:_)) = x1 &gt; x2 &amp;&amp; ordenada xs</code></p>
+
+<p>Otro ejemplo, entre dos complejos representados con tuplas, obtener el que tiene mayor parte real:</p>
+
+<p><code class="highlighter-rouge">mayorParteReal (a@(a1, _)) (b@(b1, _))</code>
+<code class="highlighter-rouge"> | a1 &gt; b1 = a</code>
+<code class="highlighter-rouge"> | otherwise = b</code></p>
+
+<p>Y otro con listas por comprensión:</p>
+
+<p><code class="highlighter-rouge">promedioDeAprobados alumnos = promedio [ promedio notas | alumno@(_,notas) &lt;- alumnos, aprobo alumno ]</code></p>
+
+<h2 id="sobre-la-variable-anónima">Sobre la Variable Anónima</h2>
+
+<p>La variable anónima _ (guión bajo) funciona, en términos de matcheo, como una variable común:</p>
+
+<p><code class="highlighter-rouge">esCero 0 = True</code>
+<code class="highlighter-rouge">esCero x = False</code></p>
+
+<p>Es lo mismo que decir:</p>
+
+<p><code class="highlighter-rouge">esCero 0 = True</code>
+<code class="highlighter-rouge">esCero _ = False</code></p>
+
+<p>De hecho, esta última opción es mejor, porque ayuda a la expresividad: si la variable no se usa en la devolución (a la derecha del igual, ó a la derecha de la guarda) entonces mejor ni ponerle nombre. Por ejemplo:</p>
+
+<p><code class="highlighter-rouge">anioActual = 2014</code>
+<code class="highlighter-rouge">edad (nombre, anioNac, cantPerros) = anioActual - anioNac</code></p>
+
+<p>En ese caso la función edad recibe una tupla pero a la derecha, en la definición de la función, no hace faltan el nombre y el cantPerros. Entonces, usamos variables anónimas:</p>
+
+<p><code class="highlighter-rouge">edad ( _, anioNac, _) = anioActual - anioNac</code></p>
+
+<h3 id="error-común-con-variables-anónimas">Error común con Variables Anónimas</h3>
+
+<p>Muchas veces pensamos que no necesitamos una variable, cuando en realidad sí la usamos a la derecha del igual. Por ejemplo, si queremos tomar esa definición de “persona” como una tupla de tres, y agregarle perros a la persona, debemos devolver a una persona, pero cambiando sólo la cantidad de perros.</p>
+
+<p>Esto es <strong>erróneo</strong>:</p>
+
+<p><code class="highlighter-rouge">agregarPerros cant (_, _, cantPerros) = (_, _, cantPerros + cant)</code></p>
+
+<p>¡Son variables anónimas! Si quiero usarlas a la derecha del igual (ó sea, si quiero que sean parte de lo que devuelvo) entonces tengo que usar variables comunes.</p>
+
+<p>Esto está <strong>bien</strong>:</p>
+
+<p><code class="highlighter-rouge">agregarPerros cant (nombre, anioNac, cantPerros) = (nombre, anioNac, cantPerros + 1)</code></p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>152</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

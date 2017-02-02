@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Css</title>
+  <meta property="og:title" content="Css" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/css.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/css.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Css
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>Es la forma más recomendada de especificar y modificar las cuestiones estéticas de una página <a href="html.md">HTML</a>. La característica principal es que <strong>separa estas declaraciones del propio html</strong>. Así evita ensuciar la información (html) con cuestiones estéticas (el archivo .css). Además permite reutilizar estilos entre las diferentes páginas html, manteniendo consistencia entre el estilo de todo el sitio/aplicación.</p>
+
+<h2 id="sintaxis">Sintaxis</h2>
+
+<p>CSS tiene su propio lenguaje declarativo en el cual especificamos <strong>reglas</strong>. Una regla tiene la siguiente sintaxis:</p>
+
+<p><img src="css-rule.gif" alt="" title="css-rule.gif" /></p>
+
+<p>El <strong>selector</strong> es una expresión que nos permite matchear aquellos elementos a los que queremos aplicarle estos estilos. Luego el cuerpo de la regla contiene un conjunto de propiedades y valores para éstos.</p>
+
+<p>Algunas propiedades aplican solo a algunos tipos de tags. Sin embargo, no es un lenguaje que “compile” o que tire errores. Simplemente si una propiedad no aplica a un tag, el browser no le va a dar bola.</p>
+
+<p>Un primer ejemplo para entender la sintaxis</p>
+
+<p><code class="highlighter-rouge">span {</code>
+<code class="highlighter-rouge">   text-align:center;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Aplica el valor “center” a la propiedad “text-align” de todos los tags de la página que sean de tipo &lt;span&gt;.</p>
+
+<h2 id="selectores-principales">Selectores Principales</h2>
+
+<p>Básicamente lo primero que tenemos que saber sobre los selectores es que hay tres grandes tipos o formas de matchear nuestros tags.</p>
+
+<ul>
+  <li><strong>Por tag</strong>, es decir a todos los tags de un tipo (por ejemplo h1, h2, etc).</li>
+  <li><strong>Por clase</strong> (class), es decir a los tags a los que se les haya indicado un estilo determinado (mediante el atributo <strong>class</strong>).</li>
+  <li><strong>Por id</strong>, es decir a un elemento específico de la página según su <strong>id</strong>.</li>
+</ul>
+
+<p>Ejemplo por tag (ya vimos otro arriba para &lt;span&gt;)</p>
+
+<p><code class="highlighter-rouge">td {</code>
+<code class="highlighter-rouge">   text-align:center;</code>
+<code class="highlighter-rouge">   color:red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Aplica esas dos propiedades a todos los &lt;td&gt;</p>
+
+<p><code class="highlighter-rouge">.filaImpar {</code>
+<code class="highlighter-rouge">   text-align:center;</code>
+<code class="highlighter-rouge">   color:red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Este selector, que comienza con un punto, indica que va a matchear con cualquier tag (no importa el tipo de tag), siempre que éste tenga el valor <strong>filaImpar</strong> en su atributo <strong>class</strong>. Por ejemplo matchearía con estos tags:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> &lt;p class="filaImpar"&gt;Hola Soy un P&amp;aacute;rrafo&lt;p&gt;
+
+ &lt;span class="filaImpar importante"&gt;Hola Soy un Span&lt;p&gt;
+
+ &lt;tr class="conBordes fondoImportante filaImpar&gt;
+    &lt;td&gt;Hola, soy una Fila&lt;/td&gt;
+ &lt;tr&gt;
+</code></pre>
+</div>
+
+<p>Como se ve acá, un tag <strong>puede tener más de un class</strong>. Así los classes no tienen nada que ver con las clases de un lenguaje orientado a objetos. Pueden pensarlos más bien como “labels” o “etiquetas” o marcas que que hago a los tags, para luego por CSS agregarle características visuales. Así eventualmente uno en un proyecto grande, se crearía su propia convención con un conjunto de “classes” que reutilizaría en todo su sitio. Por ejemplo “titulo” o “menu”, “botonGrande”, “botonMediano”, etc. Es una buena forma de elevar el nivel del html con nuevos significados.</p>
+
+<p>El último ejemplo, matchear por id</p>
+
+<p><code class="highlighter-rouge">#unElementoEspecifico {</code>
+<code class="highlighter-rouge">   text-align:center;</code>
+<code class="highlighter-rouge">   color:red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Este selector es el más “puntual” o específico, y permite matchear con tags, no importa su tipo, ni tampoco su class, sino que solo busca por “id”.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> &lt;li id="opcionIrAAyuda"&gt;Ir a Ayuda&lt;/li&gt;
+
+ &lt;button id="volver"&gt;Volver&lt;/button&gt;
+</code></pre>
+</div>
+
+<p>Algo importante para entender esto, es que en una página no deberían existir dos tags con el mismo id. No importa si están dentro de diferentes tags o en diferentes niveles. El “id” es único para todos los elementos de la página.</p>
+
+<h2 id="uso-de-css-desde-html">Uso de CSS desde HTML</h2>
+
+<p>El html usa el css mediante una declaración en la sección <strong>HEAD</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  <span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      ...
+      <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"styles.css"</span> <span class="nt">/&gt;</span>
+      ...
+    <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Donde “styles.css” sería mi archivo de estilos y estaría, en este caso en la misma carpeta en que se encuentra este html. También podríamos usar una URL absoluta:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"&gt;
+</code></pre>
+</div>
+
+<p>Existen otras formas de incluir estilos en un html, sin embargo la mejor es la que ya citamos. Las demás involucran ensuciar el html, y las pueden ver acá <a href="http://www.w3schools.com/css/css_howto.asp">1</a></p>
+
+<h2 id="cascada">Cascada</h2>
+
+<p>Las reglas se aplican <em>en cascada</em>, esto significa dos cosas:</p>
+
+<ol>
+  <li>En primer lugar cada componente hereda determinados estilos de sus contenedores, por ejemplo un td (celda de una tabla) hereda los del tr (fila) y del table correspondientes. Los estilos que apliquen al componente específico sobreescriben a los del contenedor, pero aquellos que no estén especificados se heredan. No todas las indicaciones de estilo son “heredables” (inheritable en inglés), es importante entender el comportamiento de cada una de las diferentes indicaciones de estilo.</li>
+  <li>En segundo lugar sobre cada componente pueden aplicarse más de un estilo, que matcheen con ese componente según su tag, class y id respectivamente. Esos diferentes estilos se van a combinar permitiendo que el estilo más específico sobreescriba los estilos más generales, pero aun manteniendo las indicaciones correspondientes al estilo más general que no sean redefinidas.</li>
+</ol>
+
+<p>Ejemplo de varias reglas aplicando al mismo tiempo sobre un tag.</p>
+
+<p><code class="highlighter-rouge">tr {</code>
+<code class="highlighter-rouge">   text-align:center;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p><code class="highlighter-rouge">.resaltar {</code>
+<code class="highlighter-rouge">   background-color: red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Ambos reglas van a aplicar en este tag</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;tr class="resaltar"&gt;
+        &lt;td&gt;Hola, soy una celda&lt;/td&gt;
+    &lt;/tr&gt;
+</code></pre>
+</div>
+
+<p>El texto se va a ver centrado y además con fondo rojo.</p>
+
+<h2 id="combinando-selectores-or">Combinando Selectores (OR)</h2>
+
+<p>Es común que tengamos que aplicar los mismos estilos a diferentes tags. Para evitar duplicación de código las reglas se pueden combinar. Ej:</p>
+
+<p><code class="highlighter-rouge">h1 {</code>
+<code class="highlighter-rouge">  text-align:center;</code>
+<code class="highlighter-rouge">  color:red;</code>
+<code class="highlighter-rouge">}</code>
+<code class="highlighter-rouge">h2 {</code>
+<code class="highlighter-rouge">  text-align:center;</code>
+<code class="highlighter-rouge">  color:red;</code>
+<code class="highlighter-rouge">}</code>
+<code class="highlighter-rouge">p {</code>
+<code class="highlighter-rouge">  text-align:center;</code>
+<code class="highlighter-rouge">  color:red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Se puede refactorizar a esto:</p>
+
+<p><code class="highlighter-rouge">h1, h2, p {</code>
+<code class="highlighter-rouge">  text-align:center;</code>
+<code class="highlighter-rouge">  color:red;</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>La sintaxis entonces es:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> selector1, selector2, ... selectorN {
+     propiedad1: valor1;
+     propiedad2: valor2;
+     ...
+     propiedadN: valorN;
+ }
+</code></pre>
+</div>
+
+<p>Se puede pensar como un <strong>or</strong>. Sería, si es un h1 <strong>o</strong> es un h2, <strong>o</strong> es un p.</p>
+
+<h2 id="ventajas-del-uso-de-css">Ventajas del uso de CSS</h2>
+
+<p>La separación de concerns (layout vs. configuración estética) permite dos cosas:</p>
+
+<ul>
+  <li>Configurar y personalizar el estilo que se muestre por usuario/región/dispositivo</li>
+</ul>
+
+<p>y preservar el OAOO (Once and only once) / DRY (Don’t repeat yourself), la página HTML aumenta su expresividad (es más fácil de entender) los diseñadores gráficos se concentran el look &amp; feel, decorando los botones, las tablas (grillas), el tipo de letra, los títulos y también los logos, isotipos e imágenes que la aplicación va a tener. Por lo general reciben un “esqueleto” de las páginas con datos de prueba escritos en forma manual</p>
+
+<ul>
+  <li>Por otra parte, los programadores se concentran en la lógica de presentación y en la facilidad de uso por parte del usuario</li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>167</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

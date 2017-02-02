@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Clases</title>
+  <meta property="og:title" content="Clases" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/clases.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/clases.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Clases
+    </h1>
+</div>
+
+<div id="article_content">
+    <h3 id="motivación-y-problema">Motivación y Problema</h3>
+
+<p>¿Por qué necesito clases? Porque tengo varios objetos <em>sospechosamente parecidos</em>. Es decir,</p>
+
+<ul>
+  <li>El <strong>comportamiento</strong> de varios objetos es <strong>igual</strong>. Es decir,</li>
+</ul>
+
+<p>-&gt; no solo entienden los mismos mensajes, sino que</p>
+
+<p>-&gt; tienen los mismos métodos (exactamente el mismo código).</p>
+
+<ul>
+  <li>sus <strong>atributos</strong> son los <strong>mismos</strong>.</li>
+  <li>el <strong>estado interno</strong> es <strong>diferente</strong>.</li>
+</ul>
+
+<p>Es decir, si bien tienen los mismos atributos, éstos apuntan a diferentes objetos.</p>
+
+<ul>
+  <li>su <strong>identidad</strong> es <strong>diferente</strong>.</li>
+</ul>
+
+<p>Es decir, no sólo les damos diferentes nombres en diferentes referencias, sino que además son objetos diferentes.</p>
+
+<p>En conclusión, necesitamos una <strong>abstracción</strong> donde pongamos el código y los atributos en común de todos éstos objetos. Ésta abstracción es la <strong>clase</strong>, y cada objeto que se comporte igual (aunque tenga diferente estado interno) va a ser una <strong>instancia</strong> de esa clase.</p>
+
+<p>Podemos pensar a las clases como “Especies” y a las instancias como “individuos” de esas especies</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Especie (<strong>Clase</strong>)</th>
+      <th>Individuo (<strong>instancia</strong>)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Leon</td>
+      <td>simba</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>nala</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>mufasa</td>
+    </tr>
+    <tr>
+      <td>Hiena</td>
+      <td>shenzi</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>banzai</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>ed</td>
+    </tr>
+    <tr>
+      <td>Jabalí</td>
+      <td>pumba</td>
+    </tr>
+    <tr>
+      <td>Zuricata</td>
+      <td>timon</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="cosas-a-recordar">Cosas a recordar</h3>
+
+<ul>
+  <li>Todo objeto es siempre instancia de una y sólo una clase.</li>
+  <li>No se puede cambiar la clase de un objeto una vez creado.</li>
+</ul>
+
+<h3 id="method-lookup">Method Lookup</h3>
+
+<p>Si el código está en la clase, entonces, ¿Cómo responde ahora un objeto un mensaje? Con el Method Lookup. El method lookup es el mecanismo por el cual un objeto va a buscar el método correspondiente a su clase. (si no lo encuentra en su clase, no lo entiende). Revisar <a href="herencia.md">Herencia</a> para conocer el Method Lookup completo.</p>
+
+<h3 id="alto-quién-soy-yo">¡Alto! ¿Quién soy yo?</h3>
+
+<p>Si mi código ahora no está en mi objeto, sino en una clase, <strong>¿¿Quién es self??</strong></p>
+
+<p><strong><code class="highlighter-rouge">self</code></strong><code class="highlighter-rouge"> apunta siempre al </code><strong><code class="highlighter-rouge">objeto</code> <code class="highlighter-rouge">receptor</code> <code class="highlighter-rouge">del</code> <code class="highlighter-rouge">mensaje</code></strong><code class="highlighter-rouge">. </code></p>
+
+<p>En éste envío de mensaje:</p>
+
+<p><code class="highlighter-rouge">simba.rugi()</code></p>
+
+<p>Si el método rugi() de la clase Leon usa self internamente, simba es self.</p>
+
+<h3 id="cómo-construyo-ahora-mis-objetos">¿Cómo construyo ahora mis objetos?</h3>
+
+<p>Mandándole el mensaje new a la clase correspondiente.</p>
+
+<p><strong><code class="highlighter-rouge">Smalltalk</code></strong>
+<code class="highlighter-rouge">simba := Leon new.</code>
+<code class="highlighter-rouge">mufasa := Leon new.</code>
+<code class="highlighter-rouge">simba tuPapaEs: mufasa.</code></p>
+
+<p><strong><code class="highlighter-rouge">Wollok</code></strong>
+<code class="highlighter-rouge">var simba = new Leon()</code>
+<code class="highlighter-rouge">var mufasa = new Leon()</code>
+<code class="highlighter-rouge">simba.tuPapaEs(mufasa)</code></p>
+
+<p>Es importante entender que en las líneas del estilo</p>
+
+<p><code class="highlighter-rouge">  unaVar := UnaClase new.</code></p>
+
+<p>o</p>
+
+<p><code class="highlighter-rouge">  var unaVar = new UnaClase()</code></p>
+
+<p>pasan <strong>dos</strong> cosas, en el orden que se indica</p>
+
+<ol>
+  <li>se crea un objeto instancia de la clase UnaClase.</li>
+  <li>se hace que la variable unaVar haga referencia al objeto recién creado.</li>
+</ol>
+
+<p>Puede perfectamente instanciarse una clase y no asignar una variable en la misma línea con el nuevo objeto, siempre depende de lo que se esté tratando de hacer.</p>
+
+<h3 id="diagramando-clases">Diagramando Clases</h3>
+
+<p>Ver <a href="diagrama-de-clases.md">Diagrama de clases</a></p>
+
+<h3 id="conclusión">Conclusión</h3>
+
+<p>Una clase sirve de <strong>fábrica</strong> de objetos. Modela las <strong>abstracciones</strong> de mi dominio (los <em>conceptos</em> que nos interesan), permitiéndome definir el <strong>comportamiento</strong> y los <strong>atributos</strong> de las instancias.</p>
+
+<p>Dependiendo del lenguaje las clases pueden ser un objeto más que entiende mensajes pensados para ellas (este es el caso de Smalltalk, ver <a href="variables-y-metodos-de-clase.md">Variables y métodos de clase</a>) o una construcción distinta del lenguaje que sólo existe para declarar el comportamiento de los objetos y darnos una forma de obtener nuevas instancias mediante el uso de <a href="constructores.md">constructores</a> (no envíos de mensajes) como sucede en Wollok.</p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

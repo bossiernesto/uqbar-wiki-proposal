@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Preparacion de un entorno de desarrollo web</title>
+  <meta property="og:title" content="Preparacion de un entorno de desarrollo web" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/preparacion-de-un-entorno-de-desarrollo-web.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/preparacion-de-un-entorno-de-desarrollo-web.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Preparacion de un entorno de desarrollo web
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="herramientas-de-desarrollo-web">Herramientas de desarrollo Web</h2>
+
+<p>Vamos a necesitar instalar</p>
+
+<ul>
+  <li>un web server</li>
+  <li>un browser con capacidades de debug</li>
+  <li>plugins para nuestro IDE (Eclipse u otro) que permita administrar nuestro web server</li>
+</ul>
+
+<h2 id="web-server-tomcat">Web Server Tomcat</h2>
+
+<h3 id="instrucciones-de-instalación">Instrucciones de instalación</h3>
+
+<p>Descargarlo de <a href="http://tomcat.apache.org/index.html">acá</a>, en general te recomendamos bajarte la última versión disponible.</p>
+
+<p>Descomprimirlo en una ubicación adecuada. Puede ser cualquier ubicación, aunque recomendamos usar una que no tenga espacios, por ejemplo: En windows pueden usar C:/tools/tomcat-version En linux/unix pueden usar /opt/tomcat o bien /home/algun-usuario/tomcat-version A la carpeta donde descomprimimos el tomcat la vamos a denominar $TOMCAT_HOME, ej. /home/nico/Applications/apache-tomcat-7.0.20.</p>
+
+<p>Si lo vamos a usar desde el eclipse con eso es suficiente, si alguien quisiera un uso más extensivo del tomcat tal vez tenga ganas de configurarlo como servicio.</p>
+
+<p>Editar $TOMCAT_HOME/conf/tomcat-users.xml y agregar un usuario con el rol de manager, para eso hay que agregar estas dos líneas dentro del tag tomcat-users.</p>
+
+<p><code class="highlighter-rouge">   </code><role rolename="manager"></role>
+<code class="highlighter-rouge">   </code><user username="admin" password="admin" roles="manager"></user></p>
+
+<p>(Si el tomcat va a estar en una máquina con acceso público probablemente quieran ponerle una password más segura que esa!)</p>
+
+<h2 id="browser-o-navegador">Browser o Navegador</h2>
+
+<p>Si no lo tenés instalado podés usar:</p>
+
+<ul>
+  <li><a href="http://www.google.com/intl/es/chrome/">Google Chrome</a></li>
+  <li><a href="http://www.mozilla.org/es-AR/firefox/new/">Mozilla Firefox</a>, al que le podés instalar <a href="http://getfirebug.com/">firebug</a> (si estás en Linux recordá ejecutar sudo apt-get install firefox)</li>
+  <li><a href="http://windows.microsoft.com/es-ES/internet-explorer/download-ie">Internet Explorer</a></li>
+  <li><a href="http://www.apple.com/es/safari/">Safari</a></li>
+  <li><a href="http://www.opera.com/download/">Opera</a></li>
+</ul>
+
+<h2 id="ide">IDE</h2>
+
+<p>Recomendamos que te instales la versión “Eclipse IDE for Java EE Developers” (EE es Enterprise Edition) en <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>. Eso evita que tengas que instalarte en forma separada el plugin <a href="http://www.eclipse.org/webtools/">WTP</a>, Web Tools Platform (o si preferís, tenés que descargarte el Eclipse Classic para luego descargarte <a href="http://eclipse.org/webtools/releases/3.4.1/">aquí</a> el plugin).</p>
+
+<h2 id="plugins-para-tu-ide">Plugins para tu IDE</h2>
+
+<ul>
+  <li>El M2E y el WTP vienen con la instalación default de Eclipse EE</li>
+  <li>Pero para que trabajen en forma sincronizada, necesitamos agregar el plugin “m2e-wtp”, esto se hace ingresando al Eclipse Marketplace, buscando “m2e-wtp” e instalando el plugin “Maven integration for Eclipse WTP”. Luego restartear el IDE.</li>
+</ul>
+
+<h2 id="cómo-probar-la-instalación">Cómo probar la instalación</h2>
+
+<p>Levantar el servidor, si lo hacés dentro del entorno:</p>
+
+<ul>
+  <li>Ir a la vista “Servers”. Dentro del eclipse: Window &gt; Show view &gt; Other &gt; Servers. Hay que configurar un Server en dicha vista: click derecho sobre la vista &gt; New &gt; Server.
+    <ul>
+      <li>Elegir el server que se quiere usar (la cátedra recomienda Apache Tomcat 7) y luego Next</li>
+      <li>Luego configurar el path a la carpeta raíz donde está instalado el Server, por ejemplo “/usr/local/tomcat” (no usar ningún subdirectorio lib ni bin, el raíz)</li>
+      <li>Opcionalmente se puede elegir la JVM que ejecutará el tomcat. Es importante no utilizar una JRE, sino una JDK.</li>
+      <li>Una vez creado, hacer doble click sobre el Server &gt; en la parte de Server Location &gt; Use Tomcat installation (takes control of Tomcat Installation).</li>
+      <li>Luego de configurado el server, levantamos el mismo haciendo click derecho sobre el mismo &gt; Debug (Start también es una opción válida). En la consola del eclipse debería aparecer una línea como:</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">... mensajes varios de inicialización del Tomcat ...</code>
+<code class="highlighter-rouge">INFO: Server startup in 798 ms</code></p>
+
+<p>También se puede levantar el tomcat por fuera del entorno de desarrollo. En Ubuntu tenés que hacer: sudo /etc/init.d/tomcat6 start</p>
+
+<p>En Windows hay que ir a servicios (el shortcut es Win + R: “services.msc”), buscar el Tomcat y darle Start. Otra opción es abrir una ventana de comandos (Win + R: “cmd”), ir al $TOMCAT_DIR\bin (o sea, la carpeta bin donde está instalado el Tomcat) y ejecutar “startup”.</p>
+
+<p>Dos aplicaciones deberíamos poder ver ya andando luego de haber hecho eso: La página home <a href="http://localhost:8080/">http://localhost:8080/</a>, es lo más fácil para ver si anda. La página de administración: <a href="http://localhost:8080/manager/html">http://localhost:8080/manager/html</a>, ahí pueden ver qué aplicaciones tienen levantadas en el tomcat y realizar algunas tareas administrativas. Para poder abrir esa página tienen que loguearse con el usuario y password que ingresaron al configurar el archivo $TOMCAT_HOME/conf/tomcat-users.xml.</p>
+
+<h2 id="por-último">Por último</h2>
+
+<p>Si estás trabajando en un lenguaje diferente a Java no te olvides de instalar los plugins con las extensiones para dicho lenguaje.</p>
+
+<h2 id="cómo-empezar">Cómo empezar</h2>
+
+<ul>
+  <li>Tutorial sobre html: <a href="http://www.w3schools.com/html/">http://www.w3schools.com/html/</a></li>
+  <li>Manual de referencia para manejar la estética a través de los .css: <a href="http://www.w3schools.com/css/default.asp">http://www.w3schools.com/css/default.asp</a></li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>85</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

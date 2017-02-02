@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Paradigma logico   casos de no inversibilidad</title>
+  <meta property="og:title" content="Paradigma logico   casos de no inversibilidad" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/paradigma-logico---casos-de-no-inversibilidad.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/paradigma-logico---casos-de-no-inversibilidad.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Paradigma logico   casos de no inversibilidad
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="intrroducción">Intrroducción</h2>
+
+<p>Los casos de no inversibilidad, y algunos de no funcionamiento o respuestas incorrectas, están relacionados con variables que no están ligadas en cierto punto (recordando que el análisis debe hacerse “de izquierda a derecha”) y deben estarlo, o (menos probable) al revés, variables que deben llegar a cierto punto sin ligar y están ligadas.</p>
+
+<p>Veamos varios casos, que incluyen todos los casos de no-inversibilidad que vemos en la materia.</p>
+
+<h2 id="hechos-con-variables">Hechos con variables</h2>
+
+<p>Por lo general aquellos predicados definidos en base a hechos no suelen ser problemáticos, porque lo normal es que incluyan información sobre los individuos a los cuales se refieren. Sin embargo, el siguiente es un hecho válido que no es inversible para su segunda aridad:</p>
+
+<p><code class="highlighter-rouge"> leGusta(pepe, _).</code></p>
+
+<p>Eso dice que a pepe le gusta cualquier cosa, sin acotar de ninguna forma qué podría ser aquello que le gusta. Para hacer el predicado inversible, deberíamos acotar qué puede ser aquello que le gusta convirtiéndolo en una regla, por ejemplo:</p>
+
+<p><code class="highlighter-rouge"> leGusta(pepe, Comida):- comida(Comida).</code></p>
+
+<h2 id="negación">Negación</h2>
+
+<p>Negación: las variables que aparecen en la parte de la cláusula deben llegar ligadas, a menos que sean variables afectadas por un “para ningún”, en este caso deben llegar libres. P.ej. esta definición del predicado esPlantaComestible</p>
+
+<p><code class="highlighter-rouge"> esPlantaComestible(Planta):- not(esVenenosa(Planta)).</code></p>
+
+<p>no es inversible, porque Planta debe estar ligada antes de llegar al <code class="highlighter-rouge">not</code>. ¿Por qué? Ver <a href="paradigma-logico---negacion.md">Paradigma Lógico - negación</a>
+Para hacer al predicado inversible, generamos el dominio de la variable Planta</p>
+
+<p><code class="highlighter-rouge"> esPlantaComestible(Planta):- esPlanta(Planta), not(esVenenosa(Planta)).</code></p>
+
+<h2 id="aritmética">Aritmética</h2>
+
+<p>Aritmética: todas las variables a la derecha del is deben llegar ligadas al is. P.ej. el predicado precioPorCantidad definido así</p>
+
+<p><code class="highlighter-rouge"> precioPorCantidad(Planta,Cantidad,PrecioTotal):- </code>
+<code class="highlighter-rouge">       precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.</code></p>
+
+<p>no es inversible para el 2do argumento, porque si no se indica un número para Cantidad en la consulta, al llegar a la cuenta hay una variable no ligada a la derecha del <code class="highlighter-rouge">is</code>.
+En este caso no hay forma trivial de arreglarlo para que el predicado sea totalmente inversible.</p>
+
+<p>En este caso</p>
+
+<p><code class="highlighter-rouge"> importeCompra(Persona, ImporteTotal):- </code>
+<code class="highlighter-rouge">       ImporteTotal is Precio*1.21, compra(Persona, Planta), precioPlanta(Planta,Precio).</code></p>
+
+<p>ninguna consulta que involucre a esta cláusula va a andar porque no hay forma de que la variable Precio esté ligada al momento de hacer la cuenta. Arreglar este caso es fácil: ponemos el <code class="highlighter-rouge">is</code> al lado del punto</p>
+
+<p><code class="highlighter-rouge"> importeCompra(Persona, ImporteTotal):- </code>
+<code class="highlighter-rouge">       compra(Persona, Planta), precioPlanta(Planta,Precio), ImporteTotal is Precio*1.21.</code></p>
+
+<h2 id="comparación">Comparación</h2>
+
+<p>Si se compara por mayor, menor, mayor o igual, menor o igual, distinto, lo que comparemos debe estar ligado. P.ej. esta definición</p>
+
+<p><code class="highlighter-rouge"> plantaHeavy(Planta):-Nivel &gt; 5, nivelVeneno(Planta,Nivel).</code></p>
+
+<p>es incorrecta, porque Nivel no está ligado al momento de comparar. Esta forma</p>
+
+<p><code class="highlighter-rouge"> plantaHeavy(Planta):-nivelVeneno(Planta,Nivel),Nivel &gt; 5.</code></p>
+
+<p>sí es correcta.</p>
+
+<h2 id="findall">Findall</h2>
+
+<p>Miremos esta definición de plantasDerivadasDe</p>
+
+<p><code class="highlighter-rouge"> plantasDerivadasDe(Planta, ListaPlantasFamiliares):- </code>
+<code class="highlighter-rouge">    findall(P2, derivadaDe(Planta,P2), ListaPlantasFamiliares).</code></p>
+
+<p>y supongamos esta consulta</p>
+
+<p><code class="highlighter-rouge"> ?- plantasDerivadasDe(Pl, Plantas).</code></p>
+
+<p>Miremos fijos el findall, recordando que unifica el 3er argumento con la lista de la parte indicada en el 1er argumento de todas las respuestas a la consulta del 2do argumento.
+En este caso: va a ligar <code class="highlighter-rouge">ListaPlantasFamiliares</code> con la lista de los <code class="highlighter-rouge">P2</code> para cada respuesta a la consulta <code class="highlighter-rouge">derivaDe(Planta,P2)</code>.
+Como en la consulta no se liga <code class="highlighter-rouge">Planta</code>, entonces las respuestas a <code class="highlighter-rouge">derivaDe(Planta,P2)</code> van a ser <strong>todos</strong> los pares de plantas (planta,derivada), y por lo tanto los <code class="highlighter-rouge">P2</code> van a ser <strong>todas</strong> las plantas derivadas de alguna planta.
+P.ej. si tenemos</p>
+
+<p><code class="highlighter-rouge"> derivaDe(p1,p3).</code>
+<code class="highlighter-rouge"> derivaDe(p2,p4).</code>
+<code class="highlighter-rouge"> derivaDe(p2,p5).</code></p>
+
+<p><code class="highlighter-rouge">ListaPlantasFamiliares</code> va a ser <code class="highlighter-rouge">[p2,p4,p5]</code>. Esto nos muestra que con esta definición el predicado no es inversible para el primer argumento, porque las listas de “derivadas de la misma planta” son [p3] por un lado, y [p4,p5] por otro; [p2,p4,p5] no puede ser un 2do argumento correcto para este predicado.</p>
+
+<p>Para que que el predicado sea totalmente inversible debemos asegurar que la variable <code class="highlighter-rouge">Planta</code> <em>entra ligada al findall</em>.</p>
+
+<p><code class="highlighter-rouge"> plantasDerivadasDe(Planta, ListaPlantasFamiliares):- </code>
+<code class="highlighter-rouge">    esPlanta(Planta), </code>
+<code class="highlighter-rouge">    findall(P2, derivaDe(Planta,P2), ListaPlantasFamiliares).</code></p>
+
+<p>Miremos ahora qué pasa si definimos el predicado así</p>
+
+<p><code class="highlighter-rouge"> plantasDerivadasDe(Planta, ListaPlantasFamiliares):- </code>
+<code class="highlighter-rouge">    esPlanta(Planta), derivaDe(Planta,P2), </code>
+<code class="highlighter-rouge">    findall(P2, derivaDe(Planta,P2), ListaPlantasFamiliares).</code></p>
+
+<p>En este caso, al llegar al findall tanto Planta como P2 ya están ligadas, entonces la consulta <code class="highlighter-rouge">derivaDe(Planta,P2)</code> puede tener a lo sumo una respuesta (positiva, la respuesta “no” no se cuenta), entonces ListaPlantasFamiliares va a tener a lo sumo un elemento. Vamos a obtener respuestas incorrectas, p.ej.</p>
+
+<p><code class="highlighter-rouge"> ?- plantasDerivadasDe(p2, Lista).</code>
+<code class="highlighter-rouge"> Lista = [p4]</code></p>
+
+<p>porque la variable P2, que debe llegar sin ligar al findall, llega ligada.</p>
+
+<p><strong>Un ejemplo futbolero</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ganoContra(argentina, suiza).
+ganoContra(argentina, belgica).
+ganoContra(argentina, holanda).
+
+ganoContra(belgica, eeuu).
+
+ganoContra(holanda, mexico).
+
+superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Partidos, CantGanados), CantGanados &gt; 2.
+</code></pre>
+</div>
+
+<p>Ahora fijate tirando en prolog la siguiente consulta:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>superEquipo( X ).
+</code></pre>
+</div>
+
+<h2 id="forall">Forall</h2>
+
+<p>Esta definición del predicado esEspecieComestible</p>
+
+<p><code class="highlighter-rouge"> esEspecieComestible(Especie):- </code>
+<code class="highlighter-rouge">     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).</code></p>
+
+<p>no es inversible, porque Especie debe llegar ligado al forall. Si no llega ligada, para que el forall se verifique deben ser comestibles <strong>todas</strong> las plantas que sean de alguna especie. Esto está explicado en detalle en <a href="paradigma-logico---el-forall-forall-e-inversibilidad.md">el artículo sobre forall</a>.</p>
+
+<p>Para que sea inversible debemos generar el dominio para la variable Especie</p>
+
+<p><code class="highlighter-rouge"> esEspecieComestible(Especie):- </code>
+<code class="highlighter-rouge">     esEspecie(Especie),</code>
+<code class="highlighter-rouge">     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).</code></p>
+
+<h2 id="functores-y-polimorfismo">Functores y polimorfismo</h2>
+
+<p>Como caso particular de los hechos con variables, algo muy común es tener definiciones como:</p>
+
+<p><code class="highlighter-rouge">marca(arroz(Marca),Marca).</code>
+<code class="highlighter-rouge">marca(lacteo(Marca,_),Marca).</code></p>
+
+<p>El predicado marca/2 nos va a resultar muy útil para cuando no nos interese qué tipo concreto de producto se está usando, sólo que tenga una marca y nos la sepa decir. Lo importante es ser conscientes de que este predicado no es inversible, con lo cual sería incorrecto tratar de usarlo como generador de marcas por ejemplo. Si nos interesa que sea inversible tenemos que usar otro predicado que nos genere los productos, por ejemplo:</p>
+
+<p><code class="highlighter-rouge">marca(arroz(Marca),Marca):- precioUnitario(arroz(Marca),_).</code>
+<code class="highlighter-rouge">marca(lacteo(Marca,TipoLacteo),Marca):- precioUnitario(lacteo(Marca,TipoLacteo),_).</code></p>
+
+<h2 id="en-resumen">En resumen</h2>
+
+<p>Resumimos los casos de inversibilidad con un ejemplo de cada uno</p>
+
+<p><strong>Hechos con variables</strong></p>
+
+<p><code class="highlighter-rouge"> leGusta(pepe, _).</code>
+<code class="highlighter-rouge"> % Lo que le gusta debería acotarse de alguna forma si se pretenden hacer consultas existenciales sobre la segunda aridad</code></p>
+
+<p><strong>Negación</strong></p>
+
+<p><code class="highlighter-rouge"> esPlantaComestible(Planta):- not(esVenenosa(Planta)).</code>
+<code class="highlighter-rouge"> % Planta debe llegar ligada al not</code></p>
+
+<p><strong>Aritmética</strong></p>
+
+<p><code class="highlighter-rouge"> precioPorCantidad(Planta,Cantidad,PrecioTotal):- </code>
+<code class="highlighter-rouge">     precioPlanta(Planta,Precio), PrecioTotal is Cantidad * Precio.</code>
+<code class="highlighter-rouge"> % Cantidad debe llegar ligada al is</code></p>
+
+<p><strong>Comparación</strong></p>
+
+<p><code class="highlighter-rouge"> plantaHeavy(Planta):- Nivel &gt; 5, nivelVeneno(Planta,Nivel).</code>
+<code class="highlighter-rouge"> % Nivel debe llegar ligada a la comparación</code></p>
+
+<p><strong>findall</strong></p>
+
+<p><code class="highlighter-rouge"> plantasDerivadasDe(Planta, ListaPlantasFamiliares):- </code>
+<code class="highlighter-rouge">     findall(P2, derivadaDe(Planta,P2), ListaPlantasFamiliares).</code>
+<code class="highlighter-rouge"> % Planta debe llegar ligada al findall</code></p>
+
+<p><strong>forall</strong></p>
+
+<p><code class="highlighter-rouge"> esEspecieComestible(Especie):- </code>
+<code class="highlighter-rouge">     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).</code>
+<code class="highlighter-rouge"> % Especie debe llegar ligada al forall</code></p>
+
+<p><strong>Functores y Polimorfismo</strong></p>
+
+<p><code class="highlighter-rouge"> marca(arroz(Marca),Marca).</code>
+<code class="highlighter-rouge"> marca(lacteo(Marca,_),Marca).</code>
+<code class="highlighter-rouge"> % </code><strong><code class="highlighter-rouge">Si</code> <code class="highlighter-rouge">pretendemos</code> <code class="highlighter-rouge">usar</code> <code class="highlighter-rouge">marca/2</code> <code class="highlighter-rouge">para</code> <code class="highlighter-rouge">hacer</code> <code class="highlighter-rouge">consultas</code> <code class="highlighter-rouge">existenciales</code></strong><code class="highlighter-rouge">, no puede tener _ ni variables que no se generen internamente en el encabezado.</code></p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>198</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

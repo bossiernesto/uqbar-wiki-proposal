@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Tipos de haskell</title>
+  <meta property="og:title" content="Tipos de haskell" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/tipos-de-haskell.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/tipos-de-haskell.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Tipos de haskell
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>Tal vez convenga aclarar que esta no es una categorización teórica, es más bien una introducción y vamos de lo más simple a lo más complejo.</p>
+
+<h2 id="tipos-simples-y-compuestos">Tipos simples y compuestos</h2>
+
+<h3 id="básicos-números-caracteres-y-booleanos">Básicos: números, caracteres y booleanos</h3>
+
+<p>Los tipos más básicos que tenemos en Haskell son los booleanos y los caracteres, que tiene los tipos y respectivamente:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t True</code>
+<code class="highlighter-rouge">True :: Bool</code>
+<code class="highlighter-rouge">Prelude&gt; :t 'a'</code>
+<code class="highlighter-rouge">'a' :: Char</code></p>
+
+<p>Qué podemos hacer con ellos? Algunos ejemplos con booleanos y caracteres:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; True &amp;&amp; False</code>
+<code class="highlighter-rouge">False</code>
+<code class="highlighter-rouge">Prelude&gt; True || False</code>
+<code class="highlighter-rouge">True</code>
+<code class="highlighter-rouge">Prelude&gt; not True</code>
+<code class="highlighter-rouge">False</code></p>
+
+<p><code class="highlighter-rouge">Prelude&gt; Char.isLower 'a'</code>
+<code class="highlighter-rouge">True</code>
+<code class="highlighter-rouge">Prelude&gt; Char.isUpper 'a'</code>
+<code class="highlighter-rouge">False</code>
+<code class="highlighter-rouge">Prelude&gt; Char.toLower 'A'</code>
+<code class="highlighter-rouge">'a'</code>
+<code class="highlighter-rouge">Prelude&gt; Char.toUpper 'a'</code>
+<code class="highlighter-rouge">'A'</code>
+<code class="highlighter-rouge">Prelude&gt; 'b' &gt; 'a'</code>
+<code class="highlighter-rouge">True</code></p>
+
+<p>El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver <a href="tipos-de-haskell-typeclasses.md">más adelante</a>. Algunas operaciones que podemos hacer:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; 4*6</code>
+<code class="highlighter-rouge">24</code>
+<code class="highlighter-rouge">Prelude&gt; 2+3</code>
+<code class="highlighter-rouge">5</code>
+<code class="highlighter-rouge">Prelude&gt; 9-4</code>
+<code class="highlighter-rouge">5</code>
+<code class="highlighter-rouge">Prelude&gt; 4 `div` 3</code>
+<code class="highlighter-rouge">1</code>
+<code class="highlighter-rouge">Prelude&gt; 4 `mod` 3</code>
+<code class="highlighter-rouge">1</code>
+<code class="highlighter-rouge">Prelude&gt; 4/6</code>
+<code class="highlighter-rouge">0.6666666666666666</code></p>
+
+<p>La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el <a href="problemas-comunes-con-los-tipos-numericos-de-haskell-para-salir-del-paso---.md">siguiente artículo</a></p>
+
+<h3 id="listas-y-strings">Listas y Strings</h3>
+
+<p>Un String es simplemente una lista de caracteres; se puede escribir o :</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t "Hola"</code>
+<code class="highlighter-rouge">"Hola" :: [Char]</code></p>
+
+<p>Más aún, para cualquier lista el tipo se escribe poniendo entre corchetes el tipo de los elementos la lista, por ejemplo una lista de booleanos:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t [True, False]</code>
+<code class="highlighter-rouge">[True, False] :: [Bool]</code></p>
+
+<p>También una lista de Strings (o lista de listas de caracteres):</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t ["Hola", "Chau"]</code>
+<code class="highlighter-rouge">["Hola", "Chau"] :: [ [Char] ]</code></p>
+
+<h3 id="tuplas">Tuplas</h3>
+
+<p>Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. (Esto está más detallado en <a href="-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.md">¿Cuál es la diferencia entre una tupla y una lista?</a>, pero antes te recomiendo mirar los ejemplos que siguen.)</p>
+
+<p>Una de las tuplas más simples que se puede imaginar es:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (True, 'H')</code>
+<code class="highlighter-rouge">(True, 'H') :: </code><strong><code class="highlighter-rouge">(Bool,</code> <code class="highlighter-rouge">Char)</code></strong></p>
+
+<p>es decir, una tupla compuesta por un booleano y un caracter. Sin embargo, los elementos de las tuplas también pueden ser compuestos, como un String:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (True, "Hola")</code>
+<code class="highlighter-rouge">(True, "Hola") :: (Bool, </code><strong><code class="highlighter-rouge">[Char]</code></strong><code class="highlighter-rouge">)</code></p>
+
+<p>o inclusive el componente de una tupla puede ser otra tupla:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (False, ('H', "ola"))</code>
+<code class="highlighter-rouge">(False, ('H', "ola")) :: </code><strong><code class="highlighter-rouge">(Bool,</code> <code class="highlighter-rouge">(Char,</code> <code class="highlighter-rouge">[Char]))</code></strong><code class="highlighter-rouge"> </code></p>
+
+<p>También podemos tener tuplas de más de dos componentes</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (True, 'H', [False])</code>
+<code class="highlighter-rouge">(True, 'H', [False]) :: (Bool, Char, [Bool])</code></p>
+
+<p>es decir, un booleano, un caracter y una lista de booleanos.</p>
+
+<p>Para finalizar podemos ver un ejemplo en el que combianmos todo lo anterior (no es trivial, tomate tu tiempo para leerlo!):</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t ([True, False, True], "Chau", [(True, "True"), (False, "False")])</code>
+<code class="highlighter-rouge">([True, False, True], "Chau", [(True, "True"), (False, "False")])</code>
+<code class="highlighter-rouge">  :: ([Bool], [Char], [(Bool, [Char])])</code></p>
+
+<p>Es decir, una tupla de tres componentes, a saber:</p>
+
+<ul>
+  <li>Una lista de booleanos</li>
+  <li>Un string o lista de caracteres</li>
+  <li>Una lista de tuplas cuyo primer componente es un booleano y su segundo componente es un string.</li>
+</ul>
+
+<h3 id="data">Data</h3>
+
+<p>Es posible <a href="data--definiendo-nuestros-tipos-en-haskell.md">definir nuestros propios tipos de dato</a> usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:</p>
+
+<p><code class="highlighter-rouge">data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN</code></p>
+
+<p>Usamos el constructor, como su nombre lo indica, para construir nuestros datos de este tipo y para hacer pattern matching como hacíamos con las tuplas.</p>
+
+<p><code class="highlighter-rouge">data TipoAlumno = Alumno String [Int]</code>
+<code class="highlighter-rouge">fede = Alumno "Federico" [2,3]</code>
+<code class="highlighter-rouge">nombreAlumno (Alumno nombre notas) = nombre</code>
+<code class="highlighter-rouge">&gt; :t nombreAlumno</code>
+<code class="highlighter-rouge">nombreAlumno :: TipoAlumno -&gt; String</code>
+<code class="highlighter-rouge">&gt; nombreAlumno fede</code>
+<code class="highlighter-rouge">"Federico"</code></p>
+
+<h3 id="type">Type</h3>
+
+<p>Haskell nos permite definir sinónimos de tipos, o sea definir un alias para un tipo concreto que se use para modelar alguna abstracción del dominio.</p>
+
+<p>Por ejemplo si modelamos a los alumnos como tuplas de aridad 2 cuyo primer elemento es el nombre y el segundo una lista de números que representa las notas que se sacó, podríamos definir un tipo Alumno como:</p>
+
+<p><code class="highlighter-rouge">type Alumno = (String, [Int])</code></p>
+
+<p>De hecho, String no es más que un alias para el tipo [Char]</p>
+
+<h2 id="funciones">Funciones</h2>
+
+<h3 id="funciones-con-un-único-parámetro">Funciones con un único parámetro</h3>
+
+<p>El tipo de una función que tiene un parámetro se indica relacionando mediante el símbolo la entrada o dominio de la función con la salida o imagen. Por ejemplo la función not recibe un booleano y devuelve otro:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t not</code>
+<code class="highlighter-rouge">not :: Bool -&gt; Bool</code></p>
+
+<p>La función recibe un caracter y devuelve un booleano.</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t isLower </code>
+<code class="highlighter-rouge">isLower :: Char -&gt; Bool</code></p>
+
+<p>(Nótese que la función isLower está en el módulo Char, dependiendo de su versión de Haskell tal vez deban escribir para poder probar el ejemplo, o bien importar el módulo correspondiente.)</p>
+
+<p>Y la función recibe una lista de booleanos y devuelve un booleano (<em>and</em>ea todos los booleanos de la lista)</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t and</code>
+<code class="highlighter-rouge">and :: [Bool] -&gt; Bool</code></p>
+
+<h3 id="funciones-con-más-de-un-parámetro">Funciones con más de un parámetro</h3>
+
+<p>Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell se trabaja con el concepto de <a href="currificacion.md">Currificación</a>, entonces una función que nosotros en matemática estaríamos acostumbrados a verla como en Haskell la vamos a escribir . Las funciones de dos parámetros cuyo tipo tiene esa forma se denominan <em>currificadas</em>.</p>
+
+<p>(A los efectos de entender el sistema de tipos podemos pensarlo simplemente como una función que recibe dos booleanos, aunque en realidad la versión currificada es mucho más poderosa. Para más detalles ver la teoría sobre <a href="currificacion.md">Currificación</a>.)</p>
+
+<p>El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros) a la función</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t (&amp;&amp;)</code>
+<code class="highlighter-rouge">(&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool</code></p>
+
+<h3 id="aplicación">Aplicación</h3>
+
+<p>La <a href="aplicacion.md">aplicación</a> es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente <em>una expresión que tiene valor Booleano</em> de <em>una función que devuelve Booleanos</em>.</p>
+
+<p>Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:</p>
+
+<p><code class="highlighter-rouge">Prelude&gt; :t not</code>
+<code class="highlighter-rouge">not :: Bool -&gt; Bool</code>
+<code class="highlighter-rouge">Prelude&gt; :t Char.isLower</code>
+<code class="highlighter-rouge">Char.isLower :: Char -&gt; Bool</code>
+<code class="highlighter-rouge">Prelude&gt; :t and</code>
+<code class="highlighter-rouge">and :: [Bool] -&gt; Bool</code>
+<code class="highlighter-rouge">Prelude&gt; :t (&amp;&amp;)</code>
+<code class="highlighter-rouge">(&amp;&amp;) :: Bool -&gt; Bool -&gt; Bool</code></p>
+
+<p>En este punto es importante entender que ninguno de estos ejemplos es un <em>valor booleano</em>. Cuando veo el tipo eso se entiende como el tipo <em>de las funciones a las que si les aplico un parámetro de tipo Char producen un valor de tipo Bool</em>, que claramente no es lo mismo que el tipo Bool.</p>
+
+<p>Lo dicho, si le aplicamos los parámetros adecuados a esas funciones, podemos obtener valores booleanos:</p>
+
+<p><code class="highlighter-rouge">*Main&gt; :t not True</code>
+<code class="highlighter-rouge">not True :: Bool</code>
+<code class="highlighter-rouge">*Main&gt; :t Char.isLower 'a'</code>
+<code class="highlighter-rouge">Char.isLower 'a' :: Bool</code>
+<code class="highlighter-rouge">*Main&gt; :t and [True, False, True]</code>
+<code class="highlighter-rouge">and [True, False, True] :: Bool</code>
+<code class="highlighter-rouge">*Main&gt; :t True &amp;&amp; False</code>
+<code class="highlighter-rouge">True &amp;&amp; False :: Bool</code></p>
+
+<p>En síntesis es un valor booleano, en cambio no es un valor booleano, es una función que devuelve booleanos. También es <em>un valor</em>, pero es un valor de otro tipo y no se pueden mezclar.</p>
+
+<p>Si intentamos utilizar un valor función en un lugar donde se espera un valor booleano, obtendremos un error:</p>
+
+<p><code class="highlighter-rouge">*Main&gt; not Char.isLower</code></p>
+<interactive>`:1:4:`
+``     Couldn't match expected type `Bool' ``
+``            against inferred type `Char -&gt; Bool' ``
+``     In the first argument of `not' ... ``
+
+Es decir, el primer argumento de debe ser y en cambio se recibió un argumento de tipo .
+
+Similarmente:
+
+`*Main&gt; True &amp;&amp; not`
+<interactive>`:1:8:`
+``     Couldn't match expected type `Bool' ``
+``            against inferred type `Bool -&gt; Bool' ``
+``     In the second argument of `(&amp;&amp;)', namely `not' ``
+`    In the expression: True &amp;&amp; not`
+`    ....`
+
+Typeclasses
+-----------
+
+Nos gustaría poder definir los siguientes tipos (a.k.a dominios e imágenes)
+
+(+) :: (Si asumimos que a es **numérico**) entonces a - &gt; a -&gt; a
+
+(&gt;) :: (Si asumimos que a es **ordenable**) entonces a - &gt; a -&gt; Bool
+
+(==) :: (Si asumimos que a es **equiparable**) entonces a - &gt; a -&gt; Bool
+
+En Haskell eso se escribe de la siguiente manera
+
+`(+) :: (Num a) =&gt; a - &gt; a -&gt; a`
+`(&gt;) :: (Ord a) =&gt; a - &gt; a -&gt; Bool`
+`(==) :: (Eq a) =&gt; a - &gt; a -&gt; Bool`
+
+Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typeclasses (no confundan esto con el término Clase que usamos en el paradigma de objetos!!)
+
+En cada [Typeclass](typeclasses.md) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
+
+`Num a`
+`(+), (-), (*) :: a -&gt; a -&gt; a`
+`negate, abs, signum :: a -&gt; a`
+`etc.`
+
+`Ord a`
+`(&lt;), (&lt;=), (&gt;=), (&gt;) :: a -&gt; a -&gt; Bool`
+`max, min :: a -&gt; a -&gt; a`
+`etc.`
+
+`Eq a`
+`(==) :: a -&gt; a -&gt; Bool`
+`(/=) :: a -&gt; a -&gt; Bool`
+
+### ¿Qué tipos pertenecen a cada restricción?
+
+![](Typeclasses.PNG "Typeclasses.PNG")
+
+Ejemplos:
+
+`elem :: (Eq a) =&gt; a -&gt; [ a ] -&gt; Bool`
+`elem unElemento unaLista = any (unElemento==) unaLista`
+
+`max :: (Ord a) =&gt; a -&gt; a -&gt; a`
+`max x y`
+`  | x &gt; y = x`
+`  | otherwise = y`
+
+### La restricción Show
+
+Cuando utilizamos el intérprete, los resultados de nuestras funciones son valores (valores simples, compuestos o funciones), para que se puedan mostrar por pantalla esos valores tienen que tener una representación en forma de cadena de caracteres (String).
+
+La magia la realiza una función llamada show
+
+`&gt; show 3`
+`"3"`
+`&gt; show True`
+`"True"`
+`&gt; show (2,3)`
+`"(2,3)"`
+
+Ahora bien, no todos los valores pueden ser parámetro de la función show. Por ejemplo las funciones no tienen una representación en String
+
+`&gt; show length`
+`Error`
+
+Debido a esto, cuando quieren mostrar por pantalla una lista de funciones (ej \[fst,snd\]), una función parcialmente aplicada como (3+), o en general una función que retorna una función les va a tirar un error.
+
+Veamos el tipo de la función show
+
+`show :: (Show a) =&gt; a -&gt; String`
+
+La única función que se define en la restricción Show es la función show
+
+Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, Integer, (Show a) =&gt; \[ a \] --Listas, (Show a,b) =&gt; (a,b) --Tuplas
+
+Resumiendo: casi todos todos los tipos menos el tipo función
+
+Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? Sí! Leer en [Data: Definiendo nuestros tipos en Haskell\#Instance](data--definiendo-nuestros-tipos-en-haskell-instance.md)
+</interactive></interactive>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>299</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

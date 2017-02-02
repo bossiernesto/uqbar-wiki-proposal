@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Lambdas en java 8</title>
+  <meta property="og:title" content="Lambdas en java 8" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/lambdas-en-java-8.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/lambdas-en-java-8.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Lambdas en java 8
+    </h1>
+</div>
+
+<div id="article_content">
+    <p>En la versión 8 del lenguaje <a href="java.md">Java</a> se introduce una herramienta fundamental para cualquier lenguaje de programación orientado a objetos y que era una de sus principales falencias: las <a href="expresiones-lambda.md">expresiones lambda</a>, también conocidas como <a href="bloques.md">bloques</a> de código o funciones anónimas.</p>
+
+<p>Con ellas podemos implementar fácilmente mensajes de alto nivel de abstracción, que reciben o devuelven bloques de código y se comportan de forma parecida a las funciones de <a href="orden-superior.md">orden superior</a> que podemos encontrar en el <a href="paradigma-funcional.md">Paradigma Funcional</a>.</p>
+
+<p>Dado que el lenguaje Java existió mucho tiempo sin presentar Lambdas (a partir de utilizar <a href="clases-anonimas-en-java.md">Clases Anónimas</a>), estas presentan características distintivas si las comparamos con los bloques de Ruby o Smalltalk, o las funciones anónimas de Scala o C#.</p>
+
+<h2 id="uso-básico">Uso básico</h2>
+
+<p>En una primera aproximación, una lambda es cualquier objeto que implementa algunas de las siguientes interfaces:</p>
+
+<ul>
+  <li>Function: una función que toma un sólo argumento</li>
+  <li>Predicate: una función que toma un sólo argumento pero que devuelve exclusivamente booleanos</li>
+  <li>Consumer: una función que toma un sólo argumento y no devuelve nada, probablemente porque produce un <a href="efecto.md">efecto</a>. Es decir, los Consumers normalmente NO son computaciones puras.</li>
+  <li>Entre otras, ver: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</a></li>
+</ul>
+
+<p>Para, por ejemplo, recibirlas por parámetro, debemos simplemente tipar al parámetro de nuestro método con alguna de estas interfaces.</p>
+
+<p>Ejemplo:</p>
+
+<p><code class="highlighter-rouge">Persona primerPersonasQueCumple(Predicate</code><Persona>` predicado) {`
+`  for(Persona persona : personas) `
+`    if (predicado.test(persona))`
+`      return persona;`
+` throw new PersonaNoExisteException();`
+`}`</Persona></p>
+
+<p>Para pasarlas por parámetro, la sintaxis es la siguiente:</p>
+
+<p><code class="highlighter-rouge">(TipoParametro parametro) -&gt; cuerpo</code></p>
+
+<p>que es análogo al siguiente bloque en Smalltalk (recordar que en Smalltalk las variables no se tipan explícitamente):</p>
+
+<p><code class="highlighter-rouge"> [ :parametro | cuerpo  ]</code></p>
+
+<p>Ejemplo:</p>
+
+<p><code class="highlighter-rouge">primerPersonaQueCumple((Persona p) -&gt; p.esMayorDeEdad())</code></p>
+
+<p>En muchos casos como el anterior tipo del parámetro puede ser obviado, cuando este puede ser inferido por el contexto:</p>
+
+<p><code class="highlighter-rouge">primerPersonaQueCumple(p -&gt; p.esMayorDeEdad())</code></p>
+
+<h2 id="referencias-a-métodos">Referencias a métodos</h2>
+
+<p>Si el cuerpo del método es el envío de un sólo mensaje (como en el ejemplo anterior), entonces podemos usar una MethodReference:</p>
+
+<p><code class="highlighter-rouge">primerPersonaQueCumple(Persona::esMayorDeEdad)</code></p>
+
+<h2 id="interfaces-de-un-sólo-mensaje">Interfaces de un sólo mensaje</h2>
+
+<p>Por motivos de retrocompatibilidad, en realidad, cualquier Interface que defina un sólo mensaje puede ser usada con la sintaxis de lambda. Ejemplo:</p>
+
+<p><code class="highlighter-rouge">interface ChequeadorDePersona {</code>
+<code class="highlighter-rouge">   boolean chequear(Persona p);</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p><code class="highlighter-rouge">Persona primerPersonasQueCumple(ChequeadorDePersona predicado) {</code>
+<code class="highlighter-rouge">  for(Persona persona : personas) </code>
+<code class="highlighter-rouge">    if (predicado.chequear(persona))</code>
+<code class="highlighter-rouge">      return persona;</code>
+<code class="highlighter-rouge"> throw new PersonaNoExisteException();</code>
+<code class="highlighter-rouge">}</code></p>
+
+<p>Y se usa exactamente igual. De todas formas, si no pensamos darle alguna semántica particular a nuestro bloque de código, preferiremos usar normalente las interfaces estándar comentadas antes</p>
+
+<h2 id="colecciones-en-java">Colecciones en Java</h2>
+
+<p>Una de las principales utilidades de las lambdas es el manejo de colecciones. Java 8 incorpora mensajes a sus colecciones para poder transformarlas usando mensajes análogos a las funciones de orden superior de Haskell: map, filter y reduce(fold), limit(take), entre otros: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html</a></p>
+
+<p>La forma de trabajar siempre es la misma: cuando tengamos una colecciones, le enviaremos el mensaje stream() para obtener una secuencia potencialmente infinita (análoga a las listas de Haskell), al cual le podemos enviar mensajes para filtrar, mapear, etc. Cuando hayamos terminado, y si queremos reconvertir nuestro Stream a una colección (como una List, Set, o Collection), le enviaremos el mensaje collect, indicandole a que tipo de colección queremos convertirlo:</p>
+
+<ul>
+  <li>collect(toList()) (análogo al asOrderedCollection de ST)</li>
+  <li>collect(toSet()) (análogo al asSet de ST)</li>
+  <li>entre otros. Ver <a href="http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html">http://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html</a></li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<p><code class="highlighter-rouge"> List</code><Persona>` personas = Arrays.asList(jose, pedro, maria, anabela);`
+` Set`<Persona>` nombresDeDocentesSinRepetidos = personas.stream().filter(Persona::esDocente).map(Persona::getNombre).collect(toSet());`</Persona></Persona></p>
+
+<p>Lo cual es análogo al siguiente código Smalltalk:</p>
+
+<p><code class="highlighter-rouge"> personas := { jose. pedro. maria. anabela }</code>
+<code class="highlighter-rouge"> nombresDeDocentesSinRepetidos := ((personas select: [ :p | p esDocente ]) collect: [ :p | p nombre ] ) asSet</code></p>
+
+<h2 id="ordenar">Ordenar</h2>
+
+<p>El orden superior se puede aprovechar para ordenar colecciones en Java. Supongan que tienen:</p>
+
+<p><code class="highlighter-rouge">public class Foo {</code>
+<code class="highlighter-rouge">    private String bar;</code>
+<code class="highlighter-rouge">    private int baz;</code>
+<code class="highlighter-rouge">   // y sus getters y constructor</code>
+<code class="highlighter-rouge"> } </code></p>
+
+<p>Cuando quieran tener algo ordenado según un criterio, antes o después, necesitarán un Comparator: es un objeto que nos dice si un objeto es “menor” que otro (precede a otro, dirían en discreta). La buena noticia es que normalmente no tendrán que declarar una clase que implemente esta interfaz, sino que podrán definirlo usando una lambda. Por ejemplo, si quieren crear una priorirty queue que esté ordenada según bar, pueden hacer:</p>
+
+<p><code class="highlighter-rouge">PriorityQueue</code><Foo>` foos = new PriorityQueue&lt;&gt;((x, y) -&gt; x.getBar().compareTo(y.getBar()));`</Foo></p>
+
+<p>En general ni siquiera es necesario hacer la comparación a mano. Si quieren ordenar por una propiedad (como en este caso) pueden utilizar Comparator.comparing:</p>
+
+<p><code class="highlighter-rouge"> PriorityQueue</code><Foo>` foos = new PriorityQueue&lt;&gt;(Comparator.comparing(foo -&gt; foo.getBar()));`</Foo></p>
+
+<p>o lo que es lo mismo:</p>
+
+<p><code class="highlighter-rouge"> PriorityQueue</code><Foo>` foos = new PriorityQueue&lt;&gt;(Comparator.comparing(Foo::getBar));`</Foo></p>
+
+<p>Si tienen que ordenar por multiples propiedades, pueden utilizar el mensaje thenComparing. Ejemplo de creación de un TreeSet que ordene segun bar y luego segun baz:</p>
+
+<p><code class="highlighter-rouge"> Set</code><Foo>` foos = new TreeSet&lt;&gt;(Comparator.comparing(Foo::getBar).thenComparing(Foo::getBaz));`</Foo></p>
+
+<p>Finalmente, si tienen que ordenar al revés del orden de precedencia, pueden usar el mensaje reversed. Por ejemplo, acá se está obteniendo un stream ordenado por baz, de mayor a menor:</p>
+
+<p><code class="highlighter-rouge"> Arrays.asList(new Foo("hola", 2), new Foo("hello", 9)).stream().sorted(Comparator.comparing(Foo::getBaz).reversed()) ;</code></p>
+
+<p>Para más información, miren la documentación de Comparator: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html</a></p>
+
+<h2 id="nombres-alternativos">Nombres alternativos</h2>
+
+<p>A veces se referencia a las lambda de Java como closure. En términos generales esto no es correcto, dado que son ideas diferentes: una lambda es una función que no tiene nombre, mientras una closure o cierre o clausura es una función que puede acceder a las variables disponibles en el contexto en que se la declaró.</p>
+
+<p>Sin embargo en este lenguaje informalmente y en términos prácticos ambos conceptos son intercambiables, ya que todas las lambdas encierra su contexto, y el unico tipo de closure que se puede tener es con una lambda.</p>
+
+<p>Como prueba de esto, históricamente, los frameworks de Java llamaban a la interfaz a ser implementada con una clase anónima indistintamente como Closure, Function o Lambda.</p>
+
+<h2 id="más-información">Más información</h2>
+
+<p>Para más información consultar:</p>
+
+<ul>
+  <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html</a></li>
+  <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html">http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html</a></li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>143</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

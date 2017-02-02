@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Unificacion y pattern matching</title>
+  <meta property="og:title" content="Unificacion y pattern matching" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/unificacion-y-pattern-matching.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/unificacion-y-pattern-matching.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Unificacion y pattern matching
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="unificación">Unificación</h2>
+
+<p>Dentro de los conceptos del paradigma lógico no está incluido el concepto de <strong>asignación</strong>. Para dejar en claro esto vamos a llamar a esta idea <strong><a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md">Asignación Destructiva</a></strong>, esto se debe a que una asignación me permite “destruir” el valor que tiene una variable en un momento dado y reemplazarlo por otro. Esta idea de asignación no tiene sentido cuando pensamos en incógnitas (si en un momento dado decimos que una variable X vale 1, su valor será 1 y ningún otro hasta que se empiece a buscar otra solución a la misma consulta, en ese momento se desligan todas las variables y se empieza de nuevo). Las variables en el paradigma lógico se asemejan a la idea de variable matemática, y el mecanismo por el cual se le dan valores a las variables se llama <strong>unificación</strong>. Cuando una variable que no tiene ningún valor pasa a tenerlo vamos a decir que dicha variable a sido <strong>ligada</strong>, en caso contrario la variable se encuentra <strong>sin ligar o no ligada</strong>.</p>
+
+<p>Si nuestra base de conocimiento es</p>
+
+<p><code>padre(homero,bart).</code></p>
+
+<p>padre(homero,maggie).</p>
+
+<p>padre(homero,lisa).&lt;/code&gt;</p>
+
+<p>Y hago la consulta</p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">padre(X,lisa).</code> <code class="highlighter-rouge">X</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">homero</code></p>
+
+<h2 id="cómo-obtuvo-ese-resultado-prolog">Cómo obtuvo ese resultado Prolog?</h2>
+
+<p>Básicamente lo que hace Prolog es buscar un <strong>consecuente</strong> (revisar al principio de todo qué era eso de consecuente) dentro de todas las cláusulas de nuestra base de conocimiento que unifique con la consulta. Podemos ver un poco la unificación o falta de unificación entre dos hechos (que serían la consulta y el consecuente) haciendo consultas en SWI que jueguen con el = (igual), para la consulta de recién tenemos:</p>
+
+<p><code> %El consecuente de la primer cláusula **NO** unifica con la consulta</code></p>
+
+<p>?- padre(X,lisa) = padre(homero,bart).</p>
+
+<p>No</p>
+
+<p>%El consecuente de la segunda cláusula <strong>NO</strong> unifica con la consulta</p>
+
+<p>?- padre(X,lisa) = padre(homero,maggie).</p>
+
+<p>No</p>
+
+<p>%El consecuente de la tercer cláusula <strong>unifica</strong> con la consulta</p>
+
+<p>?- padre(X,lisa) = padre(homero,lisa).</p>
+
+<p>X = homero &lt;/code&gt;</p>
+
+<p><strong><em>OJO</em></strong> el = (igual) nooooo lo vamos a usar en los programas, lo usamos acá solamente porque nos ayuda a estudiar sobre la unificación.</p>
+
+<p>Este ejemplo es fácil ya que todas las cláusulas son hechos pero <strong>no es nuestra intención entender en profundidad el mecanismo de unificación</strong>. Si se tratara de reglas, tiene que pasar que se resuelvan los antecedentes de la cláusula cuyo consecuente unificó con la consulta; en el proceso <strong>se agotan todas las posibles soluciones</strong>.</p>
+
+<p>Entonces, se dice que 2 términos unifican si existe algún reemplazo de todas las variables (de los 2 términos) que haga a los términos iguales; se dice que una consulta matchea con un consecuente si el predicado es el mismo y hay un reemplazo coherente que hace que todos los argumentos unifiquen. P.ej. con el reemplazo <code class="highlighter-rouge">X/homero</code> pasa que X queda igual que homero (primer argumento) y también que lisa es igual que lisa (segundo argumento), entonces la consulta <code class="highlighter-rouge">padre(X,lisa)</code> unifica con <code class="highlighter-rouge">padre(homero,lisa)</code> mediante el reemplazo <code class="highlighter-rouge">X/homero</code>.</p>
+
+<p>Nos alcanza pensar que un término es un individuo (simple o compuesto - estos últimos pueden tener variables) o una consulta (como en el primer ejemplo).</p>
+
+<p><code class="highlighter-rouge">%Dos</code> <code class="highlighter-rouge">individuos</code> <code class="highlighter-rouge">iguales</code> <code class="highlighter-rouge">unifican</code> <code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">1</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">1.</code>
+<code class="highlighter-rouge">Yes</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">homero</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">homero.</code>
+<code class="highlighter-rouge">Yes</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">fecha(1,1,1901)</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,1,1901).</code>
+<code class="highlighter-rouge">Yes</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">[a,b,c]</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[a,b,c].</code>
+<code class="highlighter-rouge">Yes</code></p>
+
+<p><code class="highlighter-rouge">%Existen</code> <code class="highlighter-rouge">reemplazos</code> <code class="highlighter-rouge">de</code> <code class="highlighter-rouge">variables</code> <code class="highlighter-rouge">que</code> <code class="highlighter-rouge">hagan</code> <code class="highlighter-rouge">los</code> <code class="highlighter-rouge">términos</code> <code class="highlighter-rouge">iguales</code> <code class="highlighter-rouge">por</code> <code class="highlighter-rouge">lo</code> <code class="highlighter-rouge">tanto</code> <code class="highlighter-rouge">unifican</code> <code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">X</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">homero.</code>
+<code class="highlighter-rouge">X</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">homero.</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">F</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,1,1901).</code>
+<code class="highlighter-rouge">F</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,1,1901).</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">fecha(D,1,A)</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,M,1901).</code>
+<code class="highlighter-rouge">D=</code> <code class="highlighter-rouge">1</code>
+<code class="highlighter-rouge">M=</code> <code class="highlighter-rouge">1</code>
+<code class="highlighter-rouge">A</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">1901</code></p>
+
+<p><code class="highlighter-rouge">%Dos</code> <code class="highlighter-rouge">individuos</code> <code class="highlighter-rouge">distintos</code> <code class="highlighter-rouge">no</code> <code class="highlighter-rouge">unifican</code> <code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">1</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">2.</code>
+<code class="highlighter-rouge">No</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">homero</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">marge.</code>
+<code class="highlighter-rouge">No</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">fecha(1,1,1901)</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,1,2010).</code>
+<code class="highlighter-rouge">No</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">[a,b,c]</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[c,b,a].</code>
+<code class="highlighter-rouge">No</code></p>
+
+<p><code class="highlighter-rouge">%No</code> <code class="highlighter-rouge">existen</code> <code class="highlighter-rouge">reemplazos</code> <code class="highlighter-rouge">de</code> <code class="highlighter-rouge">variables</code> <code class="highlighter-rouge">que</code> <code class="highlighter-rouge">hagan</code> <code class="highlighter-rouge">los</code> <code class="highlighter-rouge">términos</code> <code class="highlighter-rouge">iguales</code> <code class="highlighter-rouge">por</code> <code class="highlighter-rouge">lo</code> <code class="highlighter-rouge">tanto</code> <code class="highlighter-rouge">no</code> <code class="highlighter-rouge">unifican</code> <code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">fecha(D,1,2010)</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">fecha(1,M,1901).</code> <code class="highlighter-rouge">No</code> <code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">[1,2,X]</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[2,2,3].</code>
+<code class="highlighter-rouge">No</code></p>
+
+<p><code class="highlighter-rouge">?-</code> <code class="highlighter-rouge">[1,2,3]</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">[X,X,3].</code>
+<code class="highlighter-rouge">No</code></p>
+
+<h2 id="y-pattern-matching">Y pattern-matching?</h2>
+
+<p>Bueno, la diferencia entre decir pattern matching y unificación es bastante gris (algunos autores lo consideran sinónimos). Es muy común decir “unifica” o “matchea” indistintamente.</p>
+
+<p>Vamos a hablar de unificación de variables en relación al valor que las mismas toman en base a una consulta y de pattern matching cuando en el encabezado del predicado se determina la forma que tiene que tener</p>
+
+<p>Mayormente vamos a hablar de pattern matching al involucrar <a href="paradigma-logico---individuos-compuestos.md">individuos compuestos</a>, ya que a partir de los mismos se pueden definir patrones complejos con los cuales los valores usados en las consultas deberían coincidir.</p>
+
+<p>Los patrones más básicos que podemos encontrar son los que no limitan en absoluto qué valores pueden matchear (las variables) y los que sólo matchean si son exactamente iguales (valores concretos). Por ejemplo, una solución de factorial podría resolverse usando pattern matching de modo que existen dos definiciones: una que sólo es válida para el factorial de 0 y otra que es válida para cualquier número.</p>
+
+<p><code class="highlighter-rouge">factorial(0, 1).</code>
+<code class="highlighter-rouge">factorial(N, F) :- N &gt; 0,</code>
+<code class="highlighter-rouge">  M is N - 1,</code>
+<code class="highlighter-rouge">  factorial(M, FM),</code>
+<code class="highlighter-rouge">  F is N * FM.</code></p>
+
+<p>Si hacemos las siguientes consultas:</p>
+
+<p><code class="highlighter-rouge">?- factorial(2, Factorial).</code></p>
+
+<p>El 2 no matchea con el 0, pero sí con la variable N, por ende sólo la segunda cláusula es considerada para responder a la consulta.</p>
+
+<p><code class="highlighter-rouge">?- factorial(0, Factorial).</code></p>
+
+<p>El 0 matchea con el 0 y también con la variable N, por ende ambas cláusulas son usadas para responder. Sin embargo, si la variable N se unificó con el valor 0, la consulta N &gt; 0 da falso y no continúa ejecutando porque ya falló.</p>
+
+<p>Al trabajar con individuos compuestos podemos usar otro tipo de patrones que restrinjan parcialmente qué valores pueden pueden matchear.</p>
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>121</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>

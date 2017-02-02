@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+
+
+  <title>Instalacion de entorno web grails</title>
+  <meta property="og:title" content="Instalacion de entorno web grails" />
+
+
+
+
+
+
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/instalacion-de-entorno-web-grails.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/instalacion-de-entorno-web-grails.html" />
+<meta property="og:site_name" content="uqbar-wiki" />
+<meta name="application-name" content="uqbar-wiki"/>
+
+<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+
+
+
+
+
+
+  <meta property="keywords" content="" />
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/uqbar-wiki-proposal/favicon.ico" >
+    <link type="text/plain" rel="author" href="/uqbar-wiki-proposal/humans.txt"/>
+
+    <link rel="stylesheet" href="/uqbar-wiki-proposal/assets/app-ce8dd519ee762abf28c16f11faacee90.css">
+    <style>
+        .navbar {
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <div id="pagetitle"><a href="/uqbar-wiki-proposal/">uqbar-wiki</a></div>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <div class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class="has-dropdown">
+                <a href="#">Help</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Frequently-Asked-Questions.html">Frequently Asked Questions</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/como-empezar.html">como-empezar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Navigation</a>
+                <ul class="dropdown">
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/paradigma-de-programacion.html">paradigma de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/design-temario.html">design temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/tecnicas-avanzadas-de-programacion.html">tecnicas avanzadas de programacion</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-de-interfaces-de-usuario.html">programacion de interfaces de usuario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/algo3-temario.html">algo3 temario</a></li>
+                    <li><a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/programacion-con-herramientas-modernas.html">programacion con herramientas modernas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="column small-0 medium-2 large-2 sidebar" style="margin-top: 10px;">
+    <div class="rows">
+        <img src="/uqbar-wiki-proposal/img/uqbar_logo.png">
+    </div>
+
+    <ul class="rows small-12 medium-10 large-10 side-nav stack button-group" title="Link List" role="menu">
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/">Home</a></li>
+        <li class="button" role="menuitem"><a href="/uqbar-wiki-proposal/articles">Lista de articulos</a></li>
+    </ul>
+</div>
+
+<div class="column small-12 medium-10 large-10">
+    <div id="article_title">
+    <h1>
+        Instalacion de entorno web grails
+    </h1>
+</div>
+
+<div id="article_content">
+    <h2 id="pre-requisitos">Pre-requisitos</h2>
+
+<p>Asumimos que tenés instaladas las herramientas básicas, en particular necesitaremos que tengas una JDK, no puede ser una JRE. Para más ayuda, seguí este <a href="preparacion-de-un-entorno-de-desarrollo-java.md">link</a>.</p>
+
+<h2 id="ggts-entorno-integrado-de-desarrollo-y-framework-grails">GGTS: Entorno integrado de Desarrollo y Framework Grails</h2>
+
+<p>Te recomendamos utilizar la versión 3.6.0 del GGTS, que es más liviana que las siguientes. Los links para descargar son:</p>
+
+<ul>
+  <li>linux 64 bits: <a href="http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk-x86_64.tar.gz">http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk-x86_64.tar.gz</a></li>
+  <li>linux 32 bits: <a href="http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk.tar.gz">http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-linux-gtk.tar.gz</a></li>
+  <li>win64: <a href="http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32-x86_64.zip">http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32-x86_64.zip</a></li>
+  <li>win32: <a href="http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32.zip">http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-win32.zip</a></li>
+  <li>mac cocoa 64: <a href="http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-macosx-cocoa-x86_64.tar.gz">http://download.springsource.com/release/STS/3.6.0/dist/e4.4/groovy-grails-tool-suite-3.6.0.RELEASE-e4.4-macosx-cocoa-x86_64.tar.gz</a></li>
+</ul>
+
+<p>Si querés descargar la última versión estable del GGTS tenés el siguiente link</p>
+
+<ul>
+  <li><a href="https://spring.io/tools/ggts/all">https://spring.io/tools/ggts/all</a></li>
+</ul>
+
+<p>Allí seleccionás el entorno adecuado para tu sistema operativo.</p>
+
+<h3 id="configuraciones">Configuraciones</h3>
+
+<h4 id="dónde-lo-instalo">¿Dónde lo instalo?</h4>
+
+<ul>
+  <li>Es preferible que el directorio de instalación no tenga espacios (C:\GGTS, C:\IDEGrails, /home/fer/IDEGrails, etc.)</li>
+</ul>
+
+<h4 id="qué-jdk-uso">¿Qué JDK uso?</h4>
+
+<ul>
+  <li>Si bien en teoría la JDK 1.8 es compatible con Grails 2.4, nuestra experiencia nefasta nos dice que <strong>no uses una JDK 1.8, tiene que ser 1.6 ó 1.7</strong> (cualquiera, la instalás en otra carpeta)</li>
+  <li>Recordamos que no es válido asociarle una JRE sino que tiene que incluir el compilador y demás herramientas de desarrollo que vienen con la JDK.</li>
+  <li>La JDK y el GGTS deben coincidir en la versión de 32 ó 64 bits (si el GGTS es 32 bits tenés que apuntar a una JDK de 32 bits, o no va a funcionar)</li>
+</ul>
+
+<h4 id="cómo-asocio-la-jdk-al-ggts">¿Cómo asocio la JDK al GGTS?</h4>
+
+<p>Para asociar la JDK al GGTS: si descargás y ejecutás el instalador lo definís ahí mismo, si descomprimís el archivo o se lo querés cambiar creás un acceso directo al GGTS:</p>
+
+<p><code class="highlighter-rouge">GGTS -vm "/path donde está la JDK"</code></p>
+
+<ul>
+  <li>las comillas son importantes si en el path hay espacios en blanco, y</li>
+  <li>tené en cuenta incluir el directorio bin del JDK en el path.</li>
+</ul>
+
+<p>Más información en <a href="http://grails.org/products/ggts">http://grails.org/products/ggts</a></p>
+
+<h3 id="plugins">Plugins</h3>
+
+<p>Para instalar el plugin de SVN tenemos tres opciones: a partir de la ventana Dashboard, Help &gt; Eclipse Marketplace o manualmente como en Eclipse a partir del menú Help &gt; Install New Software. Allí seleccionan</p>
+
+<ul>
+  <li>Subclipse 1.10.x: es la integración de SVN con el IDE, para bajarte los ejemplos. Incluyan el SVNKit que es un componente opcional</li>
+  <li>en caso de que tengas una versión GGTS 3.5.1 ó inferior, el plugin Maven Integration for Eclipse 1.4. Para las versiones 3.6.0 en adelante ya viene instalado por defecto</li>
+</ul>
+
+<p>luego presionan el botón Install y reinician el entorno</p>
+
+<p>En algunas instalaciones recientes el Dashboard tira un mensaje de error, no es grave, sigan los pasos a partir del Marketplace (la opción siguiente).</p>
+
+<h3 id="web-server">Web Server</h3>
+
+<p>El IDE trae consigo un Web Server Tomcat (llamado vFabric tcServer) integrado con el entorno.</p>
+
+<h2 id="configuración-del-workspace">Configuración del Workspace</h2>
+
+<p>Si estás en Windows te recomendamos que uses un directorio raíz: C:\WorkspaceGrails o similar (no C:\Documents and Settings\User\etc.)</p>
+
+<h2 id="configuración-del-entorno-grails">Configuración del entorno Grails</h2>
+
+<ul>
+  <li>Primero, seguir las configuraciones estándares para cualquier eclipse como se muestra en <a href="preparacion-de-un-entorno-de-desarrollo-java-configuraciones-adicionales.md">este link</a></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Además, les recomendamos modificar Window &gt; Web Browser &gt; Default web browser para ejecutar las aplicaciones en un browser externo (si no el IDE se pone todavía más pesado)</li>
+</ul>
+
+<h3 id="importante-cómo-configurar-la-versión-default-de-grails">IMPORTANTE: Cómo configurar la versión default de Grails</h3>
+
+<p>Ir a Window &gt; Preferences, y filtrar por la palabra “Grails”. Seleccionar al nodo “Grails” (esto es: Groovy &gt; Grails), y en la grilla “Grails Installations”, pueden pasar dos cosas:</p>
+
+<ul>
+  <li>el GGTS que instalaste ya tiene una configuración de Grails default. En ese caso vas a ver chequeada una opción de Grails, y no deberías hacer más nada</li>
+  <li>el GGTS lo descomprimiste en una carpeta, entonces tenés que configurar manualmente cuál es la versión de Grails con la que vas a trabajar.</li>
+</ul>
+
+<p>Para hacer eso (o para incorporar otra versión de Grails a tu entorno de desarrollo), hagan click en Add…, luego Browse y buscar la carpeta donde saben que está el framework Grails. Si no estás seguro de dónde queda eso, es en el mismo directorio donde descomprimiste el GGTS. <em>Ej:</em> si descomprimiste el GGTS en la carpeta “C:\GGTS\GGTS360”, la versión de Grails con la que viene es 2.4.2, y se ubicará en el directorio “C:\GGTS\GGTS360\grails-2.4.2”. Eligen ese directorio y presionan ok dos veces.</p>
+
+<h3 id="configurar-el-proxy-para-poder-bajar-dependencias">Configurar el proxy para poder bajar dependencias</h3>
+
+<p>Si estás trabajando con un proxy tenés que ir a Window &gt; Preferences, Groovy &gt; Grails &gt; Grails Launch y configurar estas variables</p>
+
+<ul>
+  <li><strong>http.nonProxy.hosts</strong>: direcciones locales como 10.*</li>
+  <li><strong>http.proxyHost</strong>: tu servidor proxy</li>
+  <li><strong>http.proxyPort</strong>: el puerto que escucha el proxy</li>
+</ul>
+
+<h2 id="y-si-no-quiero-usar-eclipse">¿Y si no quiero usar Eclipse?</h2>
+
+<p>Después buscar un IDE de su agrado e incorporarle el plugin para Grails, acá tienen un link para integrarlo con IDEA: <a href="http://grails.org/IDEA+Integration">http://grails.org/IDEA+Integration</a></p>
+
+<h2 id="cómo-crear-un-proyecto-desde-cero">Cómo crear un proyecto desde cero</h2>
+
+<p>Muy simple, New &gt; Grails project.</p>
+
+<h2 id="cómo-empezar">Cómo empezar</h2>
+
+<ul>
+  <li>Tutoriales para conocer la tecnología: <a href="http://grails.org/start">http://grails.org/start</a></li>
+  <li>Manual de referencia: <a href="http://grails.org/doc/latest/guide/">http://grails.org/doc/latest/guide/</a></li>
+  <li>Plugins que se pueden instalar: <a href="http://grails.org/plugins/">http://grails.org/plugins/</a></li>
+</ul>
+
+<h2 id="cómo-levanto-las-aplicaciones">Cómo levanto las aplicaciones</h2>
+
+<ul>
+  <li>Ctrl + Shift + Alt + G &gt; run-app va a levantar el servidor en el proyecto sobre el cual están parados (eso se puede cambiar en la consola)</li>
+  <li>Una vez que aparezca un mensaje equivalente a</li>
+</ul>
+
+<p>pueden copiar la URL e ir a un Browser y pegar esa dirección para probar la aplicación.</p>
+
+<p>También pueden dar un click sobre la URL y eso los llevará por defecto a un browser interno, que consume bastantes recursos. Por eso recomendamos modificar la configuración default para que les abra un browser por afuera del entorno: Window &gt; Web Browser &gt; Default system web browser.</p>
+
+<p>Hay una solapa Server en el cual pueden agregar o eliminar las aplicaciones web. No obstante este server requiere una configuración adicional para asignarle un Tomcat en forma manual (no es el Tomcat interno que trae el entorno GGTS de Grails), por lo que por el momento recomendamos no utilizarlo.</p>
+
+<h2 id="migrar-a-una-version-diferente-de-grails">Migrar a una version diferente de Grails</h2>
+
+<p>En el caso en que quieras migrar de versión un proyecto,</p>
+
+<ul>
+  <li>tenés que buscar el archivo application.properties, modificar la línea donde está la versión de Grails a la que corresponda</li>
+</ul>
+
+<p><code class="highlighter-rouge">app.grails.version=2.3.8</code></p>
+
+<ul>
+  <li>modificar si es necesario en el BuildConfig.groovy las versiones de las dependencias (las versiones para un proyecto default las podés conocer creando un proyecto Grails vacío y revisando cómo se genera el BuildConfig)</li>
+  <li>luego desde el menú Grails Tools &gt; Refresh Dependencies</li>
+</ul>
+
+<p>Con eso debería ser suficiente. De haber algún problema: hacer un grails clean (Ctrl + Alt + Shift + G &gt; clean) y un clean + refresh desde el GGTS</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="error-al-querer-refrescar-dependencias-o-compilar">Error al querer refrescar dependencias o compilar</h3>
+
+<p>Si te aparece un error en la consola como éste</p>
+
+<p><code class="highlighter-rouge">java.lang.ClassNotFoundException: unable to locate the java compiler com.sun.tools.javac.Main, please change your classloader settings </code></p>
+
+<p>no estás apuntando en tu variable de entorno JAVA_HOME a un JDK configurado en tu GGTS. Reapuntá alguno de los dos.</p>
+
+<h3 id="compatibilidad-de-las-versiones-de-grails-y-jdk">Compatibilidad de las versiones de Grails y JDK</h3>
+
+<p>Asegurate de respetar la misma versión de 32/64 bits de tu JDK/GGTS, de lo contrario cuando crees un nuevo proyecto Grails te puede aparecer un mensaje indicando que la JDK asignada corresponde a una JRE (no encontrará ‘tools.jar’)</p>
+
+<h3 id="problemas-con-groovy-object-al-compilar">Problemas con Groovy Object al compilar</h3>
+
+<p>Al bajar ejemplos puede haber un problema con la versión del compilador (“Groovy Object not found” o si avisa que hay errores con el Build path), en ese caso hay que hacer botón derecho sobre el proyecto &gt; Properties &gt; Groovy compiler y seleccionar “I don’t care” en la opción “Groovy compiler level”.</p>
+
+<h3 id="integración-con-jdk">Integración con JDK</h3>
+
+<p>Grails 2.2.2/2.2.3 y la versión 1.7.0_25 tienen problemas temporales de integración, si te aparece este mensaje al compilar/correr la app</p>
+
+<p><code class="highlighter-rouge">Could not determine Hibernate dialect for database name [H2]!</code></p>
+
+<p>reemplazá la versión de tu JDK por una distinta.</p>
+
+<h3 id="problemas-al-querer-abrir-la-ventana-de-comandos">Problemas al querer abrir la ventana de comandos</h3>
+
+<p>Si al querer abrir la ventana de comandos (Ctrl + Shift + Alt + G) te aparece una ventana de error con el siguiente mensaje:</p>
+
+<p><code class="highlighter-rouge">An internal error occurred during: "Retrieving available scripts".</code>
+<code class="highlighter-rouge">java.lang.NullPointerException</code></p>
+
+<p>es que estás trabajando en un proyecto que tiene una versión de Grails que no está instalada en tu máquina, las opciones son</p>
+
+<ol>
+  <li>Instalar esa versión de Grails en un directorio diferente (en <a href="http://grails.org/download">http://grails.org/download</a>)</li>
+  <li>O bien migrar el proyecto a la versión de Grails que tenés instalada en tu máquina como se explicó <a href="instalacion-de-entorno-web-grails-migrar-a-una-version-diferente-de-grails.md">anteriormente</a></li>
+</ol>
+
+<h3 id="problemas-para-levantar-el-ide-con-proyectos-pesados">Problemas para levantar el IDE con proyectos pesados</h3>
+
+<p>No debería ocurrir, ya que los ejemplos son didácticos y están pensados para levantar en entornos sin mayores problemas, pero si el IDE está ocupando mucha memoria al iniciar conviene chequear este link: <a href="http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage">http://stackoverflow.com/questions/13515704/how-to-fix-groovy-grails-tool-suite-3-extreme-memory-usage</a></p>
+
+<h3 id="errores-extraños-en-las-annotations">Errores extraños en las annotations</h3>
+
+<p>Revisá que el compilador tenga seteada una compatibilidad a un JDK igual para todos el grupo de trabajo. Esto se ve en Window &gt; Preferences, Java &gt; Compiler, JDK Compliance level : Compiler Compliance Level (deberían utilizar el mismo todos los integrantes del grupo).</p>
+
+<h3 id="errores-al-trabajar-con-librerías-externas">Errores al trabajar con librerías externas</h3>
+
+<p>Esto puede ocurrir si estás trabajando con xtend, que utiliza guava como dependencia. Si al hacer run-app ves un mensaje de error similar al siguiente</p>
+
+<p><code class="highlighter-rouge">ClassNotFoundException: com.google.common.base.Objects</code></p>
+
+<p>buscá el archivo BuildConfig.groovy de tu proyecto y comentá estas dos líneas de configuración:</p>
+
+<p><code class="highlighter-rouge">grails.project.war.file </code>
+<code class="highlighter-rouge">grails.project.fork</code></p>
+
+<h2 id="integración-con-otros-lenguajes-de-programación">Integración con otros lenguajes de programación</h2>
+
+<ul>
+  <li><a href="integracion-grails-con-xtend.md">Integración Grails con Xtend</a></li>
+  <li><a href="integracion-grails-con-scala.md">Integración Grails con Scala</a></li>
+  <li>Grails se integra naturalmente con Java, sólo hay que definir las clases Java en el source folder src/java y se incluyen con la aplicación web</li>
+</ul>
+
+
+</div>
+
+<div id="article_disqus">
+    <div id="disqus_thread">
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'tadp-wiki'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <a href="http://disqus.com" class="dsq-brlink">
+        comments powered by <span class="logo-disqus">Disqus</span>
+    </a>
+
+</div>
+
+</div>
+
+<div id="article_metadata">
+    <p>Latest update on February 01, 2017 by
+        Ernesto Bossi</p>
+
+    <ul class="accordion" data-accordion>
+        <li class="accordion-navigation">
+            <a href="#panel1a">Page History, Meta information</a>
+
+            <div id="panel1a" class="content">
+
+                <div class="rows">
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Page Commits</th>
+                                <th>Page Additions</th>
+                                <th>Page Deletions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>203</td>
+                                <td>0</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="column small-12 medium-6 large-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Commits</th>
+                            <tr>
+                            </thead>
+
+                            <tbody>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.ernestog@gmail.com</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <table style="margin-left: 15px;">
+                    <thead>
+                    <tr>
+                        <th>Hash</th>
+                        <th>Time</th>
+                        <th>Name</th>
+                        <th>Mail</th>
+                        <th>Subject</th>
+                    <tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    <tr>
+                        <td>68991a7</td>
+                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>add wiki pages for demo</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+
+<div id="footer">
+    <div class="columns small-1 medium-2 large-3">
+        <small>(C) 2015-17 Matthias Beyer/Ernesto Bossi</small>
+    </div>
+
+    <div class="columns small-11 medium-10 large-9">
+    </div>
+
+</div>
+
+<script>
+    'use strict';
+</script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery-9954088f87089c387789507249fa70d3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/jquery.min-650c8b3af3d010ec559014c6e70b13c3.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation-8e0f071884576348dba555b27a4bcaa9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.abide-fa5ce9fbf8301ae49154ebc752edc220.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.accordion-bcc423fb0c2a3d515ba85ff591171a8e.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.alert-609b779b55610f4916250faaa37d1cfc.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.clearing-167db0285c7a789f7f216183f9038ac4.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.dropdown-25aac997ca0ca5dc3c3094c266c8f5aa.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.equalizer-cbdd8079a6f777c37dd1314f9b17faec.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.interchange-6ef75863aff8abeff4de79554b62e1b9.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.joyride-7cce0075f55d456449419a92671a3874.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.magellan-dc0647982e238cf1db3113e50d1b85dd.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.offcanvas-61dc0fe57ed932800c4a09b92c1ba4e5.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.orbit-9698da4fd068f7b83b3e5c00aae63ab3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.reveal-4944447a204c398659229cfd716786a1.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.slider-7ea4b29f663e7e1b52ddc9f7ca0458b3.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tab-c2efa8f5f8b255b06db277c3f339a0c7.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.tooltip-4a5d212b8f811ff50bba6cc61a2b899a.js"></script>
+<script src="/uqbar-wiki-proposal/assets/foundation/foundation.topbar-4dd840d30430ff2146208830574ca615.js"></script>
+
+<script src="/uqbar-wiki-proposal/assets/jquery.cookie-61d99d4505fb2f5359bf351153c83f1d.js"></script>
+<!-- Script pointing to jekyll-search.js -->
+<script src="/uqbar-wiki-proposal/assets/jekyll-search-2c27791d765f338cd196c9aa9a050936.js"></script>
+
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: "/uqbar-wiki-proposal/search.json"
+    });
+
+    $(document).foundation();
+
+</script>
+
+<!-- prism.js -->
+<script src="/uqbar-wiki-proposal/assets/prism-1eea551ba45e704ef55167430bb80ce4.js"></script>
+</body>
+</html>
