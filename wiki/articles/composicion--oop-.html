@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -151,17 +151,17 @@
 
 <p>Ante la necesidad de poder cambiar el humor de la persona, separamos a la Persona (que intuitivamente iba a ser un concepto entero abarcando a su estado de humor) de su Humor en un concepto aparte. Los objetos Humor deben ser polimórficos para la persona, ya que debo poder intercambiar los distintos humores y la persona debería hablarle de la misma forma a cualquiera.</p>
 
-<p>Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de <a href="polimorfismo.md">polimorfismo</a>.</p>
+<p>Entonces en vez de tener un objeto que resuelve todo el problema tenemos un objeto que conoce a otros objetos polimórficos para resolver el problema mediante la colaboración. Con esta solución, el flujo del programa ya no se encuentra definido por los ifs y objetos básicos sino por la configuración del cliente y el uso de <a href="polimorfismo.html">polimorfismo</a>.</p>
 
 <p>Es importante notar que <strong>no sería válido modelar una solución a este problema basada en herencia</strong> teniendo personas felices, indiferentes y enojadas, ya que una vez que la persona es instanciada como feliz no es posible cambiarla a indiferente o enojada, ya que implica cambiar su clase que no se puede hacer.</p>
 
 <p>Entonces, la composición en objetos es simplemente una relación de conocimiento entre dos objetos (por ejemplo, el cliente conoce a su humor) donde el objeto conocido puede cambiarse por otro que sea polimórfico para el que los conoce.</p>
 
-<p>Otro ejemplo podría ser el de las colecciones con un algoritmo de ordenamiento elegido por el usuario (<a href="sabores-de-colecciones.md">SortedCollection</a> en Smalltalk), donde la colección delega en otro objeto que modela el algoritmo de ordenamiento a usar sobre sus elementos.</p>
+<p>Otro ejemplo podría ser el de las colecciones con un algoritmo de ordenamiento elegido por el usuario (<a href="sabores-de-colecciones.html">SortedCollection</a> en Smalltalk), donde la colección delega en otro objeto que modela el algoritmo de ordenamiento a usar sobre sus elementos.</p>
 
 <h2 id="cambiando-herencia-por-composición">Cambiando herencia por composición</h2>
 
-<p>El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de <a href="herencia.md">Herencia</a>, que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:</p>
+<p>El uso de composición en ocasiones es una solución muy elegante para problemas aparejados por el concepto de <a href="herencia.html">Herencia</a>, que pueden verse en el siguiente ejemplo tomado de un final de Paradigmas de Programación:</p>
 
 <p>El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vendedores pueden ser especialistas o de salón. Los especialistas atienden detrás de mostrador y cobran un premio (todos los especialistas cobran el mismo monto) por cada venta mayor a 500 pesos. Los vendedores de salón cobran un premio (diferente para cada vendedor) si hacen más de 50 ventas “</p>
 
@@ -208,8 +208,8 @@
 <p>La solución propuesta tiene problemas que surgen por el mal uso de herencia. Los que podemos destacar son:</p>
 
 <ul>
-  <li><strong>Repetición de código:</strong> La forma de subclasificar a los vendedores tanto por tipo de vendedor (Salón o Especialista) como por categoría (Senior o Junior) hace que tengamos código repetido entre las hojas del árbol de herencia. Esto tiene problemas, sobre todo si el sistema sigue creciendo de esta forma, ya que la repetición de código es exponencial y realizar un cambio en la lógica del premio de los juniors por ejemplo se propagaría para todos los tipos de vendedores habidos y por haber (tiene problemas de <strong><a href="atributos-de-calidad.md">extensibilidad</a></strong>).</li>
-  <li><strong>Problemas con la <a href="igual-o-identico-----vs---.md">identidad</a> de los objetos:</strong> El enunciado indica que un junior puede volverse senior con el tiempo, pero el modelo que tenemos no soporta este tipo de cambio en tiempo de ejecución. Un objeto de la clase VendedorSalonJunior no puede cambiar de clase a VendedorSalonSenior, su clase es algo que se mantiene durante toda la vida del objeto. Si tratamos de emular el cambio de clase creando un nuevo objeto y copiando los valores de sus atributos según corresponda lograremos tener el comportamiento de senior pero ya no será el mismo objeto para el sistema. En OOP una de las características de un objeto es su identidad, la cual estaríamos perdiendo si tomamos esa decisión y el problema asociado a este cambio es que todos los objetos que tengan una referencia a nuestro vendedor promovido deberán enterarse de este cambio (y seguramente no lo hagan) para referenciar al nuevo objeto que lo reemplaza. La consecuencia de esto es o bien una complejidad espantosa para mantener las referencias o un sistema <strong><a href="atributos-de-calidad.md">inconsistente</a></strong>.</li>
+  <li><strong>Repetición de código:</strong> La forma de subclasificar a los vendedores tanto por tipo de vendedor (Salón o Especialista) como por categoría (Senior o Junior) hace que tengamos código repetido entre las hojas del árbol de herencia. Esto tiene problemas, sobre todo si el sistema sigue creciendo de esta forma, ya que la repetición de código es exponencial y realizar un cambio en la lógica del premio de los juniors por ejemplo se propagaría para todos los tipos de vendedores habidos y por haber (tiene problemas de <strong><a href="atributos-de-calidad.html">extensibilidad</a></strong>).</li>
+  <li><strong>Problemas con la <a href="igual-o-identico-----vs---.html">identidad</a> de los objetos:</strong> El enunciado indica que un junior puede volverse senior con el tiempo, pero el modelo que tenemos no soporta este tipo de cambio en tiempo de ejecución. Un objeto de la clase VendedorSalonJunior no puede cambiar de clase a VendedorSalonSenior, su clase es algo que se mantiene durante toda la vida del objeto. Si tratamos de emular el cambio de clase creando un nuevo objeto y copiando los valores de sus atributos según corresponda lograremos tener el comportamiento de senior pero ya no será el mismo objeto para el sistema. En OOP una de las características de un objeto es su identidad, la cual estaríamos perdiendo si tomamos esa decisión y el problema asociado a este cambio es que todos los objetos que tengan una referencia a nuestro vendedor promovido deberán enterarse de este cambio (y seguramente no lo hagan) para referenciar al nuevo objeto que lo reemplaza. La consecuencia de esto es o bien una complejidad espantosa para mantener las referencias o un sistema <strong><a href="atributos-de-calidad.html">inconsistente</a></strong>.</li>
 </ul>
 
 <p><strong>¿Cómo se soluciona este problema?</strong> Si cambiamos el modelo para que la categoría (Junior o Senior) sea un objeto aparte que el vendedor conozca y delegamos en este objeto todo aquello que corresponda a ser senior o junior solucionamos ambos problemas a la vez, ya que el valor de las referencias sí puede ser cambiado en tiempo de ejecución, es sólo settear un atributo. Veamos cómo queda la nueva solución:</p>
@@ -242,7 +242,7 @@
 
 <p><strong>Disclaimer:</strong> el mensaje #totalVentas fue a parar al vendedor porque tenía sentido para todos, no sólo para los juniors, y era más simple pero para que fuera totalmente análoga podríamos tenerlo definido en #Junior y delegar en la categoría. En caso de dudas siempre vale preguntar.</p>
 
-<p>Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una <strong><a href="atributos-de-calidad.md">complejidad</a></strong> extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor <strong><a href="atributos-de-calidad.md">flexibilidad</a></strong> del modelo.</p>
+<p>Como se puede ver en el diagrama de clases de la solución con composición, para crear un vendedor ya no alcanza sólo con elegir la clase del tipo de vendedor que queremos e instanciarla, sino que tenemos que instanciar dos objetos (al vendedor que queramos y su categoría) y hacer que el vendedor conozca a su categoría, lo cual agrega una <strong><a href="atributos-de-calidad.html">complejidad</a></strong> extra para la creación de nuestros objetos. Si más adelante quisiéramos que un vendedor también pueda pasar de ser vendedor de salón a especialista y viceversa, podría plantearse una solución en la cual el vendedor conozca a su categoría y también a su modo de venta, complicando más el armado de un vendedor a cambio una mayor <strong><a href="atributos-de-calidad.html">flexibilidad</a></strong> del modelo.</p>
 
 <p>A modo de resumen rápido:</p>
 
@@ -292,7 +292,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -314,9 +314,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>147</td>
-                                <td>0</td>
+                                <td>9</td>
+                                <td>166</td>
+                                <td>18</td>
                             </tr>
                             </tbody>
                         </table>
@@ -336,8 +336,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>8</td>
                             </tr>
                             
                             </tbody>
@@ -359,11 +365,75 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f59fb9b6</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>efc5e8a7</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d3f88f83</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>eff293f9</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Cambiando herencia por composición */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a6ab7ef4</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6654deaa</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo: de herencia a composición */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>65e580c1</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>414aea7d</td>
+                        <td>Thu Feb 2 19:09:15 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «'''Completar con teoría'''  == Ejemplo de final == El siguiente texto representa parte del relevamiento realizado en una cadena de venta de electrodomésticos: “Los vend...»</td>
                     </tr>
                     
                     </tbody>

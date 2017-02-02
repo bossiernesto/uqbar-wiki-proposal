@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -149,17 +149,17 @@
   <li>porque tengo más restricciones a nivel usuario y tecnológicos del lado de la UI (es la parte más compleja y la menos madura, cuesta encontrar buenas abstracciones)</li>
 </ul>
 
-<h2 id="conceptos-básicos-del-diseño"><a href="conceptos-basicos-del-diseno.md">Conceptos básicos del diseño</a></h2>
+<h2 id="conceptos-básicos-del-diseño"><a href="conceptos-basicos-del-diseno.html">Conceptos básicos del diseño</a></h2>
 
 <ul>
-  <li><a href="conceptos-basicos-del-diseno-cohesion.md">Cohesión</a></li>
-  <li><a href="conceptos-basicos-del-diseno-acoplamiento.md">Acoplamiento</a></li>
+  <li><a href="conceptos-basicos-del-diseno-cohesion.html">Cohesión</a></li>
+  <li><a href="conceptos-basicos-del-diseno-acoplamiento.html">Acoplamiento</a></li>
 </ul>
 
-<p>¿Dónde interviene el acoplamiento al programar la UI? El componente de UI va a tener que conocer al componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz defina lógica que es propia del cliente, o de la factura, o de un empleado o de un alumno (para más información ver <a href="integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software-interaccion-entre-la-ui-y-el-dominio-del-sistema.md">Interacción entre la UI y el dominio del sistema</a>). Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente afectar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.</p>
+<p>¿Dónde interviene el acoplamiento al programar la UI? El componente de UI va a tener que conocer al componente que maneja la lógica de dominio, de otra manera la aplicación no va a funcionar. Pero tampoco es bueno que la interfaz defina lógica que es propia del cliente, o de la factura, o de un empleado o de un alumno (para más información ver <a href="integracion-de-la-ui-en-una-arquitectura-de-un-sistema-de-software-interaccion-entre-la-ui-y-el-dominio-del-sistema.html">Interacción entre la UI y el dominio del sistema</a>). Es cierto que agregar un atributo que el usuario deba visualizar o modificar a través de la interfaz fuerza inevitablemente a un cambio en la UI, pero cambios en la lógica de negocio no deberían necesariamente afectar la UI. Así que otro de nuestros objetivos será minimizar el acoplamiento, no por ser puristas, sino porque nos traerá como beneficio no vernos impactados por cualquier tipo de cambio.</p>
 
 <ul>
-  <li><a href="conceptos-basicos-del-diseno-requerimientos-y-casos-de-uso.md">Requerimientos y casos de uso</a></li>
+  <li><a href="conceptos-basicos-del-diseno-requerimientos-y-casos-de-uso.html">Requerimientos y casos de uso</a></li>
 </ul>
 
 <p>Una buena UI va llevando al usuario a través de la secuencia que tiene un caso de uso, guiándolo y ayudándolo en el proceso.</p>
@@ -173,7 +173,7 @@
 <h2 id="links-relacionados">Links relacionados</h2>
 
 <ul>
-  <li><a href="algo3-temario.md">Algo3 Temario</a></li>
+  <li><a href="algo3-temario.html">Algo3 Temario</a></li>
 </ul>
 
 
@@ -206,7 +206,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -228,9 +228,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>62</td>
-                                <td>0</td>
+                                <td>33</td>
+                                <td>26</td>
+                                <td>16</td>
                             </tr>
                             </tbody>
                         </table>
@@ -250,8 +250,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>32</td>
                             </tr>
                             
                             </tbody>
@@ -273,11 +279,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>cdf48ec8</td>
+                        <td>Thu Feb 2 19:09:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Qué objetivos nos proponemos al programar una interfaz de usuario? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>795e5fa0</td>
+                        <td>Thu Feb 2 19:09:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Qué es el modelo de dominio? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3c9dc30f</td>
+                        <td>Thu Feb 2 19:09:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Qué es el modelo de dominio? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d8ea3bc7</td>
+                        <td>Thu Feb 2 19:09:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Otros links relacionados */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1621169d</td>
+                        <td>Thu Feb 2 19:09:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* [[Conceptos básicos del diseño]] */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b2fdb054</td>
+                        <td>Thu Feb 2 19:09:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Qué es el modelo de dominio? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ded81593</td>
+                        <td>Thu Feb 2 19:09:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* [[Conceptos básicos del diseño]] */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f586104c</td>
+                        <td>Thu Feb 2 19:09:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* [[Conceptos básicos del diseño]] */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d2b734d1</td>
+                        <td>Thu Feb 2 19:09:48 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿Qué es el modelo de dominio? */</td>
                     </tr>
                     
                     </tbody>

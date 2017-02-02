@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -116,7 +116,7 @@
 
 <p><strong>Identidad:</strong> decimos que dos objetos son idénticos si son el mismo objeto. Dentro del ambiente podemos tener dos referencias diferentes al mismo objeto.</p>
 
-<p><strong>Igualdad:</strong> (o <strong>equivalencia</strong>) <em>por defecto dos</em> objetos son iguales si son el mismo objeto (en Object se define el mensaje = como self == anObject). La igualdad puede ser redefinida (Ver <a href="redefinicion.md">Redefinición</a>) si el problema lo amerita.</p>
+<p><strong>Igualdad:</strong> (o <strong>equivalencia</strong>) <em>por defecto dos</em> objetos son iguales si son el mismo objeto (en Object se define el mensaje = como self == anObject). La igualdad puede ser redefinida (Ver <a href="redefinicion.html">Redefinición</a>) si el problema lo amerita.</p>
 
 <h2 id="ejemplos">Ejemplos</h2>
 
@@ -157,7 +157,7 @@
 <code class="highlighter-rouge">      and: [ self calle = otraDireccion calle</code>
 <code class="highlighter-rouge">        and: [ self numeracion = otraDireccion numeracion]]</code></p>
 
-<p><strong>Importante</strong> Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente <a href="inmutabilidad.md">inmutable</a> pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.</p>
+<p><strong>Importante</strong> Sólo debería redefinirse la igualdad basado en valores que no vayan a cambiar, en nuestro ejemplo una vez construido el objeto dirección con la calle y la numeración, no debería poder cambiar esas referencias, ya que la relación de igualdad entre dos objetos debería mantenerse a lo largo del tiempo. O sea, el objeto no necesita ser totalmente <a href="inmutabilidad.html">inmutable</a> pero sí debemos garantizar que lo sea respecto a los valores usados para la igualdad.</p>
 
 <p>Cuando redefinimos el = hay que redefinir también el método hash que es usado, por ejemplo, por las colecciones. De esa forma si queremos tener un Set de direcciones funcione como esperamos de modo que no hayan dos direcciones iguales. El hash (no sólo en objetos) es una función que retorna un número para un determinado elemento y se usa para algoritmos bien conocidos, y normalmente está definida en función del hash de otros objetos para simplificar la generación de una buena clave para dichos algoritmos.</p>
 
@@ -198,7 +198,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -220,9 +220,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>62</td>
-                                <td>0</td>
+                                <td>7</td>
+                                <td>81</td>
+                                <td>18</td>
                             </tr>
                             </tbody>
                         </table>
@@ -241,9 +241,27 @@
                             <tbody>
                             
                             <tr>
-                                <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
                             </tr>
                             
                             </tbody>
@@ -265,11 +283,59 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fdd8fe3c</td>
+                        <td>Thu Feb 2 19:11:02 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d52f81fa</td>
+                        <td>Thu Feb 2 19:11:01 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>28a9c93a</td>
+                        <td>Thu Feb 2 19:11:01 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7acbe7cd</td>
+                        <td>Thu Feb 2 19:11:01 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>31fa4cef</td>
+                        <td>Thu Feb 2 19:11:01 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1c4a95a5</td>
+                        <td>Thu Feb 2 19:11:01 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

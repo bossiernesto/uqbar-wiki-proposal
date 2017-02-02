@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,7 +112,7 @@
 </div>
 
 <div id="article_content">
-    <p>En el paradigma orientado a objetos, cuando se suscita el problema de que existan <strong>diferentes objetos con igual comportamiento pero diferente identidad y estado interno</strong>, podemos abordarlo de diferentes formas. Dos esquemas muy usados son el de <strong><a href="clases.md">clases</a></strong> y el que se basa en <strong><a href="prototipado.md">prototipos</a></strong>. Cada lenguaje (o herramienta) suele implementar una sóla de éstas opciones, aunque existen variaciones. Los lenguajes más tradicionales (como Java, Smalltalk, y C#) usan el esquema de clases y <a href="herencia.md">herencia</a>, y en otros lugares (como Javascript, ó en el Object Browser para Smalltalk), se usa el esquema de prototipado.</p>
+    <p>En el paradigma orientado a objetos, cuando se suscita el problema de que existan <strong>diferentes objetos con igual comportamiento pero diferente identidad y estado interno</strong>, podemos abordarlo de diferentes formas. Dos esquemas muy usados son el de <strong><a href="clases.html">clases</a></strong> y el que se basa en <strong><a href="prototipado.html">prototipos</a></strong>. Cada lenguaje (o herramienta) suele implementar una sóla de éstas opciones, aunque existen variaciones. Los lenguajes más tradicionales (como Java, Smalltalk, y C#) usan el esquema de clases y <a href="herencia.html">herencia</a>, y en otros lugares (como Javascript, ó en el Object Browser para Smalltalk), se usa el esquema de prototipado.</p>
 
 <p>Más allá de cuál de estos esquemas usemos, la base es la misma: objetos que se mandan mensajes en un ambiente aprovechando las ideas de encapsulamiento, delegación y polimorfismo.</p>
 
@@ -140,7 +140,7 @@
 
 <p>Cuando mandemos el mensaje <code class="highlighter-rouge">pepona</code> <code class="highlighter-rouge">descansar</code> lo va a entender (ya que tiene un método propio para este mensaje), va a ejecutar su método descansar y su energía se incrementará. Si mandáramos <code class="highlighter-rouge">pepita</code> <code class="highlighter-rouge">descansar</code> tendríamos un error porque pepita no entendería ese mensaje.</p>
 
-<p>¿Qué pasaría si estuviéramos trabajando con el esquema de clases? Siempre que aparece comportamiento nuevo, necesitamos crear otra clase que lo incluya, con lo cual necesitaríamos crear una clase GolondrinaPerezosa que <a href="herencia.md">herede</a> de Golondrina y definir allí el método #descansar. De esta forma, pepona ya no debería ser una instancia de Golondrina sino de GolondrinaPerezosa.</p>
+<p>¿Qué pasaría si estuviéramos trabajando con el esquema de clases? Siempre que aparece comportamiento nuevo, necesitamos crear otra clase que lo incluya, con lo cual necesitaríamos crear una clase GolondrinaPerezosa que <a href="herencia.html">herede</a> de Golondrina y definir allí el método #descansar. De esta forma, pepona ya no debería ser una instancia de Golondrina sino de GolondrinaPerezosa.</p>
 
 <p><code class="highlighter-rouge">pepona := GolondrinaPerezosa new.</code>
 <code class="highlighter-rouge">pepona descansar. "esto va a funcionar"</code>
@@ -151,7 +151,7 @@
 
 <h2 id="redefinir-comportamiento">Redefinir comportamiento</h2>
 
-<p>Siguiendo con pepona, la golondrina perezosa, sabemos que cuando vuela gasta más energía para despegar (15 en vez de 10). Una primer solución podría ser <a href="redefinicion.md">redefinir</a> el método vola:</p>
+<p>Siguiendo con pepona, la golondrina perezosa, sabemos que cuando vuela gasta más energía para despegar (15 en vez de 10). Una primer solución podría ser <a href="redefinicion.html">redefinir</a> el método vola:</p>
 
 <p><code class="highlighter-rouge">#pepona / #GolondrinaPerezosa</code>
 <code class="highlighter-rouge">&gt;&gt; vola: unosKilometros</code>
@@ -181,7 +181,7 @@
   <li>Entonces, el mecanismo de clases agrega una abstracción, ya no tengo sólo “objetos comunes”.</li>
   <li>Además, prototipado me resuelve el problema de redefinición sin más conceptos, en cambio en clases yo tengo que agregar la idea de herencia entre las clases para lograr algo parecido.</li>
   <li>Por otro lado, la separación objeto - clase viene asociada con un mecanismo para conocer a las clases “globalmente”, mientras que si uso prototipado tengo que preocuparme por guardar el prototipo de mis objetos en algún lado</li>
-  <li>Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar <strong><a href="super.md">super</a></strong> al usar herencia, ya que prototype referencia a otro objeto (con su propio estado) mientras que super referencia al mismo objeto que recibió el mensaje inicial</li>
+  <li>Si bien en prototipado se puede usar a prototype para delegar, esto no es lo mismo que usar <strong><a href="super.html">super</a></strong> al usar herencia, ya que prototype referencia a otro objeto (con su propio estado) mientras que super referencia al mismo objeto que recibió el mensaje inicial</li>
   <li>En prototipado, el “contenedor” de comportamiento es dinámico, es un objeto más de mi sistema. Al usar clases, en muchos lenguajes la separación “clase - objeto” es tal que pertenecen a dos mundos diferentes, el “estático” y el “dinámico”.</li>
 </ul>
 
@@ -215,7 +215,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -237,9 +237,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>79</td>
-                                <td>0</td>
+                                <td>7</td>
+                                <td>120</td>
+                                <td>40</td>
                             </tr>
                             </tbody>
                         </table>
@@ -259,8 +259,20 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -282,11 +294,59 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a1b687f9</td>
+                        <td>Thu Feb 2 19:13:25 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>61ed803b</td>
+                        <td>Thu Feb 2 19:13:25 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5e1dad9b</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ce72a6c6</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2fd2749d</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1ee66e56</td>
+                        <td>Thu Feb 2 19:13:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «En el paradigma orientado a objetos existen diferentes formas de trabajar, los esquemas que usamos en la materia son el que se basa en [[clases]] (tradicional) y el que se ...»</td>
                     </tr>
                     
                     </tbody>

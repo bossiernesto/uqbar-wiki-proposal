@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -217,7 +217,7 @@
 
 <p>En el caso general la memoria compartida representa un grado alto de acoplamiento ya que a priori no es posible saber qué componentes modifican o leen qué parte de los datos. En sistemas donde la información compartida está sostenida en un motor de bases de datos (por ejemplo RDBMS), estos pueden mitigar parcialmente este problema al implementar esquemas de seguridad que restrinjan en parte el acceso a los datos a sólo la parte necesaria de cada componente.</p>
 
-<p>Por otro lado, existen tecnologías que permiten definir variables con <a href="alcance-o---scopes--.md">alcance o ‘‘scopes’’</a> más limitado que <em>global</em>, reduciendo de esta manera el acoplamiento únicamente a los componentes que tienen acceso al <em>scope</em> específico. Un caso particular de <em>scope</em> son las variables de instancia de un objeto, como se muestra en el ejemplo siguiente.</p>
+<p>Por otro lado, existen tecnologías que permiten definir variables con <a href="alcance-o---scopes--.html">alcance o ‘‘scopes’’</a> más limitado que <em>global</em>, reduciendo de esta manera el acoplamiento únicamente a los componentes que tienen acceso al <em>scope</em> específico. Un caso particular de <em>scope</em> son las variables de instancia de un objeto, como se muestra en el ejemplo siguiente.</p>
 
 <h2 id="tocAnchor-1-1-2">Ejemplo: Java</h2>
 
@@ -274,7 +274,7 @@
 
 <h3 id="ejemplo-puro">Ejemplo puro</h3>
 
-<p>El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md"> efecto</a>. La ausencia de efecto obliga a que toda la comunicación sea por medio de los parámetros.</p>
+<p>El ejemplo más preciso de esta idea se encuentra en los lenguajes funcionales puros, es decir, sin la posibilidad de <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html"> efecto</a>. La ausencia de efecto obliga a que toda la comunicación sea por medio de los parámetros.</p>
 
 <p><code class="highlighter-rouge"> type Stack = [Int]</code>
 <code class="highlighter-rouge"> </code>
@@ -298,7 +298,7 @@
 
 <p>Si bien la comunicación puede ser bidireccional, el conocimiento (y por lo tanto el acoplamiento) es <em>a priori</em> unidireccional, es decir, el componente llamado no tiene ningún conocimiento de el origen del mensaje y aún puede devolver información sin tener conocimiento del destino de la misma.</p>
 
-<p>La aclaración <em>a priori</em> en el párrafo anterior se explica porque en lenguajes con efecto (es decir, la mayoría de los lenguajes que usamos habitualmente en la industria) los parámetros podrían ser modificados dentro del componente. Para estudiar el acoplamiento en estos contextos debemos determinar cuánto debe saber el componente llamado acerca de sus parámetros, por ejemplo si puede o no modificarlos. Esto a su vez depende del tipo de <a href="pasaje-de-parametros.md">pasaje de parámetros</a> que utilicemos (por ejemplo, pasaje de parámetros por copia o pasaje de parámetros por referencia). En el caso de pasaje por parámetros por referencia, la modificación del parámetro recibido puede ser un mecanismo adicional de comunicación entre los componentes.</p>
+<p>La aclaración <em>a priori</em> en el párrafo anterior se explica porque en lenguajes con efecto (es decir, la mayoría de los lenguajes que usamos habitualmente en la industria) los parámetros podrían ser modificados dentro del componente. Para estudiar el acoplamiento en estos contextos debemos determinar cuánto debe saber el componente llamado acerca de sus parámetros, por ejemplo si puede o no modificarlos. Esto a su vez depende del tipo de <a href="pasaje-de-parametros.html">pasaje de parámetros</a> que utilicemos (por ejemplo, pasaje de parámetros por copia o pasaje de parámetros por referencia). En el caso de pasaje por parámetros por referencia, la modificación del parámetro recibido puede ser un mecanismo adicional de comunicación entre los componentes.</p>
 
 <p>TODO: Este ejemplo no inicializa correctamente la pila y tira error.</p>
 
@@ -420,7 +420,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -442,9 +442,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>246</td>
-                                <td>0</td>
+                                <td>31</td>
+                                <td>94</td>
+                                <td>50</td>
                             </tr>
                             </tbody>
                         </table>
@@ -464,8 +464,26 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>23</td>
                             </tr>
                             
                             </tbody>
@@ -487,11 +505,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4d5b5c90</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* AVISO @Deprecated */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3bdc899b</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e3a174ae</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>dab4b83c</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Continuations */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>200934a0</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Continuations */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f0b27a95</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>60dc17c8</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Continuations */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f6a23bd2</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo con Call-By-Reference */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1bba7eeb</td>
+                        <td>Thu Feb 2 19:12:47 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Call & Return */</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -122,7 +122,7 @@
 
 <h3 id="función-como-transformación-matemática">Función como transformación matemática</h3>
 
-<p>Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones matemáticas que presentan <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md">transparencia referencial</a>.</p>
+<p>Las funciones, sin embargo, no son simples cajas negras, que podrían, por ejemplo, tener memoria de sus entradas anteriores, sino que son transformaciones matemáticas que presentan <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">transparencia referencial</a>.</p>
 
 <p>En particular, las funciones son relaciones que presentan las siguientes características:</p>
 
@@ -133,21 +133,21 @@
 
 <h3 id="función-desde-un-punto-de-vista-imperativo">Función desde un punto de vista imperativo</h3>
 
-<p>Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md">efecto</a>, su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.</p>
+<p>Al llevar los conceptos de función matemática al mundo computacional, la transparencia referencial implica que las funciones, comparadas contra los procedimientos imperativos, no tienen <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">efecto</a>, su aplicación no afecta al contexto, o, cuando menos, no es visible para el observador que evalua la expresión.</p>
 
 <p>Si bien no tiene sentido hablar de mutabilidad en el contexto matemático, dado que solo se manejan valores y no referencias (al menos, en un enfoque simplista), la transparencia referencial en los programas construidos en el paradigma funcional tiene dos consecuencias mas o menos evidentes:</p>
 
 <ul>
-  <li>Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.md">asignación destructiva</a> del lenguaje. (podemos decir que las variables no varían)</li>
+  <li>Las funciones no pueden mutar sus argumentos ni otras variables, locales o globales, ni directa ni indirectamente. Esto se garantiza al eliminar la <a href="transparencia-referencial--efecto-de-lado-y-asignacion-destructiva.html">asignación destructiva</a> del lenguaje. (podemos decir que las variables no varían)</li>
   <li>Las funciones no pueden realizar de forma directa operaciones de entrada/salida (aunque existen estrategias para realizarlas indirectamente preservando a la función pura)</li>
 </ul>
 
 <h3 id="función-como-un-tad">Función como un TAD</h3>
 
-<p>Las funciones <a href="currificacion.md">currificadas</a>, en tanto valores, pueden ser también pensandas como un <a href="http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato">TAD</a>, para el cual:</p>
+<p>Las funciones <a href="currificacion.html">currificadas</a>, en tanto valores, pueden ser también pensandas como un <a href="http://es.wikipedia.org/wiki/Tipo_abstracto_de_dato">TAD</a>, para el cual:</p>
 
 <ul>
-  <li>su única operación primitiva es la <a href="aplicacion.md">aplicación</a>, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.</li>
+  <li>su única operación primitiva es la <a href="aplicacion.html">aplicación</a>, definida entre una función y otro valor. Esta operación, a su vez también es una función, llamada apply, (función ($) en el Prelude de Haskell). Las demás operaciones complementarias, como la composición, se construyen a partir de la aplicación.</li>
   <li>sus valores son cada una de las funciones posibles. Así, por ejemplo, even, odd, (+) son todos valores del tipo función</li>
 </ul>
 
@@ -157,7 +157,7 @@
   <tbody>
     <tr>
       <td>Desde el punto de vista del [<a href="http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda">http://es.wikipedia.org/wiki/C%C3%A1lculo_lambda</a></td>
-      <td>cálculo lambda], la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son <a href="expresiones-lambda.md">expresiones lambda</a>. Por lo que la función <code class="highlighter-rouge">siguiente</code>, que en Haskell normalmente escribiríamos:</td>
+      <td>cálculo lambda], la función es una primitiva del lenguaje, y todas las funciones son anónimas, es decir, son <a href="expresiones-lambda.html">expresiones lambda</a>. Por lo que la función <code class="highlighter-rouge">siguiente</code>, que en Haskell normalmente escribiríamos:</td>
     </tr>
   </tbody>
 </table>
@@ -179,13 +179,13 @@
 <ul>
   <li>Las funciones son transformaciones matemáticas, que presentan transparencia referencial, y por tanto libres de efecto</li>
   <li>Las funciones son valores</li>
-  <li>Las funciones tienen <a href="tipos-de-haskell-funciones.md">tipo función</a> ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo <code class="highlighter-rouge">Int</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">Bool</code></li>
+  <li>Las funciones tienen <a href="tipos-de-haskell-funciones.html">tipo función</a> ((-&gt;) a b), que está determinado por su dominio e imagen. Una función de enteros en booleanos tiene tipo <code class="highlighter-rouge">Int</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">Bool</code></li>
   <li>Las funciones son un caso particular de las relaciones, que presentan unicidad y existencia para todo su dominio.</li>
   <li>Las funciones están currificadas, por lo que no existen funciones de más de un argumento realmente, sino que se emulan a partir de funciones de un argumento que devuelven otra función que toma los parámetros restantes.</li>
   <li>La operación primitiva de la función es la aplicación, por la cual se evalúa una función pasandole sus argumentos y obteniendo un resultado</li>
   <li>El mecanismo de la evaluación de las funciones es la reducción (reducción 𝛃)</li>
   <li>Dado que la única operación primitiva del tipo función es la aplicación, sólo es función aquello todo y sólo lo que pueda ser aplicado. Moraleja: no tiene sentido hablar de funciones de cero argumentos, ya que no pueden ser aplicadas</li>
-  <li>La <a href="estrategias-de-evaluacion.md">estrategia de reducción</a> empleada por Haskell es no estricta (≅ call-by-name), lo cual no es lo mismo que evaluación diferida, que significa que las expresiones son evaluadas a medida que son necesarias. Sin embargo, en la práctica, una lleva normalmente a la otra, por lo que podremos decir sin excesivo rigor que Haskell presenta evaluación diferida.</li>
+  <li>La <a href="estrategias-de-evaluacion.html">estrategia de reducción</a> empleada por Haskell es no estricta (≅ call-by-name), lo cual no es lo mismo que evaluación diferida, que significa que las expresiones son evaluadas a medida que son necesarias. Sin embargo, en la práctica, una lleva normalmente a la otra, por lo que podremos decir sin excesivo rigor que Haskell presenta evaluación diferida.</li>
 </ul>
 
 
@@ -218,7 +218,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -240,9 +240,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>66</td>
-                                <td>0</td>
+                                <td>26</td>
+                                <td>32</td>
+                                <td>32</td>
                             </tr>
                             </tbody>
                         </table>
@@ -262,8 +262,20 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>20</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
                             </tr>
                             
                             </tbody>
@@ -285,11 +297,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>16ca56ad</td>
+                        <td>Thu Feb 2 19:09:18 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>213b88f9</td>
+                        <td>Thu Feb 2 19:09:18 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Función como transformación matemática */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>92a946ee</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e3c8a2c3</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Función como un TAD */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>07ca6f9a</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>23a5ce92</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Función como transformación matemática */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>467bcd52</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ee004e94</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5304361b</td>
+                        <td>Thu Feb 2 19:09:17 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

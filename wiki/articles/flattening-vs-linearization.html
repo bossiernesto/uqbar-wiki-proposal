@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -118,9 +118,9 @@
 
 <p>Todos los lenguajes que brindan dicha modularización de abstracciones ofrecen de una u otra manera un mecanismo de búsqueda de comportamiento, de donde se destacan dos visiones principales: linearización (o “linearization”) y el aplanado (“flattening”).</p>
 
-<p>La linearization es un mecanismo que define un orden para las abstracciones, priorizando unas sobre otras. A la hora de proveer un método, aquella con mayor prioridad es la que lo otorga. Todo mecanismo de linearization define un <a href="http://python-history.blogspot.com.ar/2010/06/method-resolution-order.html">Method Resolution Order (MRO)</a>. El caso más común es el de la herencia simple, en donde si un objeto recibe un mensaje, el método que se ejecutará es el que esté más cercano avanzando hacia lo más general en la jerarquía de herencia. Este mecanismo también es usado para la herencia múltiple y los <a href="mixins.md">Mixins</a>.</p>
+<p>La linearization es un mecanismo que define un orden para las abstracciones, priorizando unas sobre otras. A la hora de proveer un método, aquella con mayor prioridad es la que lo otorga. Todo mecanismo de linearization define un <a href="http://python-history.blogspot.com.ar/2010/06/method-resolution-order.html">Method Resolution Order (MRO)</a>. El caso más común es el de la herencia simple, en donde si un objeto recibe un mensaje, el método que se ejecutará es el que esté más cercano avanzando hacia lo más general en la jerarquía de herencia. Este mecanismo también es usado para la herencia múltiple y los <a href="mixins.html">Mixins</a>.</p>
 
-<p>El flattening es un mecanismo que no prioriza abstracciones, sino que deja al usuario resolver las situaciones contradictorias o “conflictos”, mediante diferentes herramientas. Los <a href="traits.md">Traits</a> de Smalltalk se manejan con flattening, y la manera de solucionar conflictos se basa en el uso de operaciones para ajustar la composición de traits a las necesidades de cada caso, siendo un mecanismo muy flexible y a la vez simple de entender. Respecto al method lookup, como este mecanismo aplana los métodos definidos en la clase usuaria, encontrar el método correspondiente a un mensaje provisto por la otra entidad es lo mismo que encontrar el método para un mensaje propio.</p>
+<p>El flattening es un mecanismo que no prioriza abstracciones, sino que deja al usuario resolver las situaciones contradictorias o “conflictos”, mediante diferentes herramientas. Los <a href="traits.html">Traits</a> de Smalltalk se manejan con flattening, y la manera de solucionar conflictos se basa en el uso de operaciones para ajustar la composición de traits a las necesidades de cada caso, siendo un mecanismo muy flexible y a la vez simple de entender. Respecto al method lookup, como este mecanismo aplana los métodos definidos en la clase usuaria, encontrar el método correspondiente a un mensaje provisto por la otra entidad es lo mismo que encontrar el método para un mensaje propio.</p>
 
 </div>
 
@@ -151,7 +151,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -173,9 +173,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>13</td>
-                                <td>0</td>
+                                <td>3</td>
+                                <td>16</td>
+                                <td>2</td>
                             </tr>
                             </tbody>
                         </table>
@@ -195,8 +195,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -218,11 +224,27 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f1609562</td>
+                        <td>Thu Feb 2 19:10:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a852d2f0</td>
+                        <td>Thu Feb 2 19:10:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Cuando el comportamiento de un objeto es separado en distintas abstracciones separadas, es necesario definir cómo se resolverá la tarea de encontrar el comportamiento def...»</td>
                     </tr>
                     
                     </tbody>

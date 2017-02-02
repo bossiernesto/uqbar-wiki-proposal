@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,13 +112,13 @@
 </div>
 
 <div id="article_content">
-    <p>El diagrama de clases es una herramienta para <a href="comunicacion.md">comunicar el diseño</a> de un programa orientado a objetos, permitiendo modelar las relaciones entre las entidades. En UML, una <a href="clases.md">clase</a> es representada por un rectángulo que posee tres divisiones: Nombre de la clase, atributos que tiene y mensajes que entiende.</p>
+    <p>El diagrama de clases es una herramienta para <a href="comunicacion.html">comunicar el diseño</a> de un programa orientado a objetos, permitiendo modelar las relaciones entre las entidades. En UML, una <a href="clases.html">clase</a> es representada por un rectángulo que posee tres divisiones: Nombre de la clase, atributos que tiene y mensajes que entiende.</p>
 
-<p>En el primer cuadro anotamos el nombre de la clase (si es <a href="herencia-clase-abstracta.md">abstracta</a> se escribe en cursiva, o bien se usa un estereotipo &lt;<abstract>&gt; arriba del nombre de la clase).</abstract></p>
+<p>En el primer cuadro anotamos el nombre de la clase (si es <a href="herencia-clase-abstracta.html">abstracta</a> se escribe en cursiva, o bien se usa un estereotipo &lt;<abstract>&gt; arriba del nombre de la clase).</abstract></p>
 
-<p>En la segunda parte (que para nosotros no será de tanta importancia) van los atributos (o variables de instancia, las <a href="variables-y-metodos-de-clase.md">variables de clase</a> van en subrayado).</p>
+<p>En la segunda parte (que para nosotros no será de tanta importancia) van los atributos (o variables de instancia, las <a href="variables-y-metodos-de-clase.html">variables de clase</a> van en subrayado).</p>
 
-<p>En el último cuadro escribimos las operaciones (qué mensajes que puede entender). No confundir con los <a href="mensajes-y-metodos.md">métodos</a> que es cómo lo resuelve cada objeto. Lo importante no es documentar todos los mensajes de un objeto, sino sólo los más relevantes. Así quedan fuera los getters, setters, métodos privados (o auxiliares) y aquellos que uno considere menores. <strong>Moraleja:</strong> cuidado con las herramientas que en base al código generan el diagrama (y viceversa). Bien vale la pena un diagrama útil hecho a mano antes que uno inútil en 3D.</p>
+<p>En el último cuadro escribimos las operaciones (qué mensajes que puede entender). No confundir con los <a href="mensajes-y-metodos.html">métodos</a> que es cómo lo resuelve cada objeto. Lo importante no es documentar todos los mensajes de un objeto, sino sólo los más relevantes. Así quedan fuera los getters, setters, métodos privados (o auxiliares) y aquellos que uno considere menores. <strong>Moraleja:</strong> cuidado con las herramientas que en base al código generan el diagrama (y viceversa). Bien vale la pena un diagrama útil hecho a mano antes que uno inútil en 3D.</p>
 
 <p><strong>Importante:</strong> Una clase que no tiene comportamiento no está comunicando qué rol cumple en la solución: o está faltando definir qué le puedo pedir o esa clase no debería estar en el diagrama.</p>
 
@@ -180,7 +180,7 @@
 
 <h3 id="relaciÓn-implementa">RELACIÓN “IMPLEMENTA”</h3>
 
-<p>Realización: se establece entre una clase y una <a href="interfaz.md">interfaz</a>; esto implica que la clase debe implementar todas las operaciones que defina la interfaz. Si bien no todos los lenguajes requieren explicitar por código la existencia de una interfaz (en Smalltalk no hace falta, pero en Java sí por tener un checkeo de tipos estático), desde un punto de vista conceptual la interfaz existe y puede comunicarse en el diagrama.</p>
+<p>Realización: se establece entre una clase y una <a href="interfaz.html">interfaz</a>; esto implica que la clase debe implementar todas las operaciones que defina la interfaz. Si bien no todos los lenguajes requieren explicitar por código la existencia de una interfaz (en Smalltalk no hace falta, pero en Java sí por tener un checkeo de tipos estático), desde un punto de vista conceptual la interfaz existe y puede comunicarse en el diagrama.</p>
 
 <p><img src="DdC-implementa.png" alt="" title="DdC-implementa.png" /></p>
 
@@ -217,7 +217,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -239,9 +239,9 @@
 
                             <tbody>
                             <tr>
+                                <td>3</td>
+                                <td>74</td>
                                 <td>1</td>
-                                <td>72</td>
-                                <td>0</td>
                             </tr>
                             </tbody>
                         </table>
@@ -261,8 +261,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -284,11 +290,27 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c22dafd5</td>
+                        <td>Thu Feb 2 19:09:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0af5f2de</td>
+                        <td>Thu Feb 2 19:09:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «El diagrama de clases es una herramienta para [[Comunicación|comunicar el diseño]] de un programa orientado a objetos, permitiendo modelar las relaciones entre las entida...»</td>
                     </tr>
                     
                     </tbody>

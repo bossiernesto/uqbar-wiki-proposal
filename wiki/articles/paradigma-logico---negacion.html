@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,11 +112,11 @@
 </div>
 
 <div id="article_content">
-    <p>El predicado de <a href="orden-superior.md">orden superior</a> más simple, y a la vez muy utilizado, es el <code class="highlighter-rouge">not/1</code>, que representa una negación. Si <code class="highlighter-rouge">P</code> es una proposición, entonces <code class="highlighter-rouge">not(P)</code> es una proposición que niega el valor de verdad asumido para P. Así, la negación de algo falso se toma por verdadera, y la negación de algo con valor cierto, se toma como falso.</p>
+    <p>El predicado de <a href="orden-superior.html">orden superior</a> más simple, y a la vez muy utilizado, es el <code class="highlighter-rouge">not/1</code>, que representa una negación. Si <code class="highlighter-rouge">P</code> es una proposición, entonces <code class="highlighter-rouge">not(P)</code> es una proposición que niega el valor de verdad asumido para P. Así, la negación de algo falso se toma por verdadera, y la negación de algo con valor cierto, se toma como falso.</p>
 
 <h2 id="ejemplos">Ejemplos</h2>
 
-<p>Utilizamos <a href="paradigma-l-c3-b3gico---un-poco-de-nomenclatura-consultas.md">ésta nomenclatura</a> para los ejemplos de consultas</p>
+<p>Utilizamos <a href="paradigma-l-c3-b3gico---un-poco-de-nomenclatura-consultas.html">ésta nomenclatura</a> para los ejemplos de consultas</p>
 
 <h3 id="consultas-individuales">Consultas Individuales</h3>
 
@@ -142,7 +142,7 @@
 <p><code class="highlighter-rouge">?- esMalo(34).</code>
 <code class="highlighter-rouge">false</code></p>
 
-<p>¡Claro que no es malo! ¡El 34 no lastimaría una mosca! Porque éste paradigma se basa en el concepto de <a href="paradigma-l-c3-b3gico---introducci-c3-b3n-universo-cerrado.md">Universo Cerrado</a>. (Si no está en la base, es falso). Entonces, la siguiente consulta da verdadero:</p>
+<p>¡Claro que no es malo! ¡El 34 no lastimaría una mosca! Porque éste paradigma se basa en el concepto de <a href="paradigma-l-c3-b3gico---introducci-c3-b3n-universo-cerrado.html">Universo Cerrado</a>. (Si no está en la base, es falso). Entonces, la siguiente consulta da verdadero:</p>
 
 <p><code class="highlighter-rouge">?- not(esMalo(34)).</code>
 <code class="highlighter-rouge">true</code></p>
@@ -213,7 +213,7 @@
 
 <h3 id="interpretación">Interpretación</h3>
 
-<p>Mi regla dice que se cumple <code class="highlighter-rouge">esBueno(X)</code>, si se cumple <code class="highlighter-rouge">not(esMalo(Persona))</code>. Y por lo que vimos arriba, si hago una consulta <em>existencial</em> ó <em>variable</em> (es decir, que llegan las variables sin ligar con un individuo)… ¡Eso es falso! (Leer más arriba) Además, ya vimos que por el concepto de <a href="paradigma-l-c3-b3gico---introducci-c3-b3n-universo-cerrado.md">Universo Cerrado</a> nuestra consulta <code class="highlighter-rouge">esBueno(34)</code> es cierta, ya que <code class="highlighter-rouge">not(esMalo(34))</code> es cierta.</p>
+<p>Mi regla dice que se cumple <code class="highlighter-rouge">esBueno(X)</code>, si se cumple <code class="highlighter-rouge">not(esMalo(Persona))</code>. Y por lo que vimos arriba, si hago una consulta <em>existencial</em> ó <em>variable</em> (es decir, que llegan las variables sin ligar con un individuo)… ¡Eso es falso! (Leer más arriba) Además, ya vimos que por el concepto de <a href="paradigma-l-c3-b3gico---introducci-c3-b3n-universo-cerrado.html">Universo Cerrado</a> nuestra consulta <code class="highlighter-rouge">esBueno(34)</code> es cierta, ya que <code class="highlighter-rouge">not(esMalo(34))</code> es cierta.</p>
 
 <h3 id="solución">Solución</h3>
 
@@ -221,7 +221,7 @@
 
 <p><em>Generamos</em>.</p>
 
-<p><a href="paradigma-logico---generacion.md">Generar</a> es agregar una condición que <em>sí</em> sea inversible antes del <code class="highlighter-rouge">not</code>, para que las variables lleguen ligadas al mismo. De ésta manera, transformamos la consulta dentro del <code class="highlighter-rouge">not</code> que podía llegar a ser una <em>consulta existencial</em> en una <em>consulta individual</em>, que funcionan como nosotros esperamos (Leer más ariba).</p>
+<p><a href="paradigma-logico---generacion.html">Generar</a> es agregar una condición que <em>sí</em> sea inversible antes del <code class="highlighter-rouge">not</code>, para que las variables lleguen ligadas al mismo. De ésta manera, transformamos la consulta dentro del <code class="highlighter-rouge">not</code> que podía llegar a ser una <em>consulta existencial</em> en una <em>consulta individual</em>, que funcionan como nosotros esperamos (Leer más ariba).</p>
 
 <p><code class="highlighter-rouge">esBueno(Persona) :- esPersona(Persona), not(esMalo(Persona)).</code></p>
 
@@ -232,7 +232,7 @@
 <code class="highlighter-rouge">X = fer;</code>
 <code class="highlighter-rouge">X = lucas.</code></p>
 
-<p>Para más conceptos sobre inversibilidad y generación, visitar el artículo <a href="paradigma-l-c3-b3gico---inversibilidad.md">Paradigma_L%C3%B3gico_-_inversibilidad</a></p>
+<p>Para más conceptos sobre inversibilidad y generación, visitar el artículo <a href="paradigma-l-c3-b3gico---inversibilidad.html">Paradigma_L%C3%B3gico_-_inversibilidad</a></p>
 
 </div>
 
@@ -263,7 +263,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -285,9 +285,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>127</td>
-                                <td>0</td>
+                                <td>4</td>
+                                <td>130</td>
+                                <td>2</td>
                             </tr>
                             </tbody>
                         </table>
@@ -307,8 +307,20 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -330,11 +342,35 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a10a233a</td>
+                        <td>Thu Feb 2 19:12:38 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d1a90d3c</td>
+                        <td>Thu Feb 2 19:12:38 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Solución */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>74d3e88c</td>
+                        <td>Thu Feb 2 19:12:38 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «El predicado de orden superior más simple, y a la vez muy utilizado, es el <code>not/1</code>, que representa una negación. Si  <code>P</code>  es una proposición, enton...»</td>
                     </tr>
                     
                     </tbody>

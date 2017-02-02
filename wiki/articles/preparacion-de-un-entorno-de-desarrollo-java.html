@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,129 +112,297 @@
 </div>
 
 <div id="article_content">
-    <p>| | __TOC__ |
-|—————|</p>
+    <div style="float:right">
+\_\_TOC\_\_
 
-<p>A continuación explicaremos cómo instalar un entorno de desarrollo para Java, en su versión 8, el cual incluirá los siguientes elementos:</p>
-
-<ul>
-  <li>El JDK8: Las bibliotecas estándar y herramientras de construcción para la tecnología Java y derivadas</li>
-  <li>Eclipse: Un entorno integrado de desarrollo (IDE), que nos servirá para codificar, compilar, probar, refactorizar nuestro software.</li>
-  <li>Maven: Una herramienta de (entre otras cosas) manejo de dependencias</li>
-</ul>
-
-<p>Nota: además de lo descripto acá, será necesario contar con una herramienta de control de versiones, como por ejemplo git o svn.</p>
-
-<h2 id="instalación-del-jdk-java-development-kit">Instalación del JDK (Java Development Kit)</h2>
-
-<p>El JDK8 contiene un compilador y una máquina virtual (el runtime) que traduce a código de máquina el código intermedio que genera el compilador (.java → COMPILADOR (javac) → .class → VM (java) → ejecutable final).</p>
-
-<p>Para instalarlo, debemos descargarlo de <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>. Luego, procederemos a descomprimirlo.</p>
-
-<p>Los pasos siguientes dependen del sistema operativo.</p>
-
-<p><strong>En Windows</strong>, el proceso esta guiado mayormente por el instalador.</p>
-
-<p><strong>En Mac</strong> pueden utilizar homebrew.</p>
-
-<p>Una opción para <strong>Debian, Ubuntu, Mint o sistemas</strong> con apt-get es hacer:</p>
+</div>
+<p>Para realizar aplicaciones de complejidad mediana-grande en Java, es recomendable contar con un entorno de trabajo que contemple al menos:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">add-apt-repository</code> <code class="highlighter-rouge">ppa:webupd8team/java</code></li>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">apt-get</code> <code class="highlighter-rouge">update</code></li>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">apt-get</code> <code class="highlighter-rouge">install</code> <code class="highlighter-rouge">oracle-java8-installer</code></li>
+  <li>Una herramienta de versionado de fuentes</li>
+  <li>Una herramienta de manejo de dependencias</li>
+  <li>Un mecanismo para automatizar los procesos administrativos del desarrollo (test, release, deploy, etc)</li>
+  <li>Un entorno de programación que permita:
+    <ul>
+      <li>Ayudas a la detección temprana de errores, autocompleción, herramientas para navegar y buscar ágilmente dentro del código, etc.</li>
+      <li>Soporte para la realización de refactors automatizados</li>
+      <li>Integración con la mayor cantidad posible de las demás herramientas que utilizamos.</li>
+    </ul>
+  </li>
 </ul>
 
-<p>Y definirlo como el default haciendo</p>
+<p>En este artículo se propone una configuración de entorno de trabajo que intenta cumplir con los anteriores objetivos. Las herramientas seleccionadas para eso son:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">update-java-alternatives</code> <code class="highlighter-rouge">-s</code> <code class="highlighter-rouge">java-8-oracle</code></li>
+  <li><strong>Java Development Kit</strong></li>
+  <li><strong>Eclipse</strong> como entorno integrado de desarrollo</li>
+  <li><strong>Svn</strong> como repositorio de fuentes y herramienta de versionado</li>
+  <li><strong>Maven</strong> como herramienta para manejar dependencias y automatizar diversos procesos administrativos.</li>
 </ul>
 
-<p>Sino en <strong>otros sistemas Linux</strong> debemos realizar lo siguiente:</p>
+<p>Adicionalmente se instalarán extensiones al entorno de desarrollo eclipse para integrarlo con svn y maven.</p>
+
+<h2 id="jdk-java-development-kit">JDK (Java Development Kit)</h2>
+
+<p>Contiene un compilador y una máquina virtual (el runtime) que traduce a código de máquina el código intermedio que genera el compilador (.java → COMPILADOR (javac.exe) → .class → VM (java.exe) → ejecutable final).</p>
+
+<p>Al tiempo de escribir este artículo la última versión estable es 1.7. Para el propósito aquí descripto es recomendable instalar la <em>Standard Edition</em>.</p>
+
+<h3 id="download-e-instalación-base">Download e instalación base</h3>
+
+<p>A continuación se detallan los pasos básicos de instalación según el sistema operativo que se esté utilizando. Luego de realizar este paso inicial se deberá pasar a la configuración del entorno.</p>
+
+<p>Este es el link de <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">downloads</a>.</p>
+
+<p>Desde ahí buscan el Latest Release y se descargan el JDK del sistema operativo que esté instalado en sus máquinas.</p>
+
+<p>Para más detalles adicionales a los que se encuentran en esta página, se puede consultar el <a href="http://java.sun.com/javase/6/webnotes/install/index.html">manual de instalación de sun</a>.</p>
+
+<h5 id="ubuntu">Ubuntu</h5>
+
+<p>Para instalarlo en Ubuntu se puede hacer:</p>
+
+<p><code class="highlighter-rouge">sudo apt-get install default-jdk</code></p>
+
+<p>Eso instalará el jdk default (para Ubuntu es <em>OpenJDK de la versión que se bajaron</em>), si se desea instalar en cambio el JDK de Sun se puede hacer:</p>
+
+<p><code class="highlighter-rouge">sudo apt-get install sun-java6-jdk sun-java6-jre</code></p>
+
+<h5 id="otros-sistemas-operativos">Otros sistemas operativos</h5>
+
+<p>Para otros sistemas operativos se puede bajar el instalable de: <a href="http://java.sun.com/javase/downloads/">http://java.sun.com/javase/downloads/</a> .</p>
+
+<p><a href="http://www.it.uc3m.es/tlp/guia/guiaWinXP.html">Este tutorial</a> indica cómo instalarlo en Windows XP (en especial pasos 1 a 3).</p>
+
+<h3 id="documentación">Documentación</h3>
 
 <ul>
-  <li>Pararse en el directorio donde se lo descomprimió.</li>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">mv</code> <code class="highlighter-rouge">jdk1.8.0</code> <code class="highlighter-rouge">/usr/lib/jvm/jdk1.8.0/</code> (si descargaste la versión JDK 1.8.0_40 el nombre del directorio será jdk1.8.0_40, y así sucesivamente)</li>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">update-alternatives</code> <code class="highlighter-rouge">--install</code> <code class="highlighter-rouge">/usr/bin/java</code> <code class="highlighter-rouge">java</code> <code class="highlighter-rouge">/usr/lib/jvm/jdk1.8.0/jre/bin/java</code> <code class="highlighter-rouge">500</code></li>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">update-alternatives</code> <code class="highlighter-rouge">--config</code> <code class="highlighter-rouge">java</code>. Elegir la opcion del jdk8</li>
+  <li><a href="http://java.sun.com/docs/books/tutorial/">Java Tutorials</a></li>
+  <li><a href="http://java.sun.com/j2se/1.4.2/docs/tooldocs/windows/javadoc.html">Javadoc reference guide</a></li>
+  <li><a href="http://java.sun.com/j2se/javadoc/writingdoccomments/index.html">Writing comment tips</a></li>
 </ul>
-
-<p>______________________</p>
-
-<p>Con esto, el JDK ya deberia estar instalado. Probarlo desde una terminal tipeando lo siguiente:</p>
-
-<p><code class="highlighter-rouge">java</code> <code class="highlighter-rouge">-version</code></p>
-
-<p>(deberia mostrar 1.8.0)</p>
 
 <h2 id="eclipse">Eclipse</h2>
 
-<p>La instalación del eclipse es muy sencilla: hay que bajar la versión el Eclipse IDE for Java Developers que corresponda a su sistema operativo desde <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a> y descomprimirlo en su disco rígido. Posiblemente deseen crear un acceso directo para apuntar al ejecutable.</p>
+<p>La instalación del eclipse es muy sencilla: hay que bajar el que corresponda a su sistema operativo desde <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a> y descomprimirlo en su disco rígido. Posiblemente deseen crear un acceso directo para apuntar al ejecutable. Otra opción en Ubuntu es</p>
 
-<p>Recuerden después configurarlo adecuadamente: <a href="configuraciones-generales-para-cualquier-eclipse.md">Configuraciones generales para cualquier Eclipse</a></p>
+<p><code class="highlighter-rouge">sudo apt-get install eclipse-platform</code></p>
 
-<h2 id="problema-de-eclipse-con-ubuntu-1310">Problema de Eclipse con Ubuntu 13.10</h2>
+<p>A los efectos de los objetivos planteados en este artículo, se recomienda elegir la versión denominada “Eclipse IDE for Java EE Developers”.</p>
 
-<p>Si instalaste Eclipse en Ubuntu 13.10 y utilizás el escritorio Unity, es posible que tengas problemas a la hora de visualizar los menús (file, edit, view, etc). Para arreglar este problema, hay que editar a mano unos archivos tal como se indica en esta <a href="http://askubuntu.com/questions/364310/eclipse-kepler-runs-weird">solución</a>.</p>
+<p>Esa versión pesa bastante. Si no van a utilizar las herramientas de programación web es posible utilizar la versión más liviana “Eclipse IDE for Java Developers”.</p>
 
-<p>Hay que buscar los archivos eclipse.desktop en las rutas /usr/share/applications y ~/.local/share/applications/ y luego editarlos con cualquier editor de texto (nano, gedit, etc). Para esto, debemos primero pararnos en cada ruta, utilizando el comando cd.</p>
+<h3 id="configuraciones-adicionales">Configuraciones adicionales</h3>
 
-<ul>
-  <li><code class="highlighter-rouge">cd</code> <code class="highlighter-rouge">/usr/share/applications</code></li>
-</ul>
+<p>Para no tener problemas con los tildes y demás caracteres especiales al bajarse los ejemplos conviene tener sincronizado el mismo encoding. Para eso, desde la barra de menú: Window &gt; Preferences, filtrar por “encoding” y cambiar todos a “UTF-8” o “ISO 10646/Unicode(UTF-8)”. Por ejemplo: En General &gt; Workspace &gt; Text file encoding, seleccionar Other &gt; UTF-8. Aplicar cambios.</p>
 
-<p>Luego, debemos utilizar un editor de texto para cambiar la línea que queremos cambiar.</p>
+<p>Filtrar en el menú por la palabra “spell” y desactivar la corrección ortográfica (Spelling &gt; desactivar el check Enable spell checking). Aplicar cambios.</p>
 
-<ul>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">nano</code> <code class="highlighter-rouge">eclipse.desktop</code></li>
-</ul>
+<p>También conviene desactivar el warning default de clases serializables que no definan un identificador de versión: Window &gt; Preferences, filtrar por “Serializable”, solapa Java / Compiler / “Errors/Warnings”, “Potential programming problems”, y se setea el valor de “Serializable class without serialVersionUID” a Ignore. Aplicar cambios.</p>
 
-<p>o bien</p>
+<h3 id="documentación-1">Documentación</h3>
 
 <ul>
-  <li><code class="highlighter-rouge">sudo</code> <code class="highlighter-rouge">gedit</code> <code class="highlighter-rouge">eclipse.desktop</code></li>
+  <li><a href="http://www.eclipse.org/">Página principal de Eclipse</a></li>
 </ul>
 
-<p>o bien sudo “el_editor_de_texto_que_me_guste” eclipse.desktop y reemplazamos la línea que comienza con Exec por:</p>
+<h2 id="svn">Svn</h2>
 
-<ul>
-  <li><code class="highlighter-rouge">Exec=env</code> <code class="highlighter-rouge">UBUNTU_MENUPROXY=</code> <code class="highlighter-rouge">/ruta/al/eclipse/eclipse</code></li>
-</ul>
-
-<p>Luego repetimos los pasos anteriores para el eclipse.desktop que se encuentra en la ruta <code class="highlighter-rouge">~/.local/share/applications/</code>.</p>
-
-<p>Reiniciamos el eclipse y los menús deberían poder visualizarse correctamente.</p>
+<p>Pueden instalar el plugin de svn para eclipse basándose en <a href="http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA">este tutorial</a>.</p>
 
 <h2 id="maven">Maven</h2>
 
-<p>Instalen Maven según la <a href="guia-de-instalacion-de-maven.md">Guía de Instalación de Maven</a></p>
+<h3 id="instalación-default">Instalación default</h3>
 
-<p>Y cuando creemos un proyecto, recordá configurar el compilador para que emplee Java 8. Ver <a href="http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html">http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html</a></p>
+<p>Pueden seguir <a href="http://maven.apache.org/download.cgi#Installation">estas instrucciones</a></p>
 
-<p>Por ejemplo, agregá la siguiente información dentro de tu pom:</p>
+<h3 id="instalación-en-so-unix-based-linux-solaris-and-mac-os-x">Instalación en SO Unix-based (Linux, Solaris and Mac OS X)</h3>
 
-<build>
-`   `<plugins>
-`     `<plugin>
-`       `<groupId>`org.apache.maven.plugins`</groupId>
-`       `<artifactId>`maven-compiler-plugin`</artifactId>
-`       `<version>`3.1`</version>
-`       `<configuration>
-`         `
+<p>Descargar Apache Maven 3 desde <a href="http://apache.dattatec.com/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz">este link</a>.</p>
 
-    1.8
+<p>Descomprimir el tarball y mover el directorio a donde usualmente se guardan los programas. Ejemplo: <em>/home/john/programs/</em>.</p>
 
-`         `<target>`1.8`</target>
-`       `</configuration>
-`     `</plugin>
-`   `</plugins>
-` `</build>
+<p><code class="highlighter-rouge">$ tar -xzvf apache-maven-3.0.4-bin.tar.gz</code>
+<code class="highlighter-rouge">$ mv apache-maven-3.0.4 /home/john/programs/</code></p>
+
+<p>Agregar la siguiente línea al archivo <strong>.bashrc</strong>. Este archivo oculto (su nombre empieza con ‘.’) contiene comandos que se ejecutan cuando se abre una terminal (consola). Se puede abrir con cualquier editor de textos (Gedit, vim, Emacs, Notepad++, etc) y se encuentra en el directorio <strong>home</strong> del usuario.</p>
+
+<p><code class="highlighter-rouge">export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin</code></p>
+
+<p>Una forma sencilla de hacer ésto (sin tener que abrir un editor) es usando el programa <strong>echo</strong> y <em>appendeando</em> (redireccionando y agregando al final) el output al archivo. <strong>Prestar atención al hecho de que se usan dos signos mayor</strong>:</p>
+
+<p><code class="highlighter-rouge">$ echo 'export PATH=$PATH:$HOME/programs/apache-maven-3.0.4/bin' &gt;&gt; .bashrc</code></p>
+
+<p>Corroboramos que podemos usar Maven. El output sería algo parecido a ésto:</p>
+
+<p><code class="highlighter-rouge">john@notebook:~$ mvn -v</code>
+<code class="highlighter-rouge">Apache Maven 3.0.4 (r1232337; 2012-01-17 05:44:56-0300)</code>
+<code class="highlighter-rouge">Maven home: /home/john/programs/apache-maven-3.0.4</code>
+<code class="highlighter-rouge">Java version: 1.6.0_26, vendor: Sun Microsystems Inc.</code>
+<code class="highlighter-rouge">Java home: /usr/lib/jvm/java-6-sun-1.6.0.26/jre</code>
+<code class="highlighter-rouge">Default locale: en_US, platform encoding: UTF-8</code>
+<code class="highlighter-rouge">OS name: "linux", version: "3.0.0-19-generic", arch: "i386", family: "unix"</code></p>
+
+<h4 id="usé-un-sólo--y-se-me-borró-todo-el-bashrc-ahora-qué-hago">¡Usé un sólo ‘&gt;’ y se me borró todo el .bashrc! ¿Ahora qué hago?</h4>
+
+<ol>
+  <li>
+    <p>Don’t panic</p>
+  </li>
+  <li>
+    <p>Cuando editamos los archivos, Linux guarda una copia oculta del estado anterior del mismo. Simplemente, restauramos esa versión:</p>
+  </li>
+</ol>
+
+<p><code class="highlighter-rouge">$ cp .bashrc~ .bashrc</code></p>
+
+<h3 id="configuración-de-maven">Configuración de Maven</h3>
+
+<p>A la configuración original de Maven debemos indicarle cuáles son los repositorios de donde bajar los artefactos de Arena. Para poder realizar esto es necesario crear el archivo ~/.m2/settings.xml. Este archivo se encuentra en el directorio del usuario, esta ruta cambia dependiendo de cada sistema operativo. Por ejemplo en Linux, si el usuario es pablo, la ruta sería /home/pablo/.m2/settings.xml. Si trabajan con Windows, instalado en el drive C: y el nombre del usuario es Fernando, el directorio será C:\Users\Fernando\.m2\settings.xml</p>
+
+<p>El contenido de este archivo debería quedar así:</p>
+
+<p><code class="highlighter-rouge"> </code><settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0         http://maven.apache.org/xsd/settings-1.0.0.xsd">
+`  `<profiles>
+`        `<profile>
+`              `<id>`uqbar-wiki`</id>
+`              `<repositories>
+`                    `<repository>
+`                        `<id>`uqbar-wiki.org-releases`</id>
+`                        `<name>`uqbar-wiki.org-releases`</name>
+`                        `<url>[`http://uqbar-wiki.org/mvn/releases`](http://uqbar-wiki.org/mvn/releases)</url>
+`                    `</repository>
+`                    `<repository>
+`                        `<snapshots></snapshots>
+`                        `<id>`uqbar-wiki.org-snapshots`</id>
+`                        `<name>`uqbar-wiki.org-snapshots`</name>
+`                        `<url>[`http://uqbar-wiki.org/mvn/snapshots`](http://uqbar-wiki.org/mvn/snapshots)</url>
+`                   `</repository>
+`              `</repositories>
+`        `</profile>
+`  `</profiles>
+`  `<activeProfiles>
+`       `<activeProfile>`uqbar-wiki`</activeProfile>
+`  `</activeProfiles>
+` `</settings></p>
+
+<h3 id="plugin-para-eclipse">Plugin para Eclipse</h3>
+
+<p>Desde la versión 4.2 (Juno) Eclipse incluyó el plugin m2e como parte de la instalación. Por lo cual no hace falta instalarlo.</p>
+
+<p>Si por algún motivo estuvieras usando una versión anterior, se puede instalar de la siguiente manera:</p>
+
+<ul>
+  <li><em>Help</em> -&gt; <em>Install new software..</em></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li><em>Add..</em></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>En <em>Location</em> pegar la siguiente url: <a href="http://download.eclipse.org/technology/m2e/releases">http://download.eclipse.org/technology/m2e/releases</a> y click en <em>Ok</em></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Se cargará el paquete <strong>Maven Integration for Eclipse</strong> en el recuadro blanco del centro. Seleccionarlo y hacer click en Next -&gt; Next -&gt; … -&gt; Finish</li>
+</ul>
+
+<h3 id="propiedades-de-maven-en-eclipse">Propiedades de Maven en Eclipse</h3>
+
+<p>Window &gt; Preferences te permite configurar algunas propiedades para Maven. Te recomendamos</p>
+
+<ul>
+  <li>tener chequeado “Do not automatically update dependencies from remote repositories” para que no intente bajarte permanentemente nuevas versiones de los componentes que utilices. Esto requiere que lo hagas en forma manual, algo que quizás sea más recomendable.</li>
+  <li>tener chequeado “Download artifact sources” te permite ver el código fuente de los .jars que te bajes, esta opción hace que las descargas inicialmente tarden un poco más de tiempo pero es bueno cuando tenés algún error y necesitás entender cómo funciona alguna parte de un componente.</li>
+  <li>también es bueno chequear “Download artifact javadocs” para obtener documentación de los componentes que utilizamos</li>
+  <li>Y por último tener deschequeada la opción “Update Maven projects on startup” permite que manualmente vos actualices los proyectos solamente ante un cambio y no cuando levantes el Eclipse.</li>
+</ul>
+
+<p>Una configuración más que puede ser útil para encontrar versiones nuevas de artefactos en los repositorios es dejar chequeada:</p>
+
+<ul>
+  <li>La opción “Download repository index on startup” (opción por defecto chequeada): para más información pueden leer <a href="http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes">http://stackoverflow.com/questions/8647769/what-is-eclipse-doing-when-it-says-that-its-updating-indexes</a>.</li>
+</ul>
+
+<h3 id="creación-de-un-proyecto-básico">Creación de un proyecto básico</h3>
+
+<p>Una vez instaladas todas las herramientas, se puede crear un proyecto en esta plataforma siguiendo <a href="creacion-de-un-proyecto-maven-basico.html">este tutorial</a> (ojo, este es un tutorial básico, si necesitan usar otras tecnologías de presentación busquen los tutoriales en las páginas de las tecnologías correspondientes).</p>
+
+<h3 id="mavenizar-un-proyecto-existente">Mavenizar un proyecto existente</h3>
+
+<p>Si ya arrancaste tu proyecto y decidiste más tarde que necesitabas usar Maven, podés <em>mavenizarlo</em> de alguna de las siguientes maneras.</p>
+
+<h4 id="usando-m2eclipse">Usando M2Eclipse</h4>
+
+<ul>
+  <li>Click derecho en el Proyecto</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li><em>Configure</em> -&gt; <em>Convert to Maven Project</em></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Ingresar el <strong>groupId deseado</strong>. Preferentemente que sea el package name que se hayan definido antes, ej: <em>org.uqbar.arena.exampes</em></li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li><em>Finish</em></li>
+</ul>
+
+<p>Independientemente de si su proyecto respeta la estructura estándar de un proyecto Maven, lo van a tener configurado y funcionando. De hecho, si crean los directorios y mueven el paquete a src/main/java, Maven automágicamente lo va a detectar.</p>
+
+<p><code class="highlighter-rouge">.</code>
+<code class="highlighter-rouge">├── src</code>
+<code class="highlighter-rouge">│   └── main</code>
+<code class="highlighter-rouge">│       ├── java</code>
+<code class="highlighter-rouge">│       │   └── org</code>
+<code class="highlighter-rouge">│       │       └── uqbar</code>
+<code class="highlighter-rouge">│       │           └── arena</code>
+<code class="highlighter-rouge">│       │               └── examples</code>
+<code class="highlighter-rouge">│       │                    └── Main.java</code>
+<code class="highlighter-rouge">│       └── resources</code>
+<code class="highlighter-rouge">├── pom.xml</code></p>
+
+<h4 id="a-manopla">A manopla</h4>
+
+<ul>
+  <li>Creamos un proyecto Maven.</li>
+</ul>
+
+<p><code class="highlighter-rouge">$ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=org.uqbar.arena.examples -DartifactId=Example</code></p>
+
+<p>A todas las opciones que nos pregunte le damos enter para aceptar las default.</p>
+
+<ul>
+  <li>Copiamos nuestro código al directorio generado para el groupId. En el ejemplo: src/main/java/ar/edu/frba/utn/dds.</li>
+</ul>
+
+<!-- -->
+
+<ul>
+  <li>Probamos hacer una compilación e instalación local.</li>
+</ul>
+
+<p><code class="highlighter-rouge">$ mvn install</code></p>
 
 <h2 id="links-útiles">Links útiles</h2>
 
 <ul>
-  <li><a href="amigandonos-con-el-entorno-de-desarrollo.md">Amigandonos con el entorno de desarrollo</a></li>
+  <li><a href="amigandonos-con-el-entorno-de-desarrollo.html">Amigandonos con el entorno de desarrollo</a></li>
 </ul>
 
 
@@ -267,7 +435,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -289,9 +457,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>116</td>
-                                <td>0</td>
+                                <td>31</td>
+                                <td>42</td>
+                                <td>15</td>
                             </tr>
                             </tbody>
                         </table>
@@ -311,7 +479,43 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>19</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Jfernandes</td>
+                                <td>Jfernan...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mdumrauf</td>
+                                <td>Mdumrau...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ptesone</td>
+                                <td>Ptesone...</td>
                                 <td>1</td>
                             </tr>
                             
@@ -334,11 +538,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>84985a25</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fb69cb30</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a9a339fa</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Propiedades de Maven en Eclipse */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b2000192</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Propiedades de Maven en Eclipse */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fd4d8994</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>adb511bd</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Configuraciones adicionales */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>56a820cc</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6fd031b7</td>
+                        <td>Thu Feb 2 19:13:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Eclipse */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>702a0093</td>
+                        <td>Thu Feb 2 19:13:18 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ubuntu */</td>
                     </tr>
                     
                     </tbody>

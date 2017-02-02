@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -134,17 +134,17 @@
 <p><code class="highlighter-rouge">--cuentaLoca es una función que recibe 3 parámetros</code>
 <code class="highlighter-rouge">cuentaLoca = (\x y z -&gt; x * 2 - y + 10 * z)</code></p>
 
-<p>La gracia de poder definir funciones anónimas es que nos permite armar fácilmente una función para usar en el momento. Como las expresiones lambda son funciones, las mismas pueden combinarse con otras funciones usando <a href="composicion.md">Composición</a>. Una de las ventajas que tienen las lambdas por sobre otros mecanismos de crear nuevas funciones cuando las necesito sin tener que definirlas en otro lado, es que los parámetros tienen un nombre y puedo usar ese mismo parámetro tantas veces como quiera dentro de la definición. Si por ejemplo quisiera encontrar a todas las personas de una lista que tengan edad &lt; 20 o edad &gt; 60, yo podría resolverlo de la siguiente forma:</p>
+<p>La gracia de poder definir funciones anónimas es que nos permite armar fácilmente una función para usar en el momento. Como las expresiones lambda son funciones, las mismas pueden combinarse con otras funciones usando <a href="composicion.html">Composición</a>. Una de las ventajas que tienen las lambdas por sobre otros mecanismos de crear nuevas funciones cuando las necesito sin tener que definirlas en otro lado, es que los parámetros tienen un nombre y puedo usar ese mismo parámetro tantas veces como quiera dentro de la definición. Si por ejemplo quisiera encontrar a todas las personas de una lista que tengan edad &lt; 20 o edad &gt; 60, yo podría resolverlo de la siguiente forma:</p>
 
 <p><code class="highlighter-rouge">&gt; filter ((\e -&gt; e &lt; 20 || e &gt; 60).edad) personas</code></p>
 
-<p>Algo importante a tener en cuenta es que si no le damos un nombre a nuestras funciones podríamos perder <a href="abstraccion.md">abstracciones</a> útiles que podrían luego ser utilizadas en otros puntos de nuestro programa, por lo tanto es importante se criteriosos respecto a si es una buena idea buscar un nombre para nuestra función.</p>
+<p>Algo importante a tener en cuenta es que si no le damos un nombre a nuestras funciones podríamos perder <a href="abstraccion.html">abstracciones</a> útiles que podrían luego ser utilizadas en otros puntos de nuestro programa, por lo tanto es importante se criteriosos respecto a si es una buena idea buscar un nombre para nuestra función.</p>
 
 <p>Por lo general, si tengo una forma sencilla de nombrar una determinada lógica que forma parte de una función más grande, lo más probable es que no quiera definir ese pedacito de lógica usando una lambda, sino con una función que se llame como la idea que tenemos en la cabeza. Si no hay un nombre claro asociado a ese pedacito de lógica, lo más probable es que no sea un concepto del dominio que merezca la pena modelar como algo aparte.</p>
 
 <h2 id="lambdas-y-pattern-matching">Lambdas y Pattern Matching</h2>
 
-<p>Algo interesante que se puede hacer con las expresiones lambda es descomponer sus parámetros usando <a href="pattern-matching-en-haskell.md">pattern matching</a> como cuando definimos funciones normales. Supongamos que dada una lista de alumnos (modelados con tuplas de tipo (String, [Int]) quiero obtener la primer nota que se sacó cada uno, se podría resolver de la siguiente forma:</p>
+<p>Algo interesante que se puede hacer con las expresiones lambda es descomponer sus parámetros usando <a href="pattern-matching-en-haskell.html">pattern matching</a> como cuando definimos funciones normales. Supongamos que dada una lista de alumnos (modelados con tuplas de tipo (String, [Int]) quiero obtener la primer nota que se sacó cada uno, se podría resolver de la siguiente forma:</p>
 
 <p><code class="highlighter-rouge"> &gt; map (\(_,(nota:_)) -&gt; nota) alumnos</code></p>
 
@@ -154,7 +154,7 @@
 
 <h2 id="uso-de-lambdas-en-vez-de-aplicación-parcial">Uso de lambdas en vez de aplicación parcial</h2>
 
-<p>Uno de los conceptos fuertes que existen en el paradigma funcional es el de <a href="aplicacion-parcial.md">Aplicación Parcial</a>, que nos permite crear una función nueva a partir de otra existente cuando nos hace falta para combinarla con otras funciones mediante composición o simplemente pasarla por parámetro para que otra función la evalúe cuando corresponda.</p>
+<p>Uno de los conceptos fuertes que existen en el paradigma funcional es el de <a href="aplicacion-parcial.html">Aplicación Parcial</a>, que nos permite crear una función nueva a partir de otra existente cuando nos hace falta para combinarla con otras funciones mediante composición o simplemente pasarla por parámetro para que otra función la evalúe cuando corresponda.</p>
 
 <p>Siempre que usamos aplicación parcial podemos también usar una lambda, por ejemplo:</p>
 
@@ -166,7 +166,7 @@
 
 <p>En casos como este, el uso de aplicación parcial es más interesante que el uso de la expresión lambda. No sólo hacemos lo mismo con menos código sino que demostramos un mayor entendimiento de los conceptos más fuertes del paradigma.</p>
 
-<p>Sin embargo hay casos en los cuales <a href="aplicacion-parcial-puedo-aplicar-parcialmente-el-segundo-parametro-en-vez-del-primero-.md">no podemos resolver el problema aplicando parcialmente</a> la función que queremos usar que sí justifican el uso de una expresión lambda.</p>
+<p>Sin embargo hay casos en los cuales <a href="aplicacion-parcial-puedo-aplicar-parcialmente-el-segundo-parametro-en-vez-del-primero-.html">no podemos resolver el problema aplicando parcialmente</a> la función que queremos usar que sí justifican el uso de una expresión lambda.</p>
 
 </div>
 
@@ -197,7 +197,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -219,9 +219,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>61</td>
-                                <td>0</td>
+                                <td>10</td>
+                                <td>81</td>
+                                <td>19</td>
                             </tr>
                             </tbody>
                         </table>
@@ -241,8 +241,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>9</td>
                             </tr>
                             
                             </tbody>
@@ -264,11 +270,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>eb03536f</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Lambdas y Pattern Matching */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>11dadf0c</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a9e8ee59</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ff4d1a4d</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Uso de lambdas en vez de aplicación parcial */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>855daacf</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>17955670</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d0563fa6</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>edd278ee</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>964093de</td>
+                        <td>Thu Feb 2 19:10:39 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Son funciones anónimas. Por ej., una función anónima que toma solo un número como argumento y produce el resultado x + x se puede definir como:      λx → x + x  En Hask...»</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,7 +112,7 @@
 </div>
 
 <div id="article_content">
-    <p>Por aplicación parcial se entiende a la <a href="aplicacion.md">aplicación de una función</a>, pero suministrando menos parámetros que los que esta requiere. <strong>El resultado de aplicar parcialmente una función es otra función que espera menos parámetros que la original</strong>, ya que puede realizar reemplazos en su definición por expresiones o valores concretos. La aplicación parcial es muy útil para <a href="composicion.md">componer funciones</a> y para parametrizar funciones de <a href="orden-superior.md">Orden Superior</a>.</p>
+    <p>Por aplicación parcial se entiende a la <a href="aplicacion.html">aplicación de una función</a>, pero suministrando menos parámetros que los que esta requiere. <strong>El resultado de aplicar parcialmente una función es otra función que espera menos parámetros que la original</strong>, ya que puede realizar reemplazos en su definición por expresiones o valores concretos. La aplicación parcial es muy útil para <a href="composicion.html">componer funciones</a> y para parametrizar funciones de <a href="orden-superior.html">Orden Superior</a>.</p>
 
 <p>Por ejemplo, las siguientes expresiones presentan aplicación parcial:</p>
 
@@ -153,7 +153,7 @@
   <li><code class="highlighter-rouge">filter</code> <code class="highlighter-rouge">(&gt;5)</code> <code class="highlighter-rouge">[4,5,9,10]</code> (está completamente aplicada, esta expresión no es de tipo función sino que es una lista de números)</li>
 </ul>
 
-<p>Una consecuencia de esto es que sólo pueden aplicarse parcialmente funciones de 2 o más argumentos. Para que la aplicación parcial exista, es necesario que las funciones estén currificadas (ver <a href="currificacion.md">Currificación</a>).</p>
+<p>Una consecuencia de esto es que sólo pueden aplicarse parcialmente funciones de 2 o más argumentos. Para que la aplicación parcial exista, es necesario que las funciones estén currificadas (ver <a href="currificacion.html">Currificación</a>).</p>
 
 <h2 id="puedo-aplicar-parcialmente-el-segundo-parámetro-en-vez-del-primero">Puedo aplicar parcialmente el segundo parámetro en vez del primero?</h2>
 
@@ -173,7 +173,7 @@
 
 <p>Formas posibles de resolverlo:</p>
 
-<p><strong>Usando una <a href="expresiones-lambda.md">expresión lambda</a></strong></p>
+<p><strong>Usando una <a href="expresiones-lambda.html">expresión lambda</a></strong></p>
 
 <p><code class="highlighter-rouge">esExotico nombre = any (\letra -&gt; elem letra "XKQWxkqw") nombre</code></p>
 
@@ -187,7 +187,7 @@
 
 <p><strong>Usando la función flip</strong></p>
 
-<p>En Haskell existe una función de <a href="orden-superior.md">Orden Superior</a> llamada flip cuyo tipo es <code class="highlighter-rouge">(a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c)</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c</code>, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.</p>
+<p>En Haskell existe una función de <a href="orden-superior.html">Orden Superior</a> llamada flip cuyo tipo es <code class="highlighter-rouge">(a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c)</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">c</code>, y sirve justamente para resolver esta clase de problemas ya que lo que hace es aplicar la función que recibe con los parámetros en el orden inverso al que le llegan. Podríamos usar flip parcialmente aplicada para lograr nuestro objetivo.</p>
 
 <p><code class="highlighter-rouge">esExotico nombre = any (flip elem "XKQWxkqw") nombre</code></p>
 
@@ -220,7 +220,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -242,9 +242,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>79</td>
-                                <td>0</td>
+                                <td>10</td>
+                                <td>100</td>
+                                <td>20</td>
                             </tr>
                             </tbody>
                         </table>
@@ -264,8 +264,20 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>4</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
                             </tr>
                             
                             </tbody>
@@ -287,11 +299,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>548a4910</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d42fe1b</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ce61d1db</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d69fc574</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c6955013</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>aa86a39f</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bc75736d</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Formato</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9cab9b1f</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>075e859a</td>
+                        <td>Thu Feb 2 19:08:42 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «= Apicación Parcial =  Por aplicació parcial se entiende a la [[Aplicación|aplicación de una función]], pero suministrando menos parámetros que los que esta requiere....»</td>
                     </tr>
                     
                     </tbody>

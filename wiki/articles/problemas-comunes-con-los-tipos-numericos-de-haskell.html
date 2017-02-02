@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -197,7 +197,7 @@
 
 <p>En realidad hay una forma mejor de solucionar el problema planteado en la sección. La desventaja de la solución descripta consiste en que, al resolverlo de esa manera, la función suma sólo funciona para valores de tipo <code class="highlighter-rouge">Integer</code>; lo que puede resultar muy restrictivo en un futuro.</p>
 
-<p>¿Por qué sucede esto? Como sabemos, el <code class="highlighter-rouge">Haskell</code> trabaja con <a href="inferencia-de-tipos.md">inferencia de tipos</a>, por lo tanto, cuando nosotros no indicamos en nuestro programa de qué tipo son los valores que espera y devuelve una función, el sistema intentará descubrir ese tipo por nosotros. Normalmente este mecanismo de inferencia es suficiente y resulta de gran utilidad, ya que nos permite tener un lenguaje fuertemente tipado que nos ayuda a encontrar muchos errores en nuestro código en una fase previa a la ejecución del programa, al mismo tiempo que nos evita de la burocracia y el engorro de tener que indicar el tipo de cada función explícitamente.</p>
+<p>¿Por qué sucede esto? Como sabemos, el <code class="highlighter-rouge">Haskell</code> trabaja con <a href="inferencia-de-tipos.html">inferencia de tipos</a>, por lo tanto, cuando nosotros no indicamos en nuestro programa de qué tipo son los valores que espera y devuelve una función, el sistema intentará descubrir ese tipo por nosotros. Normalmente este mecanismo de inferencia es suficiente y resulta de gran utilidad, ya que nos permite tener un lenguaje fuertemente tipado que nos ayuda a encontrar muchos errores en nuestro código en una fase previa a la ejecución del programa, al mismo tiempo que nos evita de la burocracia y el engorro de tener que indicar el tipo de cada función explícitamente.</p>
 
 <p>Sin embargo en este caso el tipo inferido por el sistema de tipos de <code class="highlighter-rouge">Haskell</code> es <em>subóptimo</em>. El tipo inferido es <code class="highlighter-rouge">[Integer]</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">Integer</code>, es decir, que sólo funciona para listas de tipo <code class="highlighter-rouge">Integer</code>.</p>
 
@@ -255,7 +255,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -277,9 +277,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>119</td>
-                                <td>0</td>
+                                <td>14</td>
+                                <td>128</td>
+                                <td>34</td>
                             </tr>
                             </tbody>
                         </table>
@@ -298,9 +298,21 @@
                             <tbody>
                             
                             <tr>
-                                <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>Alfredo.sanzo</td>
+                                <td>Alfredo...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Ernesto Bossi</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>12</td>
                             </tr>
                             
                             </tbody>
@@ -322,11 +334,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>869da373</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Para salir del paso... */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0d2c6c64</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Aprovechando mejor el polimorfismo paramétrico */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b088d3d9</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Nueva página</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d04fe36e</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8dfd6a0b</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0114e7b3</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>645422d9</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b298807e</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>467a25c3</td>
+                        <td>Thu Feb 2 19:13:21 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

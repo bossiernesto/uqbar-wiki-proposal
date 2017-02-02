@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -115,19 +115,19 @@
     <p>El término “lenguaje dinámico” es usado en la industria con poca rigurosidad. En lugar de intentar de dar una definición precisa, señalaremos dos características típicas de estos lenguajes (aunque bien se podrían incluir muchas más):</p>
 
 <ul>
-  <li>Presentan <a href="esquemas-de-tipado.md">chequeo de tipos dinámico e implícito</a></li>
-  <li>Presentan facilidades para <a href="metaprogramacion.md">metaprogramar</a>, no limitándose a la <a href="reflection-introspection.md">introspección</a> sino también haciendo uso intensivo de <a href="reflection-self-modification.md">auto-modificación</a></li>
+  <li>Presentan <a href="esquemas-de-tipado.html">chequeo de tipos dinámico e implícito</a></li>
+  <li>Presentan facilidades para <a href="metaprogramacion.html">metaprogramar</a>, no limitándose a la <a href="reflection-introspection.html">introspección</a> sino también haciendo uso intensivo de <a href="reflection-self-modification.html">auto-modificación</a></li>
 </ul>
 
 <p>Es interesante marcar que la primera característica no es suficiente para hacer dinámico al lenguaje: si pudieramos reemplazar el sistema de verificación de tipos de Java para que fuera realizado enteramente en tiempo de ejecución, pero mantuviéramos su modelo de objetos y API de metaprogramación tal como la conocemos, seguiría siendo un lenguaje “estático”: el tipado dinámico no es condición suficiente.</p>
 
 <p>Por otro lado, el tipado dinámico no es en teoría una condición necesaria para la metaprogramación, pero sí lo simplifica notablemente: la auto-modificación en lenguajes con tipado estático requeriría de sistemas de tipos mucho más complejos que los que estamos acostumbrados a ver en la mayoría de los lenguajes.</p>
 
-<p>A continuación mencionamos algunos features destacados por su utilidad para metaprogramar y hacer <a href="dsl.md">DSLs</a>.</p>
+<p>A continuación mencionamos algunos features destacados por su utilidad para metaprogramar y hacer <a href="dsl.html">DSLs</a>.</p>
 
 <ul>
   <li>Envío de mensajes “dinámicos”: mandar un mensaje a un objeto a partir de su nombre</li>
-  <li>Interceptores de código: Los lenguajes dinámicos presentan interesantes capacidades de intercepción de código, ya que ofrecen puntos en los cuales uno puede “colgarse” del mecanismo de resolución de métodos (method lookup). El más simple y usado de ellos es <a href="method-missing.md">method missing</a> o does not understand: se evaluará este método siempre que se le envie un mensaje a un objeto que este no entienda. En Groovy también existe el análogo para los accessors (propertyMissing).</li>
+  <li>Interceptores de código: Los lenguajes dinámicos presentan interesantes capacidades de intercepción de código, ya que ofrecen puntos en los cuales uno puede “colgarse” del mecanismo de resolución de métodos (method lookup). El más simple y usado de ellos es <a href="method-missing.html">method missing</a> o does not understand: se evaluará este método siempre que se le envie un mensaje a un objeto que este no entienda. En Groovy también existe el análogo para los accessors (propertyMissing).</li>
   <li>Clases abiertas (open classes): Que una clase sea abierta significa que puede ser modificada luego de ser definida, para agregar, quitar o modificar cualquier aspecto de la misma (métodos, atributos, jerarquía de herencia…)</li>
   <li>Autoclases (Eigen Class): una clase exclusiva de esa instancia y que no se comparte con las demás permitiendo modificar la estructura y comportamiento de una instancia específica en vez de todas las de una determinada clase.</li>
   <li>Sintaxis flexible: Algunos lenguajes como Ruby permiten jugar con la sintaxis de modo que se pueda incrementar la expresividad del código. Algunos ejemplos de esto podría ser:
@@ -176,7 +176,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -198,9 +198,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>29</td>
-                                <td>0</td>
+                                <td>5</td>
+                                <td>32</td>
+                                <td>2</td>
                             </tr>
                             </tbody>
                         </table>
@@ -220,8 +220,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>4</td>
                             </tr>
                             
                             </tbody>
@@ -243,11 +249,43 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3278ad82</td>
+                        <td>Thu Feb 2 19:14:11 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0c7de1b8</td>
+                        <td>Thu Feb 2 19:14:11 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d91e49ac</td>
+                        <td>Thu Feb 2 19:14:11 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2138979e</td>
+                        <td>Thu Feb 2 19:14:11 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «El término "lenguaje dinámico" es usado en la industria con poca rigurosidad. En lugar de intentar de dar una definición precisa, señalaremos dos características típi...»</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -123,7 +123,7 @@
 
 <p>Literal de listas: [1,2,3] Literal de sets: #{1,2,3}</p>
 
-<p>Para ejemplos de uso ver <a href="intro-a-colecciones.md">Intro a colecciones</a></p>
+<p>Para ejemplos de uso ver <a href="intro-a-colecciones.html">Intro a colecciones</a></p>
 
 <h2 id="sabores-de-colecciones-en-smalltalk">Sabores de colecciones en Smalltalk</h2>
 
@@ -195,9 +195,9 @@
 
 <p>Luego, así como la OrderedCollection, también tenemos la llamada <strong>SortedCollection</strong>, que la diferencia con la primera radica en que el criterio de ordenamiento puede ser definido. Si no definimos el criterio, SortedCollection ordena los elementos por su “orden natural” (significa que los ordenará de menor a mayor). Dicho de otra forma, no ordena por orden de llegada, sino por comparación entre los elementos.</p>
 
-<p>Si queremos ordenar los elementos de la colección con un criterio en particular, necesitamos pasárselo a la colección. La forma de hacerlo, es pasarle lo que denominamos <strong>sortBlock</strong>, que es un objeto <a href="bloques.md">Block</a> (bloque).</p>
+<p>Si queremos ordenar los elementos de la colección con un criterio en particular, necesitamos pasárselo a la colección. La forma de hacerlo, es pasarle lo que denominamos <strong>sortBlock</strong>, que es un objeto <a href="bloques.html">Block</a> (bloque).</p>
 
-<p>Con respecto a las colecciones que tienen orden, por último veremos al viejo amigo <strong>Array</strong>. Aquí en Smalltalk también existe, y una de sus características es que es de tamaño fijo. Para instanciar un Array, hago Array new: 6, donde 6 es la cantidad de elementos que contendrá, alternativamete si conocemos los elementos de antemano pueden crearse de <a href="arrays-literales-en-smalltalk.md"> forma literal</a> (que es uno de los pocos motivo razonable para querer usar un Array en vez de otro tipo de colección como OrderedCollection).</p>
+<p>Con respecto a las colecciones que tienen orden, por último veremos al viejo amigo <strong>Array</strong>. Aquí en Smalltalk también existe, y una de sus características es que es de tamaño fijo. Para instanciar un Array, hago Array new: 6, donde 6 es la cantidad de elementos que contendrá, alternativamete si conocemos los elementos de antemano pueden crearse de <a href="arrays-literales-en-smalltalk.html"> forma literal</a> (que es uno de los pocos motivo razonable para querer usar un Array en vez de otro tipo de colección como OrderedCollection).</p>
 
 <p>Los Arrays no implementan el mensaje add:, justamente porque no puedo modificar su tamaño. La forma de agregarles elementos es a través del mensaje <strong>at:put:</strong>, como por ejemplo:</p>
 
@@ -238,7 +238,7 @@
 
 <p>Por último, queremos mostrarles un sabor de colección que es especial. Se llama Dictionary y, como su nombre lo indica, intenta representar un diccionario. Este tipo de representación implica tener una asociación entre una clave y un valor.</p>
 
-<p>Poniendo como ejemplo, el propio diccionario. El diccionario es una asociación entre una clave, que son cada letra del abecedario y un apartado de páginas que tienen palabras. El diccionario lleva todo una explicación aparte, pueden profundizar más al respecto leyendo sobre <a href="diccionarios.md">Diccionarios</a>.</p>
+<p>Poniendo como ejemplo, el propio diccionario. El diccionario es una asociación entre una clave, que son cada letra del abecedario y un apartado de páginas que tienen palabras. El diccionario lleva todo una explicación aparte, pueden profundizar más al respecto leyendo sobre <a href="diccionarios.html">Diccionarios</a>.</p>
 
 </div>
 
@@ -269,7 +269,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -291,9 +291,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>132</td>
-                                <td>0</td>
+                                <td>5</td>
+                                <td>145</td>
+                                <td>12</td>
                             </tr>
                             </tbody>
                         </table>
@@ -313,8 +313,20 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
                             </tr>
                             
                             </tbody>
@@ -336,11 +348,43 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>70af887a</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f9436cd8</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>41ede305</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>623332ae</td>
+                        <td>Thu Feb 2 19:13:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Smalltalk tiene una clase llamada '''Collection''' que me permite representar colecciones, pero Collection es la abstracción superior de la jerarquía de colecciones. Al m...»</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -119,7 +119,7 @@ El predicado forall conviene pensarlo por lo segundo, o sea cuándo se verifica.
 
 <h2 id="definición">Definición</h2>
 
-<p>El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de <a href="orden-superior.md">orden superior</a>, porque puede manejar predicados dentro de sus parámetros.</p>
+<p>El forall recibe dos parámetros, los dos deben ser consultas. Las consultas se hacen sobre predicados, o sea que forall es un predicado de <a href="orden-superior.html">orden superior</a>, porque puede manejar predicados dentro de sus parámetros.</p>
 
 <p>Hagámosnos la pregunta … ¿cuándo se verifica?
 Cuando a todos los que les pasa lo primero, les pasa lo segundo.
@@ -248,7 +248,7 @@ La consulta correspondiente ya viene con esa variable ligada, o sea que las cons
 <p>¿Cuáles son las respuestas a la primer consulta? <strong>Todos</strong> los pares (persona,alimento) relacionados por leGusta.
 Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <strong>a alguien</strong>, no importa a quién, es dulce.</p>
 
-<p>Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante <a href="paradigma-logico---generacion.md"> generación</a>:</p>
+<p>Claro, no es lo que queremos. Para lograr lo que queremos, tenemos que lograr que la variable P llegue ligada al forall mediante <a href="paradigma-logico---generacion.html"> generación</a>:</p>
 
 <p><code class="highlighter-rouge">   esTierno(P):- persona(P), forall(leGusta(P,Alim),esDulce(Alim)).</code></p>
 
@@ -295,7 +295,7 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <stro
 
 <h2 id="más-sobre-forall">Más sobre forall</h2>
 
-<p>Léanse <a href="paradigma-logico---forall---no-siempre-con-member.md">Paradigma Lógico - forall - no siempre con member</a></p>
+<p>Léanse <a href="paradigma-logico---forall---no-siempre-con-member.html">Paradigma Lógico - forall - no siempre con member</a></p>
 
 </div>
 
@@ -326,7 +326,7 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <stro
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -348,9 +348,9 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <stro
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>190</td>
-                                <td>0</td>
+                                <td>14</td>
+                                <td>61</td>
+                                <td>15</td>
                             </tr>
                             </tbody>
                         </table>
@@ -369,9 +369,21 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <stro
                             <tbody>
                             
                             <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>8</td>
+                            </tr>
+                            
+                            <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>5</td>
                             </tr>
                             
                             </tbody>
@@ -393,11 +405,83 @@ Entonces, el forall sólo se va a verificar si cualquier cosa que le guste <stro
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>17d04c39</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Definición */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a63721ea</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Definición */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>48322764</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>538fb3d4</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Forall e inversibilidad */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fb539c3b</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Forall e inversibilidad */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>601d4398</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Forall e inversibilidad */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1866a252</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>206ee6ff</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a577b07c</td>
+                        <td>Thu Feb 2 19:12:27 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,37 +112,11 @@
 </div>
 
 <div id="article_content">
-    <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Introduccion</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Aplicación de funciones en Haskell</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h1 id="tocAnchor-1-1">Introduccion</h1>
-
-<p>Cuando se aplica una función a unos argumentos, el resultado se obtiene sustituyendo esos argumentos en el cuerpo de la función respetando el nombre que se les dio a cada uno. Es posible que esto produzca un resultado que no puede ser simplificado (e.g. un número); pero es más común que el resultado de esa sustitución sea otra expresión que contenga otra aplicación de funciones, entonces se vuelve a hacer el mismo proceso hasta producir un resultado que no pueda ser simplificado (un resultado final).</p>
+    <p>Cuando se aplica una función a unos argumentos, el resultado se obtiene sustituyendo esos argumentos en el cuerpo de la función respetando el nombre que se les dio a cada uno. Es posible que esto produzca un resultado que no puede ser simplificado (e.g. un número); pero es más común que el resultado de esa sustitución sea otra expresión que contenga otra aplicación de funciones, entonces se vuelve a hacer el mismo proceso hasta producir un resultado que no pueda ser simplificado (un resultado final).</p>
 
 <p>Por ej., siendo doble:</p>
 
-<p>
-  <code class="highlighter-rouge">doble x = x + x</code>
-</p>
+<p><code class="highlighter-rouge">doble x = x + x</code></p>
 
 <p>El resultado de aplicar doble 3 (o sea, la función doble aplicada al número 3) se puede obtener de la siguiente manera:</p>
 
@@ -180,21 +154,17 @@
 <code class="highlighter-rouge">= { aplicamos la función + }</code>
 <code class="highlighter-rouge">8</code></p>
 
-<p>El orden en que realicemos las <strong>reducciones</strong> (basta de decirle simplificar) no afecta al resultado final pero sí a la eficiencia. Lo copado es que hay un motor que se encarga de esto (se llama motor de reducciones CUAC!). Para entender un poco más lo que pasa detrás de escenas hace falta meterse en la <a href="estrategias-de-evaluacion.md">estrategia de evaluación</a> usada por el motor.</p>
+<p>El orden en que realicemos las <strong>reducciones</strong> (basta de decirle simplificar) no afecta al resultado final pero sí a la eficiencia. Lo copado es que hay un motor que se encarga de esto (se llama motor de reducciones CUAC!). Para entender un poco más lo que pasa detrás de escenas hace falta meterse en la <a href="estrategias-de-evaluacion.html">estrategia de evaluación</a> usada por el motor.</p>
 
-<h2 id="tocAnchor-1-1-1">Aplicación de funciones en Haskell</h2>
+<h2 id="aplicación-de-funciones-en-haskell">Aplicación de funciones en Haskell</h2>
 
 <p>Notacion matemática</p>
 
-<p>
-  <code class="highlighter-rouge">f(a, b) + c d</code>
-</p>
+<p><code class="highlighter-rouge">f(a, b) + c d</code></p>
 
 <p>En Haskell</p>
 
-<p>
-  <code class="highlighter-rouge">f a b + c * d</code>
-</p>
+<p><code class="highlighter-rouge">f a b + c * d</code></p>
 
 <p>La aplicación se denota solo poniendo espacio entre la función y sus argumentos. Además la aplicación de funciones que no son operadores tiene una precedencia mayor que la de los operadores (un operador es una función que recibe 2 parámetros y se usa de forma infija ya sea un chirimbolo o una función con ``) � Las siguientes definiciones son equivalentes, podemos ver la precedencia para la aplicación de div de forma infija y prefija:</p>
 
@@ -231,7 +201,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -253,9 +223,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>66</td>
-                                <td>0</td>
+                                <td>4</td>
+                                <td>81</td>
+                                <td>16</td>
                             </tr>
                             </tbody>
                         </table>
@@ -275,8 +245,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>3</td>
                             </tr>
                             
                             </tbody>
@@ -298,11 +274,35 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>79a88c2a</td>
+                        <td>Thu Feb 2 19:08:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e7596224</td>
+                        <td>Thu Feb 2 19:08:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>d582110f</td>
+                        <td>Thu Feb 2 19:08:41 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Cuando se aplica una función a unos argumentos, el resultado se obtiene sustituyendo esos argumentos en el cuerpo de la función respetando el nombre que se les dio a cada...»</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -134,7 +134,7 @@
 
 <p><code class="highlighter-rouge"> esPlantaComestible(Planta):- not(esVenenosa(Planta)).</code></p>
 
-<p>no es inversible, porque Planta debe estar ligada antes de llegar al <code class="highlighter-rouge">not</code>. ¿Por qué? Ver <a href="paradigma-logico---negacion.md">Paradigma Lógico - negación</a>
+<p>no es inversible, porque Planta debe estar ligada antes de llegar al <code class="highlighter-rouge">not</code>. ¿Por qué? Ver <a href="paradigma-logico---negacion.html">Paradigma Lógico - negación</a>
 Para hacer al predicado inversible, generamos el dominio de la variable Planta</p>
 
 <p><code class="highlighter-rouge"> esPlantaComestible(Planta):- esPlanta(Planta), not(esVenenosa(Planta)).</code></p>
@@ -239,7 +239,7 @@ superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Par
 <p><code class="highlighter-rouge"> esEspecieComestible(Especie):- </code>
 <code class="highlighter-rouge">     forall(especieDe(Planta,Especie), esPlantaComestible(Planta)).</code></p>
 
-<p>no es inversible, porque Especie debe llegar ligado al forall. Si no llega ligada, para que el forall se verifique deben ser comestibles <strong>todas</strong> las plantas que sean de alguna especie. Esto está explicado en detalle en <a href="paradigma-logico---el-forall-forall-e-inversibilidad.md">el artículo sobre forall</a>.</p>
+<p>no es inversible, porque Especie debe llegar ligado al forall. Si no llega ligada, para que el forall se verifique deben ser comestibles <strong>todas</strong> las plantas que sean de alguna especie. Esto está explicado en detalle en <a href="paradigma-logico---el-forall-forall-e-inversibilidad.html">el artículo sobre forall</a>.</p>
 
 <p>Para que sea inversible debemos generar el dominio para la variable Especie</p>
 
@@ -331,7 +331,7 @@ superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Par
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -353,9 +353,9 @@ superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Par
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>198</td>
-                                <td>0</td>
+                                <td>15</td>
+                                <td>129</td>
+                                <td>31</td>
                             </tr>
                             </tbody>
                         </table>
@@ -374,8 +374,32 @@ superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Par
                             <tbody>
                             
                             <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>10</td>
+                            </tr>
+                            
+                            <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npalumbo</td>
+                                <td>Npalumb...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
                                 <td>1</td>
                             </tr>
                             
@@ -398,11 +422,83 @@ superEquipo( Equipo ) :- findall(P, ganoContra(Equipo, P), Partidos), length(Par
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>37bdf83d</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c0721bc3</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2631191c</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2e60998e</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Findall */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9ea08bbe</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c24da3ed</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>486cd09f</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* En resumen */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f4e013f6</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b967fe79</td>
+                        <td>Thu Feb 2 19:12:24 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Findall */</td>
                     </tr>
                     
                     </tbody>

@@ -9,20 +9,20 @@
     
 
 
-  <title>Como empezar</title>
-  <meta property="og:title" content="Como empezar" />
+  <title>Portada</title>
+  <meta property="og:title" content="Portada" />
 
 
 
 
 
 
-<link rel="canonical" href="bossiernesto.github.io/wiki/articles/como-empezar.html" />
-<meta property="og:url" content="bossiernesto.github.io/wiki/articles/como-empezar.html" />
+<link rel="canonical" href="bossiernesto.github.io/wiki/articles/portada.html" />
+<meta property="og:url" content="bossiernesto.github.io/wiki/articles/portada.html" />
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -107,163 +107,52 @@
 <div class="column small-12 medium-10 large-10">
     <div id="article_title">
     <h1>
-        Como empezar
+        Portada
     </h1>
 </div>
 
 <div id="article_content">
-    <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Beginners guide</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-2">
-              <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Dependencies</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-3">
-              <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">Getting up an running</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-4">
-              <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Modifying</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#tocAnchor-1-4-1"><span class="tocnumber">4.1</span> <span class="toctext">Linking articles</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#tocAnchor-1-4-2"><span class="tocnumber">4.2</span> <span class="toctext">Images, code, etc</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#tocAnchor-1-4-3"><span class="tocnumber">4.3</span> <span class="toctext">Alerts</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h1 id="tocAnchor-1-1">Beginners guide</h1>
+    <p>¡Hola!</p>
 
-<p>So you want to install this template and create your own wiki from it. Nice!
-Here are all the basics you need to know.</p>
+<p>Bienvenidos al wiki del grupo <a href="http://www.uqbar-project.org">Uqbar</a>. Somos un grupo de docentes, investigadores y alumnos de diferentes universidades de la Argentina que enseñamos, aprendemos y trabajamos en diferentes temas relacionados con la construcción de software.</p>
 
-<h1 id="tocAnchor-1-2">Dependencies</h1>
+<p>El objetivo de esta página es proveer un lugar integrado en el cual agrupar y organizar el conocimiento con el que trabajamos, que sirva tanto para compartirlo entre las distintas universidades en las que nos desempeñamos como para la comunidad en general.</p>
 
-<p>To install this, you need to install the following things:</p>
+<p>También nos permite publicar material asociado con las asignaturas pero que muchas veces por motivo de espacio no es posible abordarlo durante la cursada, así que este es el lugar en el que el estudiante curioso puede ir un poquito más allá de lo que podemos alcanzar a ver en clase.</p>
+
+<p>Si sos un estudiante en busca del material de una materia, tal vez te convenga ingresar por uno de estos links:</p>
 
 <ul>
-  <li>Ruby 2.2.0 +</li>
-  <li>Bundler</li>
-  <li>bower</li>
-  <li>imagemagick</li>
-  <li>python</li>
-  <li>pygments</li>
+  <li><a href="paradigmas-de-programacion.html">Paradigmas de Programación</a></li>
+  <li><a href="design-temario.html">Diseño de Sistemas</a></li>
+  <li><a href="tecnicas-avanzadas-de-programacion.html">Técnicas Avanzadas de Programación</a></li>
+  <li><a href="programacion-de-interfaces-de-usuario.html">Programación de Interfaces de Usuario</a></li>
+  <li><a href="algo3-temario.html">Algoritmos III</a></li>
+  <li><a href="programacion-con-herramientas-modernas.html">Programación con Herramientas Modernas</a></li>
 </ul>
 
-<p>If you are on NixOS, as I am, you can run <code class="highlighter-rouge">nix-shell</code> inside the root
-directory of the repository and all the things will be available in your
-environment.</p>
+<p>Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre <a href="otros-temas-interesantes-de-programacion.html">Otros Temas Interesantes de Programación</a>. Finalmente, otra posibilidad es browsear nuestra colección de propuestas de <a href="herramientas-utiles.html">Herramientas Útiles</a>, que incluye tanto herramientas propias como algunas herramientas de terceros que recomendamos.</p>
 
-<h1 id="tocAnchor-1-3">Getting up an running</h1>
+<p>Discusiones</p>
 
-<p>After installing the dependencies, you need to install the gems and the like.
-You do this by running
-<code class="highlighter-rouge">bundler install --path vendor/bundle &amp;&amp; bower install</code>. If everything
-succeeded, you can build the site with either <code class="highlighter-rouge">bundler exec jekyll b</code> or build
-and view the site with <code class="highlighter-rouge">bundler exec jekyll s</code> (the site will be available at
-<code class="highlighter-rouge">localhost:4000</code>).</p>
+<ul>
+  <li><a href="robustez-de-los-lenguajes.html">Robustez de los lenguajes</a></li>
+</ul>
 
-<h1 id="tocAnchor-1-4">Modifying</h1>
+<p>Otro material:</p>
 
-<p>You can now start modifying the site to your needs. All articles you want to
-have in your wiki go to <code class="highlighter-rouge">./wiki/articles</code> and
-<a href="/wiki/articles/sub/Subpage.html">its subdirectories</a>.
-They <em>have</em> to have the yml header:</p>
+<ul>
+  <li><a href="lombardizacion.html">Lombardización</a></li>
+  <li><a href="comidas.html">Comidas</a></li>
+  <li><a href="portal-del-investigador.html">Portal del investigador</a></li>
+  <li><a href="tips-para-concursos-docentes.html">Tips para Concursos Docentes</a></li>
+  <li><a href="coeficiente-de-felicidad-docente.html">Coeficiente de Felicidad Docente</a></li>
+  <li><a href="ast-abstract-syntax-tree.html">AST-Abstract Syntax Tree</a></li>
+</ul>
 
-<div class="language-markdown highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
-<span class="s">layout</span><span class="pi">:</span> <span class="s">article</span>
-<span class="s">title</span><span class="pi">:</span> <span class="s">&lt;title&gt;</span>
-<span class="nn">---</span>
-</code></pre>
-</div>
-
-<p>Articles are written in Markdown. An article <em>must</em> have the <code class="highlighter-rouge">article</code> layout.
-You can leave the title empty if you want, it is (by now) only used for the
-title in the tab of your browser.</p>
-
-<h2 id="tocAnchor-1-4-1">Linking articles</h2>
-
-<p>You can link articles in two ways:</p>
-
-<ol>
-  <li>You can use the <code class="highlighter-rouge">link_article</code> helper from the plugins:
-<code class="highlighter-rouge">&lt;a class="link article_link" href="/uqbar-wiki-proposal/wiki/articles/Beginners-guide.html"&gt;Beginners guide&lt;/a&gt;</code></li>
-  <li>You can link them in plain markdown:
-<code class="highlighter-rouge">[The guide for newbies](/wiki/articles/Beginners_guide.html)</code></li>
-</ol>
-
-<p>Both result in the same output, but the <code class="highlighter-rouge">link_article</code> helper has no support
-for custom link names. The linked page title is the link title with the
-helper (but it also results in less text in your files).</p>
-
-<p>Note that you have to replace spaces with underscores in the Markdown syntax.</p>
-
-<h2 id="tocAnchor-1-4-2">Images, code, etc</h2>
-
-<p>All normal markdown features are supported. You can include code with the
-three-backticks-syntax. Syntax highlighing is done with <code class="highlighter-rouge">highlightjs</code> and
-works client-side. <a href="https://highlightjs.org/">highlightjs</a> has a lot of
-different color schemes, which
-<a href="https://highlightjs.org/static/demo/">you can choose from</a> and
-<a href="/wiki/articles/Installation_guide.html#Modifying">use in this wiki</a></p>
-
-<div data-alert="" class="alert-box info" tabindex="0" aria-live="assertive" role="alertdialog">
-  Note that you have to set the language when highlighing code with the
-  three-backticks-syntax. Highlighting does not work if there is no language
-  specified.
-</div>
-
-<h2 id="tocAnchor-1-4-3">Alerts</h2>
-
-<p>There are several kinds of alerts available:</p>
-
-<div data-alert="" class="alert-box secondary" tabindex="0" aria-live="assertive" role="alertdialog">
-  secondary
-</div>
-
-<div data-alert="" class="alert-box info" tabindex="0" aria-live="assertive" role="alertdialog">
-  info
-</div>
-
-<div data-alert="" class="alert-box success" tabindex="0" aria-live="assertive" role="alertdialog">
-  success
-</div>
-
-<div data-alert="" class="alert-box warning" tabindex="0" aria-live="assertive" role="alertdialog">
-  warning
-</div>
-
-<div data-alert="" class="alert-box alert" tabindex="0" aria-live="assertive" role="alertdialog">
-  alert
-</div>
-
-<p>Each has a different color scheme. The markup to include them is simple:</p>
-
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="p">{</span><span class="sx">% wiki_note_&lt;kind&gt; </span><span class="o">%</span><span class="p">}</span>
-    <span class="o">&lt;</span><span class="n">your</span> <span class="n">text</span><span class="o">&gt;</span>
-  <span class="p">{</span><span class="sx">% endwiki_note_secondary </span><span class="o">%</span><span class="p">}</span>
-</code></pre>
-</div>
-
-<p>Where <code class="highlighter-rouge">&lt;kind&gt;</code> is one of “secondary”, “info”, “success “, “warning” or
-“alert”.</p>
+<blockquote>
+  <p>“Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento” <a href="http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm">1</a></p>
+</blockquote>
 
 </div>
 
@@ -294,7 +183,7 @@ different color schemes, which
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -316,9 +205,9 @@ different color schemes, which
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>116</td>
-                                <td>0</td>
+                                <td>65</td>
+                                <td>21</td>
+                                <td>10</td>
                             </tr>
                             </tbody>
                         </table>
@@ -337,8 +226,74 @@ different color schemes, which
                             <tbody>
                             
                             <tr>
+                                <td>192.168.1.1</td>
+                                <td>192.168...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Clombardi</td>
+                                <td>Clombar...</td>
+                                <td>5</td>
+                            </tr>
+                            
+                            <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fdodino</td>
+                                <td>Fdodino...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gise</td>
+                                <td>Gise@uq...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Guille</td>
+                                <td>Guille@...</td>
+                                <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Lgassman</td>
+                                <td>Lgassma...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>MediaWiki default</td>
+                                <td>MediaWi...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>41</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Pablitar</td>
+                                <td>Pablita...</td>
                                 <td>1</td>
                             </tr>
                             
@@ -361,11 +316,83 @@ different color schemes, which
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>60a7effa</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>64c10aa2</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6cecb7b7</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5f58203d</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>48a9c644</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>39d3b53e</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>20f552a6</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>b383bd0d</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>336681ff</td>
+                        <td>Thu Feb 2 19:12:57 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -122,15 +122,15 @@
 <code class="highlighter-rouge">   padre(Persona, Hijo),</code>
 <code class="highlighter-rouge">   problematico(Hijo).</code></p>
 
-<p>Si luego queremos definir estaHarto/1 de modo que se cumpla para las personas qué sólo tiene hijos problemáticos, deberíamos usar el predicado <a href="paradigma-logico---el-forall.md"> forall</a> para cuantificar con Para Todo a los hijos de la persona en cuestión:</p>
+<p>Si luego queremos definir estaHarto/1 de modo que se cumpla para las personas qué sólo tiene hijos problemáticos, deberíamos usar el predicado <a href="paradigma-logico---el-forall.html"> forall</a> para cuantificar con Para Todo a los hijos de la persona en cuestión:</p>
 
 <p><code class="highlighter-rouge">estaHarto(Persona):-</code>
-<code class="highlighter-rouge">   padre(Persona, _),  %% </code><a href="paradigma-logico---generacion.md"> <code class="highlighter-rouge">Generamos</code></a><code class="highlighter-rouge"> a la persona porque no quiero que sea una variable a cuantificar por el para todo, sino un individuo concreto.</code>
+<code class="highlighter-rouge">   padre(Persona, _),  %% </code><a href="paradigma-logico---generacion.html"> <code class="highlighter-rouge">Generamos</code></a><code class="highlighter-rouge"> a la persona porque no quiero que sea una variable a cuantificar por el para todo, sino un individuo concreto.</code>
 <code class="highlighter-rouge">   forall(padre(Persona, Hijo), problematico(Hijo)).</code></p>
 
 <h2 id="relación-entre-existe-y-para-todo">Relación entre Existe y Para Todo</h2>
 
-<p>Existe una <a href="http://es.wikipedia.org/wiki/Cuantificador_universal#Relaci.C3.B3n_cuantificador_universal_y_el_cuantificador_existencial">relación entre el cuantificador universal y el existencial</a>, la misma se establece mediante la <a href="paradigma-logico---negacion.md"> negación</a>.</p>
+<p>Existe una <a href="http://es.wikipedia.org/wiki/Cuantificador_universal#Relaci.C3.B3n_cuantificador_universal_y_el_cuantificador_existencial">relación entre el cuantificador universal y el existencial</a>, la misma se establece mediante la <a href="paradigma-logico---negacion.html"> negación</a>.</p>
 
 <p>Podríamos haber hecho una solución para estaHarto/1 sin usar forall basándonos en esta equivalencia lógica. Alguien está harto si ninguno de sus hijos no es problemático.</p>
 
@@ -167,7 +167,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -189,8 +189,8 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>30</td>
+                                <td>2</td>
+                                <td>31</td>
                                 <td>0</td>
                             </tr>
                             </tbody>
@@ -211,7 +211,13 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
                                 <td>1</td>
                             </tr>
                             
@@ -234,11 +240,19 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>04daf968</td>
+                        <td>Thu Feb 2 19:12:19 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «En la [http://es.wikipedia.org/wiki/L%C3%B3gica_de_primer_orden lógica de primer orden] se trabaja con variables cuantificadas, los cuantificadores indican si algo se cump...»</td>
                     </tr>
                     
                     </tbody>

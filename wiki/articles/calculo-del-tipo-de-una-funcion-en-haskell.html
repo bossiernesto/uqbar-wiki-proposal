@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -112,7 +112,7 @@
 </div>
 
 <div id="article_content">
-    <p>Dado que el haskell es un lenguaje con <a href="inferencia-de-tipos.md">Inferencia de tipos</a>, no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente <em>por</em> ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).</p>
+    <p>Dado que el haskell es un lenguaje con <a href="inferencia-de-tipos.html">Inferencia de tipos</a>, no es necesario indicar el tipo de las funciones que construimos. A pesar de ello (o tal vez precisamente <em>por</em> ello) los tipos juegan un rol fundamental al programar en un lenguaje funcional (en particular en Haskell).</p>
 
 <p>Esto se debe a varios motivos:</p>
 
@@ -142,23 +142,17 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
 
 <h2 id="antes-de-empezar-cómo-leer-el-tipo-de-una-función-en-haskell">Antes de empezar: cómo leer el tipo de una función en Haskell</h2>
 
-<p>Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre <a href="tipos-de-haskell.md">Tipos de Haskell</a></p>
+<p>Antes de poder evaluar el tipo de una hay que comprender cuáles son los tipos posibles de Haskell, eso está explicado en el artículo sobre <a href="tipos-de-haskell.html">Tipos de Haskell</a></p>
 
 <h2 id="aplicación">Aplicación</h2>
 
-<p>si x es Bool, entonces</p>
-
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code>
-</code></pre>
-</div>
-
-<p>también es de tipo Bool</p>
+<p>si x es Bool, entonces  también es de tipo Bool</p>
 
 <h2 id="funciones-simples">Funciones Simples</h2>
 
 <p>Al intentar calcular el tipo de una función, lo primero que tenemos que hacer es mirar las funciones que se usan dentro de su definición. Por ejemplo:</p>
 
-<p>none x y = not x &amp;&amp; not y</p>
+<p><code class="highlighter-rouge">none x y = not x &amp;&amp; not y</code></p>
 
 <p>Para determinar el tipo de la función none podemos seguir los siguientes pasos:</p>
 
@@ -177,94 +171,70 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
 
 <p>Siendo</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code> <span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">head</span> <span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="nf">\</span><span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="n">x</span><span class="p">)</span> <span class="n">z</span><span class="p">)</span>
-</code></pre>
-</div>
+<p><strong><code class="highlighter-rouge">f</code> <code class="highlighter-rouge">x</code> <code class="highlighter-rouge">y</code> <code class="highlighter-rouge">z</code> <code class="highlighter-rouge">=</code> <code class="highlighter-rouge">(head</code> <code class="highlighter-rouge">y)</code> <code class="highlighter-rouge">&gt;</code> <code class="highlighter-rouge">(map</code> <code class="highlighter-rouge">(\n</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">n</code> <code class="highlighter-rouge">x)</code> <code class="highlighter-rouge">z)</code></strong></p>
 
 <p>Vamos a intentar hacer la inferencia de tipos</p>
 
-<p>Por donde empezamos?</p>
+<p><strong>Por donde empezamos?</strong></p>
 
-<p>Primero tenemos que ver qué es f ? f es una función que tiene 3 parámetros</p>
+<p>Primero tenemos que ver qué es <strong>f</strong> ? f es una función que tiene 3 parámetros</p>
 
 <p>Ponemos 3 flechitas -&gt;</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">x</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">y</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">z</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: esto es el tipo de </code><strong><code class="highlighter-rouge">x</code></strong><code class="highlighter-rouge"> -&gt; esto es el tipo de </code><strong><code class="highlighter-rouge">y</code></strong><code class="highlighter-rouge"> -&gt; esto es el tipo de </code><strong><code class="highlighter-rouge">z</code></strong><code class="highlighter-rouge"> -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>Como head se aplica a una lista y tiene que ser una lista</p>
+<p>Como head se aplica a una lista <strong>y</strong> tiene que ser una lista</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">x</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">z</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: esto es el tipo de </code><strong><code class="highlighter-rouge">x</code></strong><code class="highlighter-rouge"> -&gt; [???] -&gt; esto es el tipo de </code><strong><code class="highlighter-rouge">z</code></strong><code class="highlighter-rouge"> -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>Como map recibe como segundo parámetro una lista, z tiene q ser una lista</p>
+<p>Como map recibe como segundo parámetro una lista, <strong>z</strong> tiene q ser una lista</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">x</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: esto es el tipo de </code><strong><code class="highlighter-rouge">x</code></strong><code class="highlighter-rouge"> -&gt; [???] -&gt; [???] -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>La función que es primer parámetro del map (\n -&gt; n x) recibe como parámetro cada elemento de la lista z, cada uno de esos elementos va a ser n</p>
+<p>La función que es primer parámetro del map <strong>(\n -&gt; n x)</strong> recibe como parámetro cada elemento de la lista <strong>z</strong>, cada uno de esos elementos va a ser <strong>n</strong></p>
 
-<p>Como n se está aplicando a x podemos inferir que n es una función, por lo que z es una lista de funciones</p>
+<p>Como <strong>n</strong> se está aplicando a <strong>x</strong> podemos inferir que <strong>n</strong> es una función, por lo que <strong>z</strong> es una lista de funciones</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">x</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="kt">Dominio</span> <span class="o">-&gt;</span> <span class="kt">Imagen</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: esto es el tipo de </code><strong><code class="highlighter-rouge">x</code></strong><code class="highlighter-rouge"> -&gt; [???] -&gt; </code><strong><code class="highlighter-rouge">[Dominio</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">Imagen]</code></strong><code class="highlighter-rouge"> -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>Como x es el parámetro de n podemos inferir que x pertenece al dominio de n, por ende si el Dominio es de tipo a entonces x es de tipo a</p>
+<p>Como <strong>x</strong> es el parámetro de <strong>n</strong> podemos inferir que <strong>x</strong> pertenece al dominio de <strong>n</strong>, por ende si el <strong>Dominio</strong> es de tipo <strong>a</strong> entonces <strong>x</strong> es de tipo <strong>a</strong></p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="kt">Imagen</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: </code><strong><code class="highlighter-rouge">a</code></strong><code class="highlighter-rouge"> -&gt; [???] -&gt; [</code><strong><code class="highlighter-rouge">a</code></strong><code class="highlighter-rouge"> -&gt; Imagen] -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>Respiremos profundo… Asumimos que Imagen es de tipo b</p>
+<p>Respiremos profundo… Asumimos que Imagen es de tipo <strong>b</strong></p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="o">???</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: a -&gt; [???] -&gt; [a -&gt; </code><strong><code class="highlighter-rouge">b</code></strong><code class="highlighter-rouge">] -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>Ahora pensemos en los parámetros de la función (&gt;) que son (head y) y (map (\n -&gt; n x) z)</p>
+<p>Ahora pensemos en los parámetros de la función <strong>(&gt;)</strong> que son <strong>(head y)</strong> y <strong>(map (\n -&gt; n x) z)</strong></p>
 
 <p>Para poder comparar estas 2 cosas ambos tienen que ser del mismo tipo</p>
 
-<p>El map me da una lista de lo que devuelve (\n -&gt; n x) sabemos que la imagen de (\n -&gt; n x) es b entonces (map (\n -&gt; n x) z) es de tipo [b]</p>
+<p>El map me da una lista de lo que devuelve (\n -&gt; n x) sabemos que la imagen de (\n -&gt; n x) es b entonces <strong>(map (\n -&gt; n x) z)</strong> es de tipo <strong>[b]</strong></p>
 
-<p>Por ende (head y) también es de tipo [b]</p>
+<p>Por ende <strong>(head y)</strong> también es de tipo <strong>[b]</strong></p>
 
-<p>Para que (head y) sea de tipo [b] y tiene que tener el tipo [ [ b ] ]</p>
+<p>Para que <strong>(head y)</strong> sea de tipo <strong>[b]</strong> <strong>y</strong> tiene que tener el tipo [ <strong>[ b ]</strong> ]</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="err"> </span><span class="p">[</span> <span class="n">b</span> <span class="p">]</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">esto</span><span class="err"> </span><span class="n">es</span><span class="err"> </span><span class="n">el</span><span class="err"> </span><span class="n">tipo</span><span class="err"> </span><span class="n">de</span><span class="err"> </span><span class="n">lo</span><span class="err"> </span><span class="n">que</span><span class="err"> </span><span class="n">devuelve</span><span class="err"> </span><span class="n">f</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: a -&gt; [ </code><strong><code class="highlighter-rouge">[</code> <code class="highlighter-rouge">b</code> <code class="highlighter-rouge">]</code></strong><code class="highlighter-rouge"> ] -&gt; [a -&gt; b] -&gt; esto es el tipo de lo que devuelve </code><strong><code class="highlighter-rouge">f</code></strong></p>
 
-<p>La última función que se hace en f es (&gt;), como la imagen de (&gt;) es Bool la imagen de f es Bool</p>
+<p>La última función que se hace en <strong>f</strong> es <strong>(&gt;)</strong>, como la imagen de <strong>(&gt;)</strong> es <strong>Bool</strong> la imagen de <strong>f</strong> es <strong>Bool</strong></p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="err"> </span><span class="p">[</span><span class="err"> </span><span class="n">b</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="kt">Bool</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: a -&gt; [ [ b ] ] -&gt; [a -&gt; b] -&gt; </code><strong><code class="highlighter-rouge">Bool</code></strong></p>
 
-<p>Nos queda un pequeño detalle, el (&gt;) solo puede laburar con listas ordenables entonces [b] no puede ser cualquier lista, sus elementos tienen que tener la restricción Ord</p>
+<p>Nos queda un pequeño detalle, el <strong>(&gt;)</strong> solo puede laburar con listas ordenables entonces <strong>[b]</strong> no puede ser cualquier lista, sus elementos tienen que tener la restricción <strong>Ord</strong></p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Ord</span> <span class="n">b</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="err"> </span><span class="p">[</span><span class="err"> </span><span class="n">b</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">b</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="kt">Bool</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f :: </code><strong><code class="highlighter-rouge">Ord</code> <code class="highlighter-rouge">b</code></strong><code class="highlighter-rouge"> =&gt; a -&gt; [ [ b ] ] -&gt; [a -&gt; b] -&gt; Bool</code></p>
 
 <h3 id="ejemplo-de-parcial-para-pensar">Ejemplo de parcial para pensar</h3>
 
 <p>Tenemos esta función:</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="n">f</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="n">b</span><span class="err"> </span><span class="n">c</span><span class="err"> </span><span class="n">d</span><span class="err"> </span><span class="o">=</span><span class="err"> </span><span class="n">maximoSegun</span><span class="err"> </span><span class="p">(</span><span class="n">c</span><span class="err"> </span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="err"> </span><span class="p">(</span><span class="o">==</span><span class="err"> </span><span class="n">snd</span><span class="err"> </span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="err"> </span><span class="n">b</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">f a b c d = maximoSegun (c d).filter (== snd a).map b</code></p>
 
 <p>Y sabemos que:</p>
 
-<div class="language-haskell highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="kt">Main</span><span class="o">&gt;</span><span class="err"> </span><span class="o">:</span><span class="n">t</span><span class="err"> </span><span class="n">maximoSegun</span>
-<span class="n">maximoSegun</span><span class="err"> </span><span class="o">::</span><span class="err"> </span><span class="kt">Ord</span><span class="err"> </span><span class="n">a1</span><span class="err"> </span><span class="o">=&gt;</span><span class="err"> </span><span class="p">(</span><span class="n">a</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a1</span><span class="p">)</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="err"> </span><span class="o">-&gt;</span><span class="err"> </span><span class="n">a</span>
-</code></pre>
-</div>
+<p><code class="highlighter-rouge">*Main&gt; :t maximoSegun</code>
+<code class="highlighter-rouge">maximoSegun :: Ord a1 =&gt; (a -&gt; a1) -&gt; [a] -&gt; a</code></p>
 
 <p>Cuál es el tipo de f? Ayudita: nótese que al map se le está aplicando sólo un parámetro ;)</p>
 
@@ -297,7 +267,7 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -319,9 +289,9 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>160</td>
-                                <td>0</td>
+                                <td>18</td>
+                                <td>93</td>
+                                <td>47</td>
                             </tr>
                             </tbody>
                         </table>
@@ -341,8 +311,26 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Gleiva</td>
+                                <td>Gleiva@...</td>
+                                <td>9</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>6</td>
                             </tr>
                             
                             </tbody>
@@ -364,11 +352,83 @@ Una función que tiene un tipo genérico al ser aplicada puede reducir su tipo, 
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bedf4d97</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bbc92e1a</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a1e021f1</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a3aedb2f</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>16ae95f9</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9f76d545</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>74f555e7</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>49cc895c</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e643dc12</td>
+                        <td>Thu Feb 2 19:09:40 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Ejemplo un poco mas heavy */</td>
                     </tr>
                     
                     </tbody>

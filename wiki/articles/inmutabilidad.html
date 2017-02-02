@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -114,7 +114,7 @@
 <div id="article_content">
     <p>El concepto de inmutabilidad está asociado a la ausencia de cambio. En los paradigmas Funcional y Lógico, la inmutabilidad está garantizada, ya que no es posible modificar los datos con los que trabaja una función o un predicado, en todo caso lo que se puede hacer para emular un cambio sobre una estructura es retornar una nueva estructura a partir de la original con la información que tendría como consecuencia de la transformación deseada.</p>
 
-<p>Decimos que un objeto es inmutable si no puede cambiar su estado interno (su conjunto de atributos) después de su inicialización. Si la interfaz del objeto tiene una forma de inicializar sus variables, pero no exhibe el comportamiento para settear sus atributos, sus usuarios no podrán alterar su estado interno más adelante. Para construir un objeto ya inicializado solemos usar <a href="variables-y-metodos-de-clase.md"> métodos de clase</a>, sólo habrá que mandarle al objeto un mensaje distinto (por ejemplo, si fuera un alumno que conoce su nombre y su promedio, inicializarConNombre:yPromedio:)</p>
+<p>Decimos que un objeto es inmutable si no puede cambiar su estado interno (su conjunto de atributos) después de su inicialización. Si la interfaz del objeto tiene una forma de inicializar sus variables, pero no exhibe el comportamiento para settear sus atributos, sus usuarios no podrán alterar su estado interno más adelante. Para construir un objeto ya inicializado solemos usar <a href="variables-y-metodos-de-clase.html"> métodos de clase</a>, sólo habrá que mandarle al objeto un mensaje distinto (por ejemplo, si fuera un alumno que conoce su nombre y su promedio, inicializarConNombre:yPromedio:)</p>
 
 <p>Los Strings son un ejemplo de objetos inmutables, cualquier operación que hagan sobre un string (concatenación, cambiar a mayúscula o minúscula, etc) sólo retorna otro string, el receptor nunca se modifica.</p>
 
@@ -128,7 +128,7 @@
 
 <p>Entonces, si estamos haciendo nuestros propios objetos inmutables, hay que tener en cuenta si los objetos que conocen pueden o no cambiar su estado. En el caso de que no, listo, pero si sí pueden hay que plantearse si dichos objetos no deberían ser también inmutables, y en el caso de no querer que así sea, retornar copias de los mismos cuando sea necesario. De esa forma, quien envíe el mensaje que retorna uno de estos objetos mutables, pueda realizar modificaciones sobre el mismo sin que el objeto inmutable se vea afectado.</p>
 
-<p>Otra cosa a mencionar es sobre los objetos inmutables es que la <a href="igual-o-identico-----vs---.md">igualdad ya no se basa en la identidad</a>. Debería ser cierto por ejemplo que ‘hola’ sea igual a ‘ho’ concatenado con ‘la’, independientemente de que sean o no el mismo objeto. La igualdad termina dependiendo de los valores de sus atributos (o un subconjunto de ellos).</p>
+<p>Otra cosa a mencionar es sobre los objetos inmutables es que la <a href="igual-o-identico-----vs---.html">igualdad ya no se basa en la identidad</a>. Debería ser cierto por ejemplo que ‘hola’ sea igual a ‘ho’ concatenado con ‘la’, independientemente de que sean o no el mismo objeto. La igualdad termina dependiendo de los valores de sus atributos (o un subconjunto de ellos).</p>
 
 </div>
 
@@ -159,7 +159,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -181,9 +181,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>21</td>
-                                <td>0</td>
+                                <td>3</td>
+                                <td>25</td>
+                                <td>3</td>
                             </tr>
                             </tbody>
                         </table>
@@ -203,8 +203,14 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -226,11 +232,27 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>05e83863</td>
+                        <td>Thu Feb 2 19:11:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>237531dc</td>
+                        <td>Thu Feb 2 19:11:04 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «Un objeto es inmutable si no puede cambiar su estado interno (su conjunto de variables) después de su creación.  Los Strings son un ejemplo de objetos inmutables. Cualqui...»</td>
                     </tr>
                     
                     </tbody>

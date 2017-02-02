@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -145,7 +145,7 @@
 <code class="highlighter-rouge">Prelude&gt; 'b' &gt; 'a'</code>
 <code class="highlighter-rouge">True</code></p>
 
-<p>El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver <a href="tipos-de-haskell-typeclasses.md">más adelante</a>. Algunas operaciones que podemos hacer:</p>
+<p>El tipo de los números es un poquito más complejo porque tenemos números enteros, reales, racionales y muchas más variantes, lo vamos a ver <a href="tipos-de-haskell-typeclasses.html">más adelante</a>. Algunas operaciones que podemos hacer:</p>
 
 <p><code class="highlighter-rouge">Prelude&gt; 4*6</code>
 <code class="highlighter-rouge">24</code>
@@ -160,7 +160,7 @@
 <code class="highlighter-rouge">Prelude&gt; 4/6</code>
 <code class="highlighter-rouge">0.6666666666666666</code></p>
 
-<p>La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el <a href="problemas-comunes-con-los-tipos-numericos-de-haskell-para-salir-del-paso---.md">siguiente artículo</a></p>
+<p>La división en ocasiones puede traer problemas de tipos, si tuviste problemas con esto leé el <a href="problemas-comunes-con-los-tipos-numericos-de-haskell-para-salir-del-paso---.html">siguiente artículo</a></p>
 
 <h3 id="listas-y-strings">Listas y Strings</h3>
 
@@ -181,7 +181,7 @@
 
 <h3 id="tuplas">Tuplas</h3>
 
-<p>Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. (Esto está más detallado en <a href="-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.md">¿Cuál es la diferencia entre una tupla y una lista?</a>, pero antes te recomiendo mirar los ejemplos que siguen.)</p>
+<p>Una tupla es también un valor compuesto. A diferencia de las listas el número de componentes es fijo y los pueden ser cada uno de un tipo distinto. (Esto está más detallado en <a href="-cual-es-la-diferencia-entre-una-tupla-y-una-lista-.html">¿Cuál es la diferencia entre una tupla y una lista?</a>, pero antes te recomiendo mirar los ejemplos que siguen.)</p>
 
 <p>Una de las tuplas más simples que se puede imaginar es:</p>
 
@@ -221,7 +221,7 @@
 
 <h3 id="data">Data</h3>
 
-<p>Es posible <a href="data--definiendo-nuestros-tipos-en-haskell.md">definir nuestros propios tipos de dato</a> usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:</p>
+<p>Es posible <a href="data--definiendo-nuestros-tipos-en-haskell.html">definir nuestros propios tipos de dato</a> usando data para poder mejorar las abstracciones de nuestros programas y evitar algunos problemas asociados al uso de tuplas. Esto puede hacerse de la siguiente forma:</p>
 
 <p><code class="highlighter-rouge">data NuevoTipo = Constructor Tipo1 Tipo2 ... TipoN</code></p>
 
@@ -268,9 +268,9 @@
 
 <h3 id="funciones-con-más-de-un-parámetro">Funciones con más de un parámetro</h3>
 
-<p>Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell se trabaja con el concepto de <a href="currificacion.md">Currificación</a>, entonces una función que nosotros en matemática estaríamos acostumbrados a verla como en Haskell la vamos a escribir . Las funciones de dos parámetros cuyo tipo tiene esa forma se denominan <em>currificadas</em>.</p>
+<p>Las funciones de más de un parámetro tienen alguna sutileza porque en Haskell se trabaja con el concepto de <a href="currificacion.html">Currificación</a>, entonces una función que nosotros en matemática estaríamos acostumbrados a verla como en Haskell la vamos a escribir . Las funciones de dos parámetros cuyo tipo tiene esa forma se denominan <em>currificadas</em>.</p>
 
-<p>(A los efectos de entender el sistema de tipos podemos pensarlo simplemente como una función que recibe dos booleanos, aunque en realidad la versión currificada es mucho más poderosa. Para más detalles ver la teoría sobre <a href="currificacion.md">Currificación</a>.)</p>
+<p>(A los efectos de entender el sistema de tipos podemos pensarlo simplemente como una función que recibe dos booleanos, aunque en realidad la versión currificada es mucho más poderosa. Para más detalles ver la teoría sobre <a href="currificacion.html">Currificación</a>.)</p>
 
 <p>El tipo que usamos como ejemplo en el párrafo anterior corresponde (entre otros) a la función</p>
 
@@ -279,7 +279,7 @@
 
 <h3 id="aplicación">Aplicación</h3>
 
-<p>La <a href="aplicacion.md">aplicación</a> es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente <em>una expresión que tiene valor Booleano</em> de <em>una función que devuelve Booleanos</em>.</p>
+<p>La <a href="aplicacion.html">aplicación</a> es uno de los temas que tal vez más confunden cuando se habla de tipos de datos. La confusión más frecuente radica en no diferenciar correctamente <em>una expresión que tiene valor Booleano</em> de <em>una función que devuelve Booleanos</em>.</p>
 
 <p>Ya vimos dos ejemplos de funciones que devuelven booleanos, con uno y dos parámetros:</p>
 
@@ -346,7 +346,7 @@ En Haskell eso se escribe de la siguiente manera
 
 Num, Ord y Eq son **restricciones de tipo**, en Haskell se las conoce como Typeclasses (no confundan esto con el término Clase que usamos en el paradigma de objetos!!)
 
-En cada [Typeclass](typeclasses.md) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
+En cada [Typeclass](typeclasses.html) se definen un conjunto de funciones que los tipos pertenecientes deben implementar
 
 `Num a`
 `(+), (-), (*) :: a -&gt; a -&gt; a`
@@ -406,7 +406,7 @@ Qué tipos pertenecen a la restricción Show? Bool, Char, Double, Float, Int, In
 
 Resumiendo: casi todos todos los tipos menos el tipo función
 
-Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? Sí! Leer en [Data: Definiendo nuestros tipos en Haskell\#Instance](data--definiendo-nuestros-tipos-en-haskell-instance.md)
+Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? Sí! Leer en [Data: Definiendo nuestros tipos en Haskell\#Instance](data--definiendo-nuestros-tipos-en-haskell-instance.html)
 </interactive></interactive>
 
 </div>
@@ -438,7 +438,7 @@ Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? S
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -460,9 +460,9 @@ Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? S
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>299</td>
-                                <td>0</td>
+                                <td>41</td>
+                                <td>153</td>
+                                <td>16</td>
                             </tr>
                             </tbody>
                         </table>
@@ -482,8 +482,26 @@ Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? S
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>7</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>31</td>
                             </tr>
                             
                             </tbody>
@@ -505,11 +523,83 @@ Se puede hacer que un tipo propio pertenezca a algunas de estas restricciones? S
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>fd38db06</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>0acb889c</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e5277d5d</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Typeclasses */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>29fc863d</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Typeclasses */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c1344fcc</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Básicos: caracteres y booleanos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>372441f6</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Tipos simples y compuestos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8ed7c687</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9da137b1</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Aplicación */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e1bd85bc</td>
+                        <td>Thu Feb 2 19:13:55 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

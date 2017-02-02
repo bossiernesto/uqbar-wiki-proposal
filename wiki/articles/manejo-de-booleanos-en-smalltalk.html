@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -146,7 +146,7 @@
 
 <h3 id="agregando-vitaminas">Agregando Vitaminas</h3>
 
-<p>Además de los mensajes binarios <code class="highlighter-rouge">&amp;</code> y <code class="highlighter-rouge">|</code>, tenemos los mensajes <code class="highlighter-rouge">and:</code> y <code class="highlighter-rouge">or:</code>, que en vez de recibir un booleano, reciben un <a href="bloques.md">bloque de código</a> (que adentro tiene un booleano). Veamos:</p>
+<p>Además de los mensajes binarios <code class="highlighter-rouge">&amp;</code> y <code class="highlighter-rouge">|</code>, tenemos los mensajes <code class="highlighter-rouge">and:</code> y <code class="highlighter-rouge">or:</code>, que en vez de recibir un booleano, reciben un <a href="bloques.html">bloque de código</a> (que adentro tiene un booleano). Veamos:</p>
 
 <p><code class="highlighter-rouge">6 even | 5 even "devuelve true"</code>
 <code class="highlighter-rouge">6 even or: [5 even]. "devuelve true"</code></p>
@@ -154,7 +154,7 @@
 <p><code class="highlighter-rouge">5 even &amp; 6 even. "devuelve false"</code>
 <code class="highlighter-rouge">5 even and: [6 even]. "devuelve false"</code></p>
 
-<p>¿Para qué queremos estos mensajes? Porque son “lazy”. Es decir, tienen algo de <a href="estrategias-de-evaluacion-visi-c3-b3n-operativa.md">evaluación perezosa</a>. Ésto significa que si estoy haciendo un “or” y el receptor ya es verdadero, no hace falta analizar el segundo elemento (el or es verdadero):</p>
+<p>¿Para qué queremos estos mensajes? Porque son “lazy”. Es decir, tienen algo de <a href="estrategias-de-evaluacion-visi-c3-b3n-operativa.html">evaluación perezosa</a>. Ésto significa que si estoy haciendo un “or” y el receptor ya es verdadero, no hace falta analizar el segundo elemento (el or es verdadero):</p>
 
 <p><code class="highlighter-rouge">5 &gt; 1 or: [7 * 2]. "devuelve true, sin analizar el bloque basura"</code>
 <code class="highlighter-rouge">5 &gt; 1 | (7 * 2). "tira error, porque 14 no es un booleano"</code></p>
@@ -168,7 +168,7 @@
 
 <h3 id="para-pensar">Para pensar</h3>
 
-<p>¿Qué pasaría en cada caso si dentro del bloque hay una operación con <a href="transparencia-referencial--efecto-de-lado-y-asignaci-c3-b3n-destructiva.md">efecto</a> sobre el estado del sistema? La respuesta a ésta pregunta nos va a ayudar a entender por qué no está bueno tener efecto cuando hacemos un and: ó un or:.</p>
+<p>¿Qué pasaría en cada caso si dentro del bloque hay una operación con <a href="transparencia-referencial--efecto-de-lado-y-asignaci-c3-b3n-destructiva.html">efecto</a> sobre el estado del sistema? La respuesta a ésta pregunta nos va a ayudar a entender por qué no está bueno tener efecto cuando hacemos un and: ó un or:.</p>
 
 <h2 id="errores-comunes">Errores Comunes</h2>
 
@@ -282,7 +282,7 @@ El mismo análisis lo puedo hacer con</p>
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -304,9 +304,9 @@ El mismo análisis lo puedo hacer con</p>
 
                             <tbody>
                             <tr>
+                                <td>3</td>
+                                <td>149</td>
                                 <td>1</td>
-                                <td>147</td>
-                                <td>0</td>
                             </tr>
                             </tbody>
                         </table>
@@ -326,8 +326,14 @@ El mismo análisis lo puedo hacer con</p>
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>2</td>
                             </tr>
                             
                             </tbody>
@@ -349,11 +355,27 @@ El mismo análisis lo puedo hacer con</p>
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ab229cc4</td>
+                        <td>Thu Feb 2 19:11:44 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ifTrue: [^true], ¿está bien? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>df19f1b8</td>
+                        <td>Thu Feb 2 19:11:44 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Página creada con «== Los Booleanos como objetos == Los booleanos son objetos que representan la condición de verdad ó falsedad.  Recordemos que <code>even</code> es un mensaje que entiende...»</td>
                     </tr>
                     
                     </tbody>

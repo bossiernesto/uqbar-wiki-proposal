@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -130,9 +130,9 @@
 <code class="highlighter-rouge">esFinDeSemana' "Domingo" = True</code>
 <code class="highlighter-rouge">esFinDeSemana' _ = False</code></p>
 
-<p>La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el <a href="paradigma-logico---introduccion-universo-cerrado.md"> principio de universo cerrado</a> y si sólo definimos esFinDeSemana’ para “Sábado” y “Domingo” y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la <a href="pattern-matching-en-haskell-sobre-la-variable-anonima.md"> variable anónima</a>, que matchea con cualquier patrón, sea la última definición de esFinDeSemana’, de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).</p>
+<p>La última definición es necesaria, ya que a diferencia del paradigma lógico, no contamos con el <a href="paradigma-logico---introduccion-universo-cerrado.html"> principio de universo cerrado</a> y si sólo definimos esFinDeSemana’ para “Sábado” y “Domingo” y consultamos por otro día, Haskell nos mostrará un error porque el patrón no calza con ningún elemento del dominio esperado. Para que esta función funcione correctamente es importante que el encabezado con la <a href="pattern-matching-en-haskell-sobre-la-variable-anonima.html"> variable anónima</a>, que matchea con cualquier patrón, sea la última definición de esFinDeSemana’, de lo contrario no habrá ningún elemento del dominio cuya imagen pueda ser True (por unicidad).</p>
 
-<p>Acá tenemos un ejemplito <a href="recursividad-en-haskell.md">recursivo</a> típico para pattern matching con números:</p>
+<p>Acá tenemos un ejemplito <a href="recursividad-en-haskell.html">recursivo</a> típico para pattern matching con números:</p>
 
 <p><code class="highlighter-rouge">factorial 0 = 1  </code>
 <code class="highlighter-rouge">factorial n = n * factorial (n - 1)  </code></p>
@@ -178,7 +178,7 @@
 
 <h3 id="con-data">Con data</h3>
 
-<p>(En algunos cursos no se da data, para más información ver acá: <a href="data--definiendo-nuestros-tipos-en-haskell.md">Data: Definiendo nuestros tipos en Haskell</a>) Suponiendo que tenés</p>
+<p>(En algunos cursos no se da data, para más información ver acá: <a href="data--definiendo-nuestros-tipos-en-haskell.html">Data: Definiendo nuestros tipos en Haskell</a>) Suponiendo que tenés</p>
 
 <p><code class="highlighter-rouge">data Coordenada = Coord Int Int</code></p>
 
@@ -287,7 +287,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -309,9 +309,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>152</td>
-                                <td>0</td>
+                                <td>11</td>
+                                <td>149</td>
+                                <td>14</td>
                             </tr>
                             </tbody>
                         </table>
@@ -331,7 +331,31 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Fedescarpa</td>
+                                <td>Fedesca...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>6</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
                                 <td>1</td>
                             </tr>
                             
@@ -354,11 +378,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c4e4debd</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Con listas */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1b85d81a</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2c256019</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Con data */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>78e04290</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Con números y strings */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ba23a93b</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>35b27412</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>a809167a</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6b1d6cd1</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Patrones con sinónimos */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c8f923e4</td>
+                        <td>Thu Feb 2 19:12:49 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
                     </tr>
                     
                     </tbody>

@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="uqbar-wiki" />
 <meta name="application-name" content="uqbar-wiki"/>
 
-<meta property="og:updated_time" content=" 2017-02-01T22:45:08-03:00" />
+<meta property="og:updated_time" content=" 2017-02-02T19:28:44-03:00" />
 
 
 
@@ -122,8 +122,8 @@
   <li>Puedo aislar y <strong>reutilizar comportamiento común</strong>.</li>
   <li>Puedo partir mi problema, <strong>separando responsabilidades</strong>, entre el código que tiene orden superior, y el comportamiento parametrizado.</li>
   <li>Puedo tener un código con partes <strong>incompletas</strong>, esperando rellenarlos <strong>pasando comportamiento por parámetro</strong>, y no sólo datos.</li>
-  <li>¡Puedo generar <strong><a href="abstraccion.md">abstracciones</a> más jugosas</strong>! Más allá de las abstracciones de orden superior que ya me proveen los lenguajes, la mayoría de los mismos me dan la posibilidad de armar mi propio comportamiento de orden superior (En la materia lo vemos en Haskell más directamente, aunque se puede también en SWI-Prolog).</li>
-  <li>Con abstracciones más adecuadas, con responsabilidades repartidas, y sin repetición de lógica, genero un código más <a href="declaratividad-vs--expresividad.md"><strong>expresivo</strong> (porque en general es más fácil de leer), y más <strong>declarativo</strong> (porque en general al usar orden superior oculto detalles algorítmicos)</a></li>
+  <li>¡Puedo generar <strong><a href="abstraccion.html">abstracciones</a> más jugosas</strong>! Más allá de las abstracciones de orden superior que ya me proveen los lenguajes, la mayoría de los mismos me dan la posibilidad de armar mi propio comportamiento de orden superior (En la materia lo vemos en Haskell más directamente, aunque se puede también en SWI-Prolog).</li>
+  <li>Con abstracciones más adecuadas, con responsabilidades repartidas, y sin repetición de lógica, genero un código más <a href="declaratividad-vs--expresividad.html"><strong>expresivo</strong> (porque en general es más fácil de leer), y más <strong>declarativo</strong> (porque en general al usar orden superior oculto detalles algorítmicos)</a></li>
 </ul>
 
 <h3 id="paradigma-funcional">Paradigma Funcional</h3>
@@ -134,7 +134,7 @@
 
 <p><code class="highlighter-rouge">filter :: </code><strong><code class="highlighter-rouge">(a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">Bool)</code></strong><code class="highlighter-rouge"> -&gt; [a] -&gt; [a]</code></p>
 
-<p>Otras funciones comunes son map, <a href="fold.md">fold</a>, funciones de ordenamiento o búsqueda, composición de funciones (.), flip, etc (pueden consultar sus tipos en el intérprete con :t).</p>
+<p>Otras funciones comunes son map, <a href="fold.html">fold</a>, funciones de ordenamiento o búsqueda, composición de funciones (.), flip, etc (pueden consultar sus tipos en el intérprete con :t).</p>
 
 <p>Ejemplos comunes del análisis matemático que es más difícil de ver en los lenguajes de programación son la derivada y la integral (Vemos al “proceso de derivar” como una función que recibe otra función cualquiera y devuelve su derivada).</p>
 
@@ -144,7 +144,7 @@
 
 <h4 id="la-aplicación-parcial-es-también-orden-superior">¿La aplicación parcial es también orden superior?</h4>
 
-<p>En primer lugar, la <a href="aplicacion-parcial.md">Aplicación Parcial</a> no es una función, lo que sí podemos analizar es la <a href="aplicacion.md">Aplicación</a> y lo importante es qué recibe y qué devuelve, eso se ve cuando se analiza el tipo de la función. Existe una función que nos va a servir para realizar este análisis llamada $ que lo que hace es aplicarle un parámetro a una función.</p>
+<p>En primer lugar, la <a href="aplicacion-parcial.html">Aplicación Parcial</a> no es una función, lo que sí podemos analizar es la <a href="aplicacion.html">Aplicación</a> y lo importante es qué recibe y qué devuelve, eso se ve cuando se analiza el tipo de la función. Existe una función que nos va a servir para realizar este análisis llamada $ que lo que hace es aplicarle un parámetro a una función.</p>
 
 <p><code class="highlighter-rouge">($) :: </code><strong><code class="highlighter-rouge">(a</code> <code class="highlighter-rouge">-&gt;</code> <code class="highlighter-rouge">b)</code></strong><code class="highlighter-rouge"> -&gt; a -&gt; b</code>
 <code class="highlighter-rouge">($) funcion parametro = funcion parametro</code></p>
@@ -161,7 +161,7 @@
 
 <h3 id="paradigma-lógico">Paradigma Lógico</h3>
 
-<p>Decimos que un predicado es de Orden Superior si este recibe como argumento otro predicado. Algunos ejemplos son <a href="paradigma-logico---negacion.md">not</a>, <a href="paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.md">findall</a> y <a href="paradigma-logico---el-forall.md">forall</a>. Hacer nuestros propios predicados de orden superior no es tan natural como resulta en funcional, sin embargo Prolog nos permite hacerlo mediante el predicado <a href="como-hacer-predicados-de-orden-superior.md">call</a>.</p>
+<p>Decimos que un predicado es de Orden Superior si este recibe como argumento otro predicado. Algunos ejemplos son <a href="paradigma-logico---negacion.html">not</a>, <a href="paradigma-logico---listas--como-obtener-todas-las-respuestas--juntas--.html">findall</a> y <a href="paradigma-logico---el-forall.html">forall</a>. Hacer nuestros propios predicados de orden superior no es tan natural como resulta en funcional, sin embargo Prolog nos permite hacerlo mediante el predicado <a href="como-hacer-predicados-de-orden-superior.html">call</a>.</p>
 
 <h3 id="paradigma-estructurado">Paradigma Estructurado</h3>
 
@@ -209,14 +209,14 @@
 
 <p>Por otro lado me gustaría disentir con la idea de relacionar muy fuertemente a los bloques con orden superior, es cierto que estoy pasando “comportamiento” por parámetro. Pero, como decía, eso pasa muchas veces en objetos, entonces hacer una mención especial a los bloques no me parece. En algún momento nosotros mismos lo contamos en esos términos, pero bueno, evolucionamos. Igualmente esa respuesta no se consideraría errónea en un final, pero sí quiero comenzar a transmitirla de esta forma que me parece más adecuada.</p>
 
-<p>Creo que la diferencia del bloque con el resto de los objetos es la creación de comportamiento ad-hoc, para un fin específico, los uso una sola vez y no les pongo nombre. Ese efecto se asemeja a otros elementos del funcional, como ser las <a href="expresiones-lambda.md">Expresiones lambda</a> o la <a href="aplicacion-parcial.md">Aplicación Parcial</a>, que me permiten armar “en el aire” funciones con esas características (fíjense que también pasa en funcional, que las expresiones lambda o la aplicación parcial son útiles para combinarlas con las funciones de orden superior).</p>
+<p>Creo que la diferencia del bloque con el resto de los objetos es la creación de comportamiento ad-hoc, para un fin específico, los uso una sola vez y no les pongo nombre. Ese efecto se asemeja a otros elementos del funcional, como ser las <a href="expresiones-lambda.html">Expresiones lambda</a> o la <a href="aplicacion-parcial.html">Aplicación Parcial</a>, que me permiten armar “en el aire” funciones con esas características (fíjense que también pasa en funcional, que las expresiones lambda o la aplicación parcial son útiles para combinarlas con las funciones de orden superior).</p>
 
 <p>Volviendo al tema principal, el chiste del orden superior es que yo paso algo más complejo que un número, una lista o una estructura (functor, tupla, etc) por parámetro. Al pasar un predicado o función yo paso “comportamiento” por parámetro, el conocimiento de cómo resolver el problema ahora no se divide en datos y algoritmo, sino que la función de orden superior tiene parte del “algoritmo” y la otra parte viene por parámetro. (Nótense las comillas al usar las palabras “algoritmo” y “comportamiento” en los paradigmas declarativos.) Eso le da un poder muy piola a lo que construimos. En fin, ¿cómo llevamos eso de nuevo a objetos? Yo creo que se aprovechan beneficios similares a los del orden superior en el momento en que los objetos que interactúan (el receptor del mensaje y el parámetro) tienen dividido el comportamiento en esa forma, es decir, que el objeto receptor le pide al otro cosas que no sean solamente devolver un dato sino que tengan otra complejidad. Claro, cuando uso un bloque eso pasa siempre, y por eso es tentador establecer la relación. Pero si abrimos un poco la cancha, creo que es fácil ver que ocurre casi siempre que tengamos delegación y responsabilidades bien repartidas.</p>
 
 <h3 id="links-relacionados">Links Relacionados</h3>
 
 <ul>
-  <li><a href="lambdas-en-java-8.md">Lambdas en Java 8</a></li>
+  <li><a href="lambdas-en-java-8.html">Lambdas en Java 8</a></li>
   <li><a href="http://www.cs.aau.dk/~normark/prog3-03/html/notes/higher-order-fu_themes-intr-section.html">Introduction to higher-order functions</a></li>
   <li><a href="http://en.wikipedia.org/wiki/Higher-order_function">Higher-order function</a></li>
   <li><a href="http://weblog.raganwald.com/2007/01/closures-and-higher-order-functions.html">Closures and Higher-Order Functions</a></li>
@@ -254,7 +254,7 @@
 </div>
 
 <div id="article_metadata">
-    <p>Latest update on February 01, 2017 by
+    <p>Latest update on February 02, 2017 by
         Ernesto Bossi</p>
 
     <ul class="accordion" data-accordion>
@@ -276,9 +276,9 @@
 
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>94</td>
-                                <td>0</td>
+                                <td>17</td>
+                                <td>76</td>
+                                <td>43</td>
                             </tr>
                             </tbody>
                         </table>
@@ -298,8 +298,38 @@
                             
                             <tr>
                                 <td>Ernesto Bossi</td>
-                                <td>bossi.ernestog@gmail.com</td>
+                                <td>bossi.e...</td>
                                 <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Flbulgarelli</td>
+                                <td>Flbulga...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Lucasvidal</td>
+                                <td>Lucasvi...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Melmaquian</td>
+                                <td>Melmaqu...</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Mmatos</td>
+                                <td>Mmatos@...</td>
+                                <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Npasserini</td>
+                                <td>Npasser...</td>
+                                <td>10</td>
                             </tr>
                             
                             </tbody>
@@ -321,11 +351,83 @@
                     <tbody>
                     
                     <tr>
-                        <td>68991a7</td>
-                        <td>Wed Feb 1 20:05:13 2017 -0300</td>
+                        <td>bef5abaa</td>
+                        <td>Thu Feb 2 19:24:04 2017 -0300</td>
                         <td>Ernesto Bossi</td>
                         <td>bossi.e...</td>
-                        <td>add wiki pages for demo</td>
+                        <td>build up initial migration with old commits</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>99a26c86</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Links Relacionados */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>f0588571</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Paradigma Funcional */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>bcf8ef6d</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c11691ca</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>Revision without comments imported from MediaWiki</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4452cd7b</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Paradigma Estructurado */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>ff8da88d</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* ¿La aplicación parcial es también orden superior? */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>81abb925</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Paradigma Funcional */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>e58988e4</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Paradigma Estructurado */</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>c1d5706c</td>
+                        <td>Thu Feb 2 19:12:09 2017 -0300</td>
+                        <td>Ernesto Bossi</td>
+                        <td>bossi.e...</td>
+                        <td>/* Paradigma Funcional */</td>
                     </tr>
                     
                     </tbody>
