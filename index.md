@@ -23,26 +23,26 @@ También nos permite publicar material asociado con las asignaturas pero que muc
 
 Si sos un estudiante en busca del material de una materia, tal vez te convenga ingresar por uno de estos links:
 
--   [Paradigmas de Programación](/wiki/articles/paradigmas-de-programacion.html)
--   [Diseño de Sistemas](/wiki/articles/design-temario.html)
--   [Técnicas Avanzadas de Programación](/wiki/articles/tecnicas-avanzadas-de-programacion.html)
--   [Programación de Interfaces de Usuario](/wiki/articles/programacion-de-interfaces-de-usuario.html)
--   [Algoritmos III](/wiki/articles/algo3-temario.html)
--   [Programación con Herramientas Modernas](/wiki/articles/programacion-con-herramientas-modernas.html)
+-   [Paradigmas de Programación]({{site.baseurl}}/wiki/articles/paradigmas-de-programacion.html)
+-   [Diseño de Sistemas]({{site.baseurl}}/wiki/articles/design-temario.html)
+-   [Técnicas Avanzadas de Programación]({{site.baseurl}}/wiki/articles/tecnicas-avanzadas-de-programacion.html)
+-   [Programación de Interfaces de Usuario]({{site.baseurl}}/wiki/articles/programacion-de-interfaces-de-usuario.html)
+-   [Algoritmos III]({{site.baseurl}}/wiki/articles/algo3-temario.html)
+-   [Programación con Herramientas Modernas]({{site.baseurl}}/wiki/articles/programacion-con-herramientas-modernas.html)
 
 Para el que busca algo que vaya más allá de lo visto en las clases aquí hay una lista con algunos artículos sobre [Otros Temas Interesantes de Programación](otros-temas-interesantes-de-programacion.html). Finalmente, otra posibilidad es browsear nuestra colección de propuestas de [Herramientas Útiles](herramientas-utiles.html), que incluye tanto herramientas propias como algunas herramientas de terceros que recomendamos.
 
 Discusiones
 
--   [Robustez de los lenguajes](/wiki/articles/robustez-de-los-lenguajes.html)
+-   [Robustez de los lenguajes]({{site.baseurl}}/wiki/articles/robustez-de-los-lenguajes.html)
 
 Otro material:
 
--   [Lombardización](/wiki/articles/lombardizacion.html)
--   [Comidas](/wiki/articles/comidas.html)
--   [Portal del investigador](/wiki/articles/portal-del-investigador.html)
--   [Tips para Concursos Docentes](/wiki/articles/tips-para-concursos-docentes.html)
--   [Coeficiente de Felicidad Docente](/wiki/articles/coeficiente-de-felicidad-docente.html)
--   [AST-Abstract Syntax Tree](/wiki/articles/ast-abstract-syntax-tree.html)
+-   [Lombardización]({{site.baseurl}}/wiki/articles/lombardizacion.html)
+-   [Comidas]({{site.baseurl}}/wiki/articles/comidas.html)
+-   [Portal del investigador]({{site.baseurl}}/wiki/articles/portal-del-investigador.html)
+-   [Tips para Concursos Docentes]({{site.baseurl}}/wiki/articles/tips-para-concursos-docentes.html)
+-   [Coeficiente de Felicidad Docente]({{site.baseurl}}/wiki/articles/coeficiente-de-felicidad-docente.html)
+-   [AST-Abstract Syntax Tree]({{site.baseurl}}/wiki/articles/ast-abstract-syntax-tree.html)
 
 > "Generar una forma de pensar crítica, rigurosa, donde no cabe el dogma, la fe ni el principio de autoridad para sustentar un argumento" [1](http://www.clarin.com/diario/2008/02/25/opinion/o-01901.htm)

@@ -14,10 +14,11 @@ module Jekyll
       end
 
       def render context
-        title = @text.strip.gsub " ", "-"
+        @site = context.registers[:site]
+        title = @text.strip.gsub ' ', '-'
         text = @text.strip
 
-        %Q{<a class="link article_link" href="/wiki/articles/#{title}.html">#{text}</a>}
+        %Q{<a class="link article_link" href="#{@site.config["baseurl"]}/wiki/articles/#{title}.html">#{text}</a>}
       end
 
     end
